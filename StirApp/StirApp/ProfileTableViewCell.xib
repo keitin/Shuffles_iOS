@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="183" id="KGk-i7-Jjw" customClass="ProfileTableViewCell" customModule="StirApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="379" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="佐野 ひなこ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1j-k5-grN">
+                        <rect key="frame" x="8" y="119" width="363" height="17"/>
+                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hinako2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pbo-1D-c8d">
+                        <rect key="frame" x="154" y="41" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="7EY-Y9-aT0"/>
+                            <constraint firstAttribute="height" constant="70" id="Iqx-gp-fl3"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerX" secondItem="t1j-k5-grN" secondAttribute="centerX" id="B3e-RC-xuZ"/>
+                    <constraint firstItem="t1j-k5-grN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="D8q-8x-M46"/>
+                    <constraint firstItem="t1j-k5-grN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="HzE-15-N3y"/>
+                    <constraint firstItem="t1j-k5-grN" firstAttribute="top" secondItem="Pbo-1D-c8d" secondAttribute="bottom" constant="8" id="Nao-jH-yxf"/>
+                    <constraint firstAttribute="centerX" secondItem="Pbo-1D-c8d" secondAttribute="centerX" id="O2n-Zl-dCL"/>
+                    <constraint firstItem="Pbo-1D-c8d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="33" id="OdU-EB-0yb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="t1j-k5-grN" secondAttribute="bottom" constant="35" id="iAa-Bk-Ydq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Pbo-1D-c8d" secondAttribute="trailing" constant="147" id="ycf-MX-8Og"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="ycf-MX-8Og"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="iconImageView" destination="Pbo-1D-c8d" id="9pS-NL-W6Z"/>
+                <outlet property="nameLabel" destination="t1j-k5-grN" id="pI0-ZT-i3Z"/>
+            </connections>
+            <point key="canvasLocation" x="382.5" y="268.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="hinako2.png" width="573" height="573"/>
+    </resources>
+</document>

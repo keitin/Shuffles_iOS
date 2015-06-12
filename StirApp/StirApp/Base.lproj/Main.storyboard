@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F4c-2l-t8m">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Time Line Table View Controller-->
+        <scene sceneID="7Ef-eI-2j2">
+            <objects>
+                <tableViewController id="kge-vu-1rz" customClass="TimeLineTableViewController" customModule="StirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wZf-b7-Ahh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="fhc-H7-KyR">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fhc-H7-KyR" id="Cmd-iU-YNh">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kge-vu-1rz" id="KI6-HS-kUI"/>
+                            <outlet property="delegate" destination="kge-vu-1rz" id="Zor-ck-cn7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="6hd-Hw-Wn0"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="eJJ-mc-yOi">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle"/>
+                    </refreshControl>
+                    <connections>
+                        <segue destination="58S-kV-GQu" kind="presentation" identifier="modalToNewTweetViewController" id="KmL-az-zxA"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kT1-oG-E4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542.5" y="300.5"/>
+        </scene>
+        <!--New Tweet View Controller-->
+        <scene sceneID="QS5-n3-WXU">
+            <objects>
+                <viewController id="o9u-q3-5ih" customClass="NewTweetViewController" customModule="StirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o40-2t-a1g"/>
+                        <viewControllerLayoutGuide type="bottom" id="aEG-1D-VUz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5vp-Jf-a2X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hinako2.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Kv-cI-pNV">
+                                <rect key="frame" x="16" y="20" width="40" height="40"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="佐野 ひなこ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avN-mS-0Vd">
+                                <rect key="frame" x="64" y="29" width="295" height="21"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFj-ds-alY">
+                                <rect key="frame" x="16" y="68" width="343" height="203"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aeA-VH-SsF"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="iconImageView" destination="9Kv-cI-pNV" id="L1k-DA-jSn"/>
+                        <outlet property="nameLabel" destination="avN-mS-0Vd" id="OpB-3g-H86"/>
+                        <outlet property="tweetTextView" destination="xFj-ds-alY" id="obK-kS-ODI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B4t-GE-PBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2579.5" y="332.5"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="1tW-Jn-n7N">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CeM-yZ-2LH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="B35-Oe-Q7H"/>
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6b8-S9-mki">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kge-vu-1rz" kind="relationship" relationship="rootViewController" id="c3t-Ts-ufq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SGn-ft-UWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1074.5" y="300.5"/>
+        </scene>
+        <!--My Page Table View Controller-->
+        <scene sceneID="nMi-vk-fmS">
+            <objects>
+                <tableViewController id="tWG-aW-1Sx" customClass="MyPageTableViewController" customModule="StirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AZr-u3-RGF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mOv-KZ-38F">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mOv-KZ-38F" id="RA8-hM-XDc">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tWG-aW-1Sx" id="7ac-af-ZeD"/>
+                            <outlet property="delegate" destination="tWG-aW-1Sx" id="rna-RK-tyz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="RFe-Re-OCq"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bwl-EM-hzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522.5" y="1036.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BAa-Ou-4w8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="58S-kV-GQu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="POY-I6-7Oa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Ta5-oj-vil">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="o9u-q3-5ih" kind="relationship" relationship="rootViewController" id="kn2-Hc-OIK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ipe-kI-x2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2030.5" y="300.5"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="CjR-dZ-WBL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8sv-Cb-3BU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="6xM-go-bar"/>
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PpU-Ig-0l8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tWG-aW-1Sx" kind="relationship" relationship="rootViewController" id="IRn-dB-BcL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Cb-kF-BsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1074.5" y="1036.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="xBk-oO-z4y">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="F4c-2l-t8m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="qh9-X7-ZF1">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="CeM-yZ-2LH" kind="relationship" relationship="viewControllers" id="0Qf-DF-F3s"/>
+                        <segue destination="8sv-Cb-3BU" kind="relationship" relationship="viewControllers" id="2Vw-35-wJe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3WS-Xk-TJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="496.5" y="711.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hinako2.png" width="573" height="573"/>
+    </resources>
+</document>

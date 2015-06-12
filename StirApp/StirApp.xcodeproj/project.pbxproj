@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		323CC6CA1B2AC54200E93780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC6C91B2AC54200E93780 /* AppDelegate.swift */; };
+		323CC6CF1B2AC54200E93780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 323CC6CD1B2AC54200E93780 /* Main.storyboard */; };
+		323CC6D11B2AC54200E93780 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 323CC6D01B2AC54200E93780 /* Images.xcassets */; };
+		323CC6D41B2AC54200E93780 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323CC6D21B2AC54200E93780 /* LaunchScreen.xib */; };
+		323CC6E01B2AC54200E93780 /* StirAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC6DF1B2AC54200E93780 /* StirAppTests.swift */; };
+		323CC6EA1B2AC6BB00E93780 /* TimeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC6E91B2AC6BB00E93780 /* TimeLineTableViewController.swift */; };
+		323CC6EE1B2AC77700E93780 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC6EC1B2AC77700E93780 /* TweetTableViewCell.swift */; };
+		323CC6EF1B2AC77700E93780 /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323CC6ED1B2AC77700E93780 /* TweetTableViewCell.xib */; };
+		323CC6F51B2AEA5E00E93780 /* NewTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC6F41B2AEA5E00E93780 /* NewTweetViewController.swift */; };
+		323CC6F81B2B150100E93780 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC6F61B2B150100E93780 /* ProfileTableViewCell.swift */; };
+		323CC6F91B2B150100E93780 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323CC6F71B2B150100E93780 /* ProfileTableViewCell.xib */; };
+		323CC6FB1B2B176F00E93780 /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC6FA1B2B176F00E93780 /* MyPageTableViewController.swift */; };
+		323CC6FD1B2B1C7F00E93780 /* hinako2.png in Resources */ = {isa = PBXBuildFile; fileRef = 323CC6FC1B2B1C7F00E93780 /* hinako2.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		323CC6DA1B2AC54200E93780 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 323CC6BC1B2AC54200E93780 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 323CC6C31B2AC54200E93780;
+			remoteInfo = StirApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		323CC6C41B2AC54200E93780 /* StirApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StirApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		323CC6C81B2AC54200E93780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		323CC6C91B2AC54200E93780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		323CC6CE1B2AC54200E93780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		323CC6D01B2AC54200E93780 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		323CC6D31B2AC54200E93780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		323CC6D91B2AC54200E93780 /* StirAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StirAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		323CC6DE1B2AC54200E93780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		323CC6DF1B2AC54200E93780 /* StirAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StirAppTests.swift; sourceTree = "<group>"; };
+		323CC6E91B2AC6BB00E93780 /* TimeLineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewController.swift; sourceTree = "<group>"; };
+		323CC6EC1B2AC77700E93780 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		323CC6ED1B2AC77700E93780 /* TweetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
+		323CC6F41B2AEA5E00E93780 /* NewTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTweetViewController.swift; sourceTree = "<group>"; };
+		323CC6F61B2B150100E93780 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		323CC6F71B2B150100E93780 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		323CC6FA1B2B176F00E93780 /* MyPageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageTableViewController.swift; sourceTree = "<group>"; };
+		323CC6FC1B2B1C7F00E93780 /* hinako2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hinako2.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		323CC6C11B2AC54200E93780 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		323CC6D61B2AC54200E93780 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		323CC6BB1B2AC54200E93780 = {
+			isa = PBXGroup;
+			children = (
+				323CC6C61B2AC54200E93780 /* StirApp */,
+				323CC6DC1B2AC54200E93780 /* StirAppTests */,
+				323CC6C51B2AC54200E93780 /* Products */,
+				323CC6F31B2ACC8200E93780 /* images */,
+			);
+			sourceTree = "<group>";
+		};
+		323CC6C51B2AC54200E93780 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				323CC6C41B2AC54200E93780 /* StirApp.app */,
+				323CC6D91B2AC54200E93780 /* StirAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		323CC6C61B2AC54200E93780 /* StirApp */ = {
+			isa = PBXGroup;
+			children = (
+				323CC6C91B2AC54200E93780 /* AppDelegate.swift */,
+				323CC6CD1B2AC54200E93780 /* Main.storyboard */,
+				323CC6F01B2AC78A00E93780 /* Views */,
+				323CC6EB1B2AC6C600E93780 /* Controllers */,
+				323CC6D01B2AC54200E93780 /* Images.xcassets */,
+				323CC6D21B2AC54200E93780 /* LaunchScreen.xib */,
+				323CC6C71B2AC54200E93780 /* Supporting Files */,
+			);
+			path = StirApp;
+			sourceTree = "<group>";
+		};
+		323CC6C71B2AC54200E93780 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				323CC6C81B2AC54200E93780 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		323CC6DC1B2AC54200E93780 /* StirAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				323CC6DF1B2AC54200E93780 /* StirAppTests.swift */,
+				323CC6DD1B2AC54200E93780 /* Supporting Files */,
+			);
+			path = StirAppTests;
+			sourceTree = "<group>";
+		};
+		323CC6DD1B2AC54200E93780 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				323CC6DE1B2AC54200E93780 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		323CC6EB1B2AC6C600E93780 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				323CC6E91B2AC6BB00E93780 /* TimeLineTableViewController.swift */,
+				323CC6F41B2AEA5E00E93780 /* NewTweetViewController.swift */,
+				323CC6FA1B2B176F00E93780 /* MyPageTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		323CC6F01B2AC78A00E93780 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				323CC6EC1B2AC77700E93780 /* TweetTableViewCell.swift */,
+				323CC6ED1B2AC77700E93780 /* TweetTableViewCell.xib */,
+				323CC6F61B2B150100E93780 /* ProfileTableViewCell.swift */,
+				323CC6F71B2B150100E93780 /* ProfileTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		323CC6F31B2ACC8200E93780 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				323CC6FC1B2B1C7F00E93780 /* hinako2.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		323CC6C31B2AC54200E93780 /* StirApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 323CC6E31B2AC54200E93780 /* Build configuration list for PBXNativeTarget "StirApp" */;
+			buildPhases = (
+				323CC6C01B2AC54200E93780 /* Sources */,
+				323CC6C11B2AC54200E93780 /* Frameworks */,
+				323CC6C21B2AC54200E93780 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StirApp;
+			productName = StirApp;
+			productReference = 323CC6C41B2AC54200E93780 /* StirApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		323CC6D81B2AC54200E93780 /* StirAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 323CC6E61B2AC54200E93780 /* Build configuration list for PBXNativeTarget "StirAppTests" */;
+			buildPhases = (
+				323CC6D51B2AC54200E93780 /* Sources */,
+				323CC6D61B2AC54200E93780 /* Frameworks */,
+				323CC6D71B2AC54200E93780 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				323CC6DB1B2AC54200E93780 /* PBXTargetDependency */,
+			);
+			name = StirAppTests;
+			productName = StirAppTests;
+			productReference = 323CC6D91B2AC54200E93780 /* StirAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		323CC6BC1B2AC54200E93780 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "matsushita keita";
+				TargetAttributes = {
+					323CC6C31B2AC54200E93780 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					323CC6D81B2AC54200E93780 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 323CC6C31B2AC54200E93780;
+					};
+				};
+			};
+			buildConfigurationList = 323CC6BF1B2AC54200E93780 /* Build configuration list for PBXProject "StirApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 323CC6BB1B2AC54200E93780;
+			productRefGroup = 323CC6C51B2AC54200E93780 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				323CC6C31B2AC54200E93780 /* StirApp */,
+				323CC6D81B2AC54200E93780 /* StirAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		323CC6C21B2AC54200E93780 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				323CC6CF1B2AC54200E93780 /* Main.storyboard in Resources */,
+				323CC6D41B2AC54200E93780 /* LaunchScreen.xib in Resources */,
+				323CC6D11B2AC54200E93780 /* Images.xcassets in Resources */,
+				323CC6EF1B2AC77700E93780 /* TweetTableViewCell.xib in Resources */,
+				323CC6FD1B2B1C7F00E93780 /* hinako2.png in Resources */,
+				323CC6F91B2B150100E93780 /* ProfileTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		323CC6D71B2AC54200E93780 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		323CC6C01B2AC54200E93780 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				323CC6EA1B2AC6BB00E93780 /* TimeLineTableViewController.swift in Sources */,
+				323CC6F51B2AEA5E00E93780 /* NewTweetViewController.swift in Sources */,
+				323CC6FB1B2B176F00E93780 /* MyPageTableViewController.swift in Sources */,
+				323CC6CA1B2AC54200E93780 /* AppDelegate.swift in Sources */,
+				323CC6F81B2B150100E93780 /* ProfileTableViewCell.swift in Sources */,
+				323CC6EE1B2AC77700E93780 /* TweetTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		323CC6D51B2AC54200E93780 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				323CC6E01B2AC54200E93780 /* StirAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		323CC6DB1B2AC54200E93780 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 323CC6C31B2AC54200E93780 /* StirApp */;
+			targetProxy = 323CC6DA1B2AC54200E93780 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		323CC6CD1B2AC54200E93780 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				323CC6CE1B2AC54200E93780 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		323CC6D21B2AC54200E93780 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				323CC6D31B2AC54200E93780 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		323CC6E11B2AC54200E93780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		323CC6E21B2AC54200E93780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		323CC6E41B2AC54200E93780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StirApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		323CC6E51B2AC54200E93780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StirApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		323CC6E71B2AC54200E93780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StirAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StirApp.app/StirApp";
+			};
+			name = Debug;
+		};
+		323CC6E81B2AC54200E93780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StirAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StirApp.app/StirApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		323CC6BF1B2AC54200E93780 /* Build configuration list for PBXProject "StirApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				323CC6E11B2AC54200E93780 /* Debug */,
+				323CC6E21B2AC54200E93780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		323CC6E31B2AC54200E93780 /* Build configuration list for PBXNativeTarget "StirApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				323CC6E41B2AC54200E93780 /* Debug */,
+				323CC6E51B2AC54200E93780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		323CC6E61B2AC54200E93780 /* Build configuration list for PBXNativeTarget "StirAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				323CC6E71B2AC54200E93780 /* Debug */,
+				323CC6E81B2AC54200E93780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 323CC6BC1B2AC54200E93780 /* Project object */;
+}
