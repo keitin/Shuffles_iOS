@@ -43,7 +43,6 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
     }
     
     func sendTweet() {
-        println("送信！")
         self.tweetTextView.resignFirstResponder()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -54,11 +53,11 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
     }
     
     func makePlaceholderLabel() {
-        placeholderLabel.frame.origin = CGPointMake(8, 8)
+        placeholderLabel.frame.origin = CGPointMake(0, 8)
         placeholderLabel.text = "いまなにしてる？"
         placeholderLabel.sizeToFit()
         placeholderLabel.textColor = UIColor.grayColor()
-        placeholderLabel.font = UIFont(name: "HiraKakuProN-W3", size: 13)
+        placeholderLabel.font = UIFont(name: "HiraKakuProN-W3", size: 15)
         tweetTextView.addSubview(placeholderLabel)
     }
     
