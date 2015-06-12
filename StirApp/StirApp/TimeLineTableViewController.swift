@@ -10,6 +10,8 @@ import UIKit
 
 class TimeLineTableViewController: UITableViewController {
 
+    var tweets = StockTweets.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +25,8 @@ class TimeLineTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "modalToNewTweetViewController")
+        
+        tweets.loadTweets()
     }
 
     override func didReceiveMemoryWarning() {

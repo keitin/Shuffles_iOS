@@ -1,0 +1,6 @@
+framework module Pods_StirApp {
+  umbrella header "Pods-StirApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

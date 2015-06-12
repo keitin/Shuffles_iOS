@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D129E7D9-5CD7-4B53-AD46-CBF71F814108</string>
+	<string>568B022E-26F3-4FB1-AD7F-5BCCCE61EA55</string>
 	<key>IDESourceControlProjectName</key>
 	<string>StirApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>github.com:keitin/Stir.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>StirApp/StirApp.xcodeproj</string>
+	<string>StirApp/StirApp.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>122005B9BF64AD24D18E0B5032274FC63A31A8C5</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:keitin/Stir.git</string>
