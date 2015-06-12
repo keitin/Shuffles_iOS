@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :chats, only: [:create]
   resources :users, only: [:show, :edit, :update]
 
+  namespace :api, default: {format: :json} do
+    resources :chats, only: [:index]
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
