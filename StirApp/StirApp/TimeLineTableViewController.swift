@@ -20,13 +20,18 @@ class TimeLineTableViewController: UITableViewController {
         
         self.tableView.estimatedRowHeight = 90
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        println("======authToken in NSUserFefaults=========")
+        println(defaults.objectForKey("authToken"))
+        println("======authToken in NSUserFefaults=========")
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "modalToNewTweetViewController")
         
-        tweets.loadTweets()
+//        tweets.loadTweets()
     }
 
     override func didReceiveMemoryWarning() {

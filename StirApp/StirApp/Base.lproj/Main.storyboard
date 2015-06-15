@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F4c-2l-t8m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kyh-Jj-UDw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
@@ -173,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="1074.5" y="1036.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="F7d-zz-PvP">
             <objects>
-                <viewController id="kyh-Jj-UDw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInViewController" id="kyh-Jj-UDw" customClass="LoginViewController" customModule="StirApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qh4-Mo-bZc"/>
                         <viewControllerLayoutGuide type="bottom" id="lS1-4g-mo4"/>
@@ -185,61 +185,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="メールアドレス" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rNR-CN-lNG">
-                                <rect key="frame" x="82" y="220" width="210" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="パスワード" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7pc-Hp-jk6">
+                                <rect key="frame" x="82" y="151" width="210" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="AoT-7w-QS5"/>
-                                    <constraint firstAttribute="width" constant="210" id="Kg0-gu-fOX"/>
+                                    <constraint firstAttribute="height" constant="30" id="pbM-0K-6Km"/>
+                                    <constraint firstAttribute="width" constant="210" id="zf2-Z9-4He"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="13"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="確認パスワード" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1lZ-5p-Fhq">
+                                <rect key="frame" x="82" y="182" width="210" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2dv-Q0-lzp"/>
+                                    <constraint firstAttribute="width" constant="210" id="d3R-Ta-mDm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="13"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFe-nj-16E">
-                                <rect key="frame" x="82" y="288" width="210" height="30"/>
+                                <rect key="frame" x="82" y="234" width="210" height="30"/>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.48324507699419977" blue="0.41145905882998474" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="09T-4c-8He"/>
-                                    <constraint firstAttribute="width" constant="210" id="vGf-6M-3Ox"/>
+                                    <constraint firstAttribute="width" constant="210" id="Gae-uT-5Pg"/>
+                                    <constraint firstAttribute="height" constant="30" id="cRX-mV-gtD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
                                 <state key="normal" title="ログイン">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapLoginButton:" destination="kyh-Jj-UDw" eventType="touchUpInside" id="53s-MS-JOB"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="パスワード" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7pc-Hp-jk6">
-                                <rect key="frame" x="82" y="251" width="210" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="メールアドレス" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rNR-CN-lNG">
+                                <rect key="frame" x="82" y="120" width="210" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="0bK-cO-5xk"/>
-                                    <constraint firstAttribute="height" constant="30" id="D9c-it-268"/>
+                                    <constraint firstAttribute="width" constant="210" id="Hzs-6m-J36"/>
+                                    <constraint firstAttribute="height" constant="30" id="TkZ-A4-Io8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.40784313729999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="rNR-CN-lNG" secondAttribute="centerX" id="1ZS-75-jZQ"/>
-                            <constraint firstAttribute="centerX" secondItem="wFe-nj-16E" secondAttribute="centerX" id="D0e-83-JPC"/>
-                            <constraint firstAttribute="centerX" secondItem="7pc-Hp-jk6" secondAttribute="centerX" id="NIM-LL-cJr"/>
-                            <constraint firstItem="7pc-Hp-jk6" firstAttribute="top" secondItem="rNR-CN-lNG" secondAttribute="bottom" constant="1" id="ZcF-dm-0DM"/>
-                            <constraint firstItem="rNR-CN-lNG" firstAttribute="top" secondItem="qh4-Mo-bZc" secondAttribute="bottom" constant="200" id="a9X-cy-zmo"/>
-                            <constraint firstItem="wFe-nj-16E" firstAttribute="top" secondItem="7pc-Hp-jk6" secondAttribute="bottom" constant="7" id="oYn-60-Vwy"/>
+                            <constraint firstItem="rNR-CN-lNG" firstAttribute="top" secondItem="qh4-Mo-bZc" secondAttribute="bottom" constant="100" id="938-5b-U4h"/>
+                            <constraint firstAttribute="centerX" secondItem="wFe-nj-16E" secondAttribute="centerX" id="BzU-yi-w9Q"/>
+                            <constraint firstAttribute="centerX" secondItem="7pc-Hp-jk6" secondAttribute="centerX" id="KV3-IC-zIj"/>
+                            <constraint firstAttribute="centerX" secondItem="1lZ-5p-Fhq" secondAttribute="centerX" id="OYy-Jo-RiE"/>
+                            <constraint firstAttribute="centerX" secondItem="rNR-CN-lNG" secondAttribute="centerX" id="a2O-ib-XRq"/>
+                            <constraint firstItem="1lZ-5p-Fhq" firstAttribute="top" secondItem="7pc-Hp-jk6" secondAttribute="bottom" constant="1" id="fC6-6y-HQO"/>
+                            <constraint firstItem="7pc-Hp-jk6" firstAttribute="top" secondItem="rNR-CN-lNG" secondAttribute="bottom" constant="1" id="hcX-gd-C3e"/>
+                            <constraint firstItem="wFe-nj-16E" firstAttribute="top" secondItem="1lZ-5p-Fhq" secondAttribute="bottom" constant="22" id="rfq-WE-9xg"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="confirmPassTextFiled" destination="1lZ-5p-Fhq" id="jMt-jW-gTq"/>
+                        <outlet property="emailTextField" destination="rNR-CN-lNG" id="6Gv-QV-qcc"/>
+                        <outlet property="passwordTextFiled" destination="7pc-Hp-jk6" id="OR4-be-Lly"/>
+                        <segue destination="F4c-2l-t8m" kind="show" identifier="showTimeLineViewController" id="d1W-Qe-V7h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sqy-My-3sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98.5" y="711.5"/>
+            <point key="canvasLocation" x="112.5" y="711.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xBk-oO-z4y">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="F4c-2l-t8m" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="F4c-2l-t8m" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="oRD-4i-pcJ"/>
                     <nil key="simulatedBottomBarMetrics"/>

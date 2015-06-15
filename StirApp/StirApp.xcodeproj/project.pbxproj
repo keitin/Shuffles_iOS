@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32047FC51B2D9C0900A0A5A5 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32047FC41B2D9C0900A0A5A5 /* CurrentUser.swift */; };
+		3215EC8B1B2C699700964F6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215EC8A1B2C699700964F6C /* LoginViewController.swift */; };
+		3215EC8D1B2C6A9000964F6C /* SessionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215EC8C1B2C6A9000964F6C /* SessionUser.swift */; };
 		323A70501B2B5BF600C9CF1E /* Pods_StirApp.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */; };
 		323CC6CA1B2AC54200E93780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC6C91B2AC54200E93780 /* AppDelegate.swift */; };
 		323CC6CF1B2AC54200E93780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 323CC6CD1B2AC54200E93780 /* Main.storyboard */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32047FC41B2D9C0900A0A5A5 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		3215EC8A1B2C699700964F6C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3215EC8C1B2C6A9000964F6C /* SessionUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionUser.swift; sourceTree = "<group>"; };
 		323CC6C41B2AC54200E93780 /* StirApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StirApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		323CC6C81B2AC54200E93780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		323CC6C91B2AC54200E93780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 		323CC6EB1B2AC6C600E93780 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3215EC8A1B2C699700964F6C /* LoginViewController.swift */,
 				323CC6E91B2AC6BB00E93780 /* TimeLineTableViewController.swift */,
 				323CC6F41B2AEA5E00E93780 /* NewTweetViewController.swift */,
 				323CC6FA1B2B176F00E93780 /* MyPageTableViewController.swift */,
@@ -194,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				323CC7041B2B529000E93780 /* StockTweets.swift */,
+				3215EC8C1B2C6A9000964F6C /* SessionUser.swift */,
+				32047FC41B2D9C0900A0A5A5 /* CurrentUser.swift */,
 			);
 			name = "Model Manager";
 			sourceTree = "<group>";
@@ -375,10 +384,13 @@
 				323CC7051B2B529000E93780 /* StockTweets.swift in Sources */,
 				323CC6F51B2AEA5E00E93780 /* NewTweetViewController.swift in Sources */,
 				323CC6FB1B2B176F00E93780 /* MyPageTableViewController.swift in Sources */,
+				3215EC8D1B2C6A9000964F6C /* SessionUser.swift in Sources */,
 				323CC6CA1B2AC54200E93780 /* AppDelegate.swift in Sources */,
 				323CC6F81B2B150100E93780 /* ProfileTableViewCell.swift in Sources */,
 				323CC6EE1B2AC77700E93780 /* TweetTableViewCell.swift in Sources */,
 				323CC6FF1B2B50AE00E93780 /* User.swift in Sources */,
+				3215EC8B1B2C699700964F6C /* LoginViewController.swift in Sources */,
+				32047FC51B2D9C0900A0A5A5 /* CurrentUser.swift in Sources */,
 				323CC7021B2B51ED00E93780 /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,23 +14,21 @@ class StockTweets: NSObject {
     static let sharedInstance = StockTweets()
     var groupTweets: Array<Dictionary<String, AnyObject>> = []
     
-    func loadTweets() {
-        let url = NSURL(string: "http://localhost:3000/api/chats.json")
-        var request = NSMutableURLRequest(URL: url!)
+    func login() {
+
+        Alamofire.request(.GET, "http://localhost:3000/users/sign_in",parameters: nil, encoding: .JSON)
+            .responseJSON { (request, response, JSON, error) in
+                println("=====================")
+                println(request)
+                println("=====================")
+                println(response)
+                println("=====================")
+                println(JSON)
+                println("=====================")
+                println(error)
+                println("=====================")
+        }
         
-        request.HTTPMethod = "GET"
-        
-        var task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, responce, error) -> Void in
-            
-            println("============")
-            if (error == nil) {
-                self.groupTweets.removeAll(keepCapacity: false)
-//                var tweets = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! Array<Dictionary<String, AnyObject>>
-//                println(tweets)
-            }
-            
-        })
-        task.resume()
     }
     
 }

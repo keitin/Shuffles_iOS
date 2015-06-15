@@ -20,6 +20,13 @@ class MyPageTableViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "showActionSheet")
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,16 +59,20 @@ class MyPageTableViewController: UITableViewController {
         }
     }
     
-//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        if indexPath.section == 0 {
-//            return 180
-//        } else {
-//            self.tableView.estimatedRowHeight = 90
-//            self.tableView.rowHeight = UITableViewAutomaticDimension
-//            return 90
-//        }
-//    }
-
+    func showActionSheet() {
+        let actionSheet = UIAlertController(title: "", message: "", preferredStyle: .ActionSheet)
+        let signoutAction = UIAlertAction(title: "Log Out", style: UIAlertActionStyle.Default) { (action) -> Void in
+            
+            CurrentUser.sharedInstance.removeAuthToken()
+        
+            let tabBarController = self.parentViewController?.parentViewController as! UITabBarController
+            tabBarController.dismissViewControllerAnimated(false, completion: nil)
+            
+        }
+        actionSheet.addAction(signoutAction)
+        presentViewController(actionSheet, animated: true, completion: nil)
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -3,3 +3,4 @@ json.chats @chats do |chat|
   json.user chat.user
   json.user_name chat.user.name
 end
+p "============================"
