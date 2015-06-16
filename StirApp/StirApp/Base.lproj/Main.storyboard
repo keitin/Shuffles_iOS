@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kyh-Jj-UDw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F4c-2l-t8m">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
@@ -33,11 +33,12 @@
                     </refreshControl>
                     <connections>
                         <segue destination="58S-kV-GQu" kind="presentation" identifier="modalToNewTweetViewController" id="KmL-az-zxA"/>
+                        <segue destination="FXQ-iM-jVb" kind="presentation" identifier="ModalSigbUpViewController" animates="NO" id="yb8-AI-TiV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kT1-oG-E4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1522.5" y="300.5"/>
+            <point key="canvasLocation" x="1522.5" y="308.5"/>
         </scene>
         <!--New Tweet View Controller-->
         <scene sceneID="QS5-n3-WXU">
@@ -98,7 +99,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGn-ft-UWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074.5" y="300.5"/>
+            <point key="canvasLocation" x="1074.5" y="308.5"/>
         </scene>
         <!--My Page Table View Controller-->
         <scene sceneID="nMi-vk-fmS">
@@ -126,7 +127,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwl-EM-hzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1522.5" y="1036.5"/>
+            <point key="canvasLocation" x="1522.5" y="1123.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BAa-Ou-4w8">
@@ -171,12 +172,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Cb-kF-BsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074.5" y="1036.5"/>
+            <point key="canvasLocation" x="1074.5" y="1123.5"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Item-->
         <scene sceneID="F7d-zz-PvP">
             <objects>
-                <viewController storyboardIdentifier="LogInViewController" id="kyh-Jj-UDw" customClass="LoginViewController" customModule="StirApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" hidesBottomBarWhenPushed="YES" id="kyh-Jj-UDw" customClass="SignUpViewController" customModule="StirApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qh4-Mo-bZc"/>
                         <viewControllerLayoutGuide type="bottom" id="lS1-4g-mo4"/>
@@ -213,7 +214,7 @@
                                     <constraint firstAttribute="height" constant="30" id="cRX-mV-gtD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
-                                <state key="normal" title="ログイン">
+                                <state key="normal" title="サインアップ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -232,6 +233,22 @@
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bku-fn-uTJ">
+                                <rect key="frame" x="82" y="38" width="210" height="74"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Co0-gD-MwS">
+                                <rect key="frame" x="133" y="272" width="108" height="30"/>
+                                <state key="normal" title="Log in?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showLoginPage:" destination="kyh-Jj-UDw" eventType="touchUpInside" id="JBX-7x-tid"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.40784313729999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -245,22 +262,90 @@
                             <constraint firstItem="wFe-nj-16E" firstAttribute="top" secondItem="1lZ-5p-Fhq" secondAttribute="bottom" constant="22" id="rfq-WE-9xg"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Miw-lh-KoU"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="confirmPassTextFiled" destination="1lZ-5p-Fhq" id="jMt-jW-gTq"/>
                         <outlet property="emailTextField" destination="rNR-CN-lNG" id="6Gv-QV-qcc"/>
+                        <outlet property="errorMessageLabel" destination="Bku-fn-uTJ" id="s79-uN-081"/>
                         <outlet property="passwordTextFiled" destination="7pc-Hp-jk6" id="OR4-be-Lly"/>
-                        <segue destination="F4c-2l-t8m" kind="show" identifier="showTimeLineViewController" id="d1W-Qe-V7h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sqy-My-3sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112.5" y="711.5"/>
+            <point key="canvasLocation" x="2664.5" y="1521.5"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="QEf-yJ-UXx">
+            <objects>
+                <viewController storyboardIdentifier="LogInViewController" id="nuh-uj-bhj" customClass="LogInViewController" customModule="StirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="piC-MM-ctM"/>
+                        <viewControllerLayoutGuide type="bottom" id="89M-kL-Je2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SRs-Xo-k3B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="メールアドレス" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxO-Hh-T7e">
+                                <rect key="frame" x="72" y="154" width="224" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="パスワード" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uuq-tx-xUp">
+                                <rect key="frame" x="72" y="185" width="224" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fb2-l3-GBZ">
+                                <rect key="frame" x="144" y="271" width="87" height="30"/>
+                                <state key="normal" title="sign up?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showSignUpViewController:" destination="nuh-uj-bhj" eventType="touchUpInside" id="BN8-R1-Yl4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feM-Oj-F6r">
+                                <rect key="frame" x="72" y="62" width="224" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVF-UB-gX9">
+                                <rect key="frame" x="72" y="233" width="224" height="30"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.48324507700000002" blue="0.4114590588" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
+                                <state key="normal" title="ログイン">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapLoginButton:" destination="nuh-uj-bhj" eventType="touchUpInside" id="B4s-qf-JU5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.40784313729999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="qlm-bD-RJI"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="lxO-Hh-T7e" id="JVi-3I-UCO"/>
+                        <outlet property="errorMessageLabel" destination="feM-Oj-F6r" id="2zl-76-YOU"/>
+                        <outlet property="passTextFiled" destination="uuq-tx-xUp" id="uvp-Xc-MDq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gIu-zv-gV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2655.5" y="754.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xBk-oO-z4y">
             <objects>
-                <tabBarController storyboardIdentifier="HomeTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="F4c-2l-t8m" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="F4c-2l-t8m" customClass="TabBarController" customModule="StirApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="oRD-4i-pcJ"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -276,7 +361,26 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3WS-Xk-TJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580.5" y="711.5"/>
+            <point key="canvasLocation" x="540.5" y="711.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="CVF-RJ-gY6">
+            <objects>
+                <tabBarController autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="FXQ-iM-jVb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" hidden="YES" contentMode="scaleToFill" id="gVg-Uv-XUt">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nuh-uj-bhj" kind="relationship" relationship="viewControllers" id="hsm-Xk-kXW"/>
+                        <segue destination="kyh-Jj-UDw" kind="relationship" relationship="viewControllers" id="VVe-SR-kOh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Cp-y5-vkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2047.5" y="1123.5"/>
         </scene>
     </scenes>
     <resources>

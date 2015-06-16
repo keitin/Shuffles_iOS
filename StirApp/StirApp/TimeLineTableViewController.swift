@@ -14,21 +14,27 @@ class TimeLineTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //セルの登録
         self.tableView.registerNib(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "TweetTableViewCell")
         
         self.tableView.estimatedRowHeight = 90
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        
-        let defaults = NSUserDefaults.standardUserDefaults()
-        println("======authToken in NSUserFefaults=========")
-        println(defaults.objectForKey("authToken"))
-        println("======authToken in NSUserFefaults=========")
+
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        println(defaults.objectForKey("authToken"))
+        if let authToke = defaults.objectForKey("authToken") as? String {
+            println("ログイン済み")
+            println(authToke)
+        } else {
+            performSegueWithIdentifier("ModalSigbUpViewController", sender: nil)
+        }
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "modalToNewTweetViewController")
         
 //        tweets.loadTweets()

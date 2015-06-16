@@ -8,7 +8,8 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class SignUpViewController: UIViewController {
+    @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var confirmPassTextFiled: UITextField!
     @IBOutlet weak var passwordTextFiled: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -18,9 +19,13 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        errorMessageLabel.text = ""
+        
         let defaults = NSUserDefaults.standardUserDefaults()
         println("======authToken in NSUserFefaults=========")
         println(defaults.objectForKey("authToken"))
@@ -45,16 +50,29 @@ class LoginViewController: UIViewController {
             
             if errorMessages.isEmpty {
                 println("登録成功")
-                self.performSegueWithIdentifier("showTimeLineViewController", sender: nil)
+                self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 println("登録失敗")
                 println(errorMessages)
+                var str = ""
+                for messaege in errorMessages {
+                    str += messaege as! String
+                }
+                self.errorMessageLabel.text = str
+                
             }
         }
         
-        SessionUser.login(email, pass: pass, confirmPass: confirmPass, callBackClosure: callbackClosure1)
+        SessionUser.signUp(email, pass: pass, confirmPass: confirmPass, callBackClosure: callbackClosure1)
 
     }
+    
+    
+    @IBAction func showLoginPage(sender: UIButton) {
+        self.tabBarController?.selectedIndex = 0
+    }
+    
+    
     /*
     // MARK: - Navigation
 

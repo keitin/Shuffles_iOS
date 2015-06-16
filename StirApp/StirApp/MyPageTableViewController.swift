@@ -64,9 +64,7 @@ class MyPageTableViewController: UITableViewController {
         let signoutAction = UIAlertAction(title: "Log Out", style: UIAlertActionStyle.Default) { (action) -> Void in
             
             CurrentUser.sharedInstance.removeAuthToken()
-        
-            let tabBarController = self.parentViewController?.parentViewController as! UITabBarController
-            tabBarController.dismissViewControllerAnimated(false, completion: nil)
+            self.tabBarController?.selectedIndex = 0 //タブ切り替え(タイムライン画面に移動)
             
         }
         actionSheet.addAction(signoutAction)
