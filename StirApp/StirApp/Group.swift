@@ -10,5 +10,5 @@ import UIKit
 
 class Group: NSObject {
     var name = ""
-    var pass = ""
+    var password = ""
 }

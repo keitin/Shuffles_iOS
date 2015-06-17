@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
   # attr_accessible :email, :password, :password_confirmation
 
+
+  has_many :groups
+
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
   validates_presence_of :email
@@ -9,6 +12,7 @@ class User < ActiveRecord::Base
 
   before_create :generate_access_token
 
+  scope :by_auth_token, ->(auth_token) { find_by(auth_token: auth_token) }
 
 
   private

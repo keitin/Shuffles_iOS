@@ -33,6 +33,9 @@
 		32E91B6D1B307B820089DD59 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B6C1B307B820089DD59 /* NewGroupViewController.swift */; };
 		32E91B6F1B30827B0089DD59 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B6E1B30827B0089DD59 /* Group.swift */; };
 		32E91B711B30831C0089DD59 /* StockGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B701B30831C0089DD59 /* StockGroup.swift */; };
+		32E91B761B31390F0089DD59 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B741B31390F0089DD59 /* GroupTableViewCell.swift */; };
+		32E91B771B31390F0089DD59 /* GroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E91B751B31390F0089DD59 /* GroupTableViewCell.xib */; };
+		32E91B7A1B3139910089DD59 /* hinako4.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E91B791B3139910089DD59 /* hinako4.png */; };
 		D05E8CF620DD2BE7452F169B /* Pods_StirApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -76,6 +79,9 @@
 		32E91B6C1B307B820089DD59 /* NewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
 		32E91B6E1B30827B0089DD59 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		32E91B701B30831C0089DD59 /* StockGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockGroup.swift; sourceTree = "<group>"; };
+		32E91B741B31390F0089DD59 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		32E91B751B31390F0089DD59 /* GroupTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupTableViewCell.xib; sourceTree = "<group>"; };
+		32E91B791B3139910089DD59 /* hinako4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hinako4.png; sourceTree = "<group>"; };
 		34ADCD9A7BFFCC032C59AF27 /* Pods-StirApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StirApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-StirApp/Pods-StirApp.release.xcconfig"; sourceTree = "<group>"; };
 		59C826AD3A8568805A274FB0 /* Pods-StirApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StirApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StirApp/Pods-StirApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StirApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,10 +182,9 @@
 		323CC6F01B2AC78A00E93780 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				323CC6EC1B2AC77700E93780 /* TweetTableViewCell.swift */,
-				323CC6ED1B2AC77700E93780 /* TweetTableViewCell.xib */,
-				323CC6F61B2B150100E93780 /* ProfileTableViewCell.swift */,
-				323CC6F71B2B150100E93780 /* ProfileTableViewCell.xib */,
+				32E91B721B3138D30089DD59 /* tweets */,
+				32E91B731B3138DE0089DD59 /* profiles */,
+				32E91B781B3139160089DD59 /* groups */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 		323CC6F31B2ACC8200E93780 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				32E91B791B3139910089DD59 /* hinako4.png */,
 				323CC6FC1B2B1C7F00E93780 /* hinako2.png */,
 			);
 			name = images;
@@ -245,6 +251,33 @@
 			children = (
 				32E91B671B3078860089DD59 /* GroupListTableViewController.swift */,
 				32E91B6C1B307B820089DD59 /* NewGroupViewController.swift */,
+			);
+			name = groups;
+			sourceTree = "<group>";
+		};
+		32E91B721B3138D30089DD59 /* tweets */ = {
+			isa = PBXGroup;
+			children = (
+				323CC6EC1B2AC77700E93780 /* TweetTableViewCell.swift */,
+				323CC6ED1B2AC77700E93780 /* TweetTableViewCell.xib */,
+			);
+			name = tweets;
+			sourceTree = "<group>";
+		};
+		32E91B731B3138DE0089DD59 /* profiles */ = {
+			isa = PBXGroup;
+			children = (
+				323CC6F61B2B150100E93780 /* ProfileTableViewCell.swift */,
+				323CC6F71B2B150100E93780 /* ProfileTableViewCell.xib */,
+			);
+			name = profiles;
+			sourceTree = "<group>";
+		};
+		32E91B781B3139160089DD59 /* groups */ = {
+			isa = PBXGroup;
+			children = (
+				32E91B741B31390F0089DD59 /* GroupTableViewCell.swift */,
+				32E91B751B31390F0089DD59 /* GroupTableViewCell.xib */,
 			);
 			name = groups;
 			sourceTree = "<group>";
@@ -353,9 +386,11 @@
 				323CC6CF1B2AC54200E93780 /* Main.storyboard in Resources */,
 				323CC6D41B2AC54200E93780 /* LaunchScreen.xib in Resources */,
 				323CC6D11B2AC54200E93780 /* Images.xcassets in Resources */,
+				32E91B7A1B3139910089DD59 /* hinako4.png in Resources */,
 				323CC6EF1B2AC77700E93780 /* TweetTableViewCell.xib in Resources */,
 				323CC6FD1B2B1C7F00E93780 /* hinako2.png in Resources */,
 				323CC6F91B2B150100E93780 /* ProfileTableViewCell.xib in Resources */,
+				32E91B771B31390F0089DD59 /* GroupTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +470,7 @@
 				32E91B711B30831C0089DD59 /* StockGroup.swift in Sources */,
 				32E91B681B3078860089DD59 /* GroupListTableViewController.swift in Sources */,
 				3215EC8B1B2C699700964F6C /* SignUpViewController.swift in Sources */,
+				32E91B761B31390F0089DD59 /* GroupTableViewCell.swift in Sources */,
 				32047FC51B2D9C0900A0A5A5 /* CurrentUser.swift in Sources */,
 				32E91B661B2F11AA0089DD59 /* TabBarController.swift in Sources */,
 				32E91B6D1B307B820089DD59 /* NewGroupViewController.swift in Sources */,
