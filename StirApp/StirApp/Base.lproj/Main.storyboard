@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F4c-2l-t8m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Yzh-DL-43v">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
@@ -127,7 +127,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwl-EM-hzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1522.5" y="1123.5"/>
+            <point key="canvasLocation" x="3146.5" y="1123.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BAa-Ou-4w8">
@@ -172,7 +172,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Cb-kF-BsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074.5" y="1123.5"/>
+            <point key="canvasLocation" x="2698.5" y="1123.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="F7d-zz-PvP">
@@ -273,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sqy-My-3sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2664.5" y="1521.5"/>
+            <point key="canvasLocation" x="4288.5" y="1521.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="QEf-yJ-UXx">
@@ -340,7 +340,84 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIu-zv-gV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2655.5" y="754.5"/>
+            <point key="canvasLocation" x="4279.5" y="754.5"/>
+        </scene>
+        <!--Group List-->
+        <scene sceneID="3Dg-WD-P0H">
+            <objects>
+                <tableViewController id="FJV-ov-GLB" customClass="GroupListTableViewController" customModule="StirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yip-s5-ojV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dEl-bV-dWy">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dEl-bV-dWy" id="bNa-e9-bSn">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FJV-ov-GLB" id="0Lb-5u-UfY"/>
+                            <outlet property="delegate" destination="FJV-ov-GLB" id="Akd-hp-Apk"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Group List" id="my8-cv-ZYm"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="05E-Ze-b1C" kind="presentation" identifier="modalNewGroupVC" id="qlG-Ry-D7P"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qcc-UE-hkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="409.5" y="1454.5"/>
+        </scene>
+        <!--New Group-->
+        <scene sceneID="Kb7-pe-Qpr">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7FG-zx-jHS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="NbO-eC-YNx" customClass="NewGroupViewController" customModule="StirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H3n-fu-dcU"/>
+                        <viewControllerLayoutGuide type="bottom" id="NyK-K6-cjh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q7L-nL-EJa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="grouo name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A0A-mm-k4t">
+                                <rect key="frame" x="124" y="20" width="235" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pass " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uak-rR-9Mv">
+                                <rect key="frame" x="122" y="58" width="237" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm pass" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O5h-GD-wd5">
+                                <rect key="frame" x="122" y="96" width="237" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hinako2.png" translatesAutoresizingMaskIntoConstraints="NO" id="xk6-P5-E4Y">
+                                <rect key="frame" x="12" y="20" width="105" height="105"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Group" id="pMY-ez-dhs"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="groupImageView" destination="xk6-P5-E4Y" id="wiQ-Bv-VAt"/>
+                        <outlet property="groupNameTextFiled" destination="A0A-mm-k4t" id="FJT-1A-drn"/>
+                        <outlet property="groupPassConfirmTextField" destination="O5h-GD-wd5" id="E0q-Ue-TPb"/>
+                        <outlet property="groupPassTextFiled" destination="Uak-rR-9Mv" id="Q7L-hp-ELg"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1320.5" y="1454.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xBk-oO-z4y">
@@ -380,7 +457,45 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Cp-y5-vkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2047.5" y="1123.5"/>
+            <point key="canvasLocation" x="3671.5" y="1123.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Eps-ed-k5F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yzh-DL-43v" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5av-cj-5UT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FJV-ov-GLB" kind="relationship" relationship="rootViewController" id="X0U-7L-rpZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hFZ-qA-Umd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-69" y="1455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ovy-Dl-bjC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="05E-Ze-b1C" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="E3X-G0-EUs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NbO-eC-YNx" kind="relationship" relationship="rootViewController" id="fnD-1Y-09o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06A-cR-DYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="867.5" y="1454.5"/>
         </scene>
     </scenes>
     <resources>

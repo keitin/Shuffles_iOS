@@ -29,6 +29,10 @@
 		323CC7051B2B529000E93780 /* StockTweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC7041B2B529000E93780 /* StockTweets.swift */; };
 		32E91B641B2F08000089DD59 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B631B2F08000089DD59 /* LogInViewController.swift */; };
 		32E91B661B2F11AA0089DD59 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B651B2F11AA0089DD59 /* TabBarController.swift */; };
+		32E91B681B3078860089DD59 /* GroupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B671B3078860089DD59 /* GroupListTableViewController.swift */; };
+		32E91B6D1B307B820089DD59 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B6C1B307B820089DD59 /* NewGroupViewController.swift */; };
+		32E91B6F1B30827B0089DD59 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B6E1B30827B0089DD59 /* Group.swift */; };
+		32E91B711B30831C0089DD59 /* StockGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B701B30831C0089DD59 /* StockGroup.swift */; };
 		D05E8CF620DD2BE7452F169B /* Pods_StirApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -68,6 +72,10 @@
 		323CC7041B2B529000E93780 /* StockTweets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockTweets.swift; sourceTree = "<group>"; };
 		32E91B631B2F08000089DD59 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		32E91B651B2F11AA0089DD59 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		32E91B671B3078860089DD59 /* GroupListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListTableViewController.swift; sourceTree = "<group>"; };
+		32E91B6C1B307B820089DD59 /* NewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
+		32E91B6E1B30827B0089DD59 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		32E91B701B30831C0089DD59 /* StockGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockGroup.swift; sourceTree = "<group>"; };
 		34ADCD9A7BFFCC032C59AF27 /* Pods-StirApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StirApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-StirApp/Pods-StirApp.release.xcconfig"; sourceTree = "<group>"; };
 		59C826AD3A8568805A274FB0 /* Pods-StirApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StirApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StirApp/Pods-StirApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StirApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,11 +165,10 @@
 			isa = PBXGroup;
 			children = (
 				32E91B651B2F11AA0089DD59 /* TabBarController.swift */,
-				3215EC8A1B2C699700964F6C /* SignUpViewController.swift */,
-				32E91B631B2F08000089DD59 /* LogInViewController.swift */,
-				323CC6E91B2AC6BB00E93780 /* TimeLineTableViewController.swift */,
-				323CC6F41B2AEA5E00E93780 /* NewTweetViewController.swift */,
+				32E91B691B3079680089DD59 /* users */,
+				32E91B6A1B3079720089DD59 /* tweets */,
 				323CC6FA1B2B176F00E93780 /* MyPageTableViewController.swift */,
+				32E91B6B1B30797C0089DD59 /* groups */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +206,7 @@
 			children = (
 				323CC6FE1B2B50AE00E93780 /* User.swift */,
 				323CC7011B2B51ED00E93780 /* Tweet.swift */,
+				32E91B6E1B30827B0089DD59 /* Group.swift */,
 			);
 			name = "Model Object";
 			sourceTree = "<group>";
@@ -209,8 +217,36 @@
 				323CC7041B2B529000E93780 /* StockTweets.swift */,
 				3215EC8C1B2C6A9000964F6C /* SessionUser.swift */,
 				32047FC41B2D9C0900A0A5A5 /* CurrentUser.swift */,
+				32E91B701B30831C0089DD59 /* StockGroup.swift */,
 			);
 			name = "Model Manager";
+			sourceTree = "<group>";
+		};
+		32E91B691B3079680089DD59 /* users */ = {
+			isa = PBXGroup;
+			children = (
+				3215EC8A1B2C699700964F6C /* SignUpViewController.swift */,
+				32E91B631B2F08000089DD59 /* LogInViewController.swift */,
+			);
+			name = users;
+			sourceTree = "<group>";
+		};
+		32E91B6A1B3079720089DD59 /* tweets */ = {
+			isa = PBXGroup;
+			children = (
+				323CC6E91B2AC6BB00E93780 /* TimeLineTableViewController.swift */,
+				323CC6F41B2AEA5E00E93780 /* NewTweetViewController.swift */,
+			);
+			name = tweets;
+			sourceTree = "<group>";
+		};
+		32E91B6B1B30797C0089DD59 /* groups */ = {
+			isa = PBXGroup;
+			children = (
+				32E91B671B3078860089DD59 /* GroupListTableViewController.swift */,
+				32E91B6C1B307B820089DD59 /* NewGroupViewController.swift */,
+			);
+			name = groups;
 			sourceTree = "<group>";
 		};
 		82397996058DCD4535230577 /* Frameworks */ = {
@@ -387,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				323CC6EA1B2AC6BB00E93780 /* TimeLineTableViewController.swift in Sources */,
+				32E91B6F1B30827B0089DD59 /* Group.swift in Sources */,
 				323CC7051B2B529000E93780 /* StockTweets.swift in Sources */,
 				323CC6F51B2AEA5E00E93780 /* NewTweetViewController.swift in Sources */,
 				323CC6FB1B2B176F00E93780 /* MyPageTableViewController.swift in Sources */,
@@ -395,9 +432,12 @@
 				323CC6F81B2B150100E93780 /* ProfileTableViewCell.swift in Sources */,
 				323CC6EE1B2AC77700E93780 /* TweetTableViewCell.swift in Sources */,
 				323CC6FF1B2B50AE00E93780 /* User.swift in Sources */,
+				32E91B711B30831C0089DD59 /* StockGroup.swift in Sources */,
+				32E91B681B3078860089DD59 /* GroupListTableViewController.swift in Sources */,
 				3215EC8B1B2C699700964F6C /* SignUpViewController.swift in Sources */,
 				32047FC51B2D9C0900A0A5A5 /* CurrentUser.swift in Sources */,
 				32E91B661B2F11AA0089DD59 /* TabBarController.swift in Sources */,
+				32E91B6D1B307B820089DD59 /* NewGroupViewController.swift in Sources */,
 				32E91B641B2F08000089DD59 /* LogInViewController.swift in Sources */,
 				323CC7021B2B51ED00E93780 /* Tweet.swift in Sources */,
 			);
