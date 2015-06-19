@@ -31,18 +31,18 @@ class StockGroup: NSObject {
                 
                 println("========request=============")
                 println(request)
-                println("=========response============")
+                println("========response============")
                 println(response)
-                println("==========JSON===========")
+                println("========JSON===========")
                 println(JSON)
-                println("==========error===========")
+                println("========error===========")
                 println(error)
                 println("=====================")
                 
                 callback()
         }
-
     }
+    
     
     class func fetchGroup(callback: () -> Void) {
         

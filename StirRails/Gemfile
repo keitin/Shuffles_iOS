@@ -45,6 +45,6 @@ end
 
 gem 'sorcery'
 gem 'pry-rails'
-
+gem 'carrierwave'
 
 

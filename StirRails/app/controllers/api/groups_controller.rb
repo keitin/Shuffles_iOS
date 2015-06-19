@@ -9,6 +9,10 @@ class Api::GroupsController < ApplicationController
     Group.create_my_group(create_params)
   end
 
+  def search
+    @group = Group.search_group(search_params)
+  end
+
   private
   def create_params
     params.permit(:name, :password, :auth_token)
@@ -16,6 +20,10 @@ class Api::GroupsController < ApplicationController
 
   def auth_token_params
     params.permit(:auth_token)
+  end
+
+  def search_params
+    params.permit(:name, :password)
   end
 
 end

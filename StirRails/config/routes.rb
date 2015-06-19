@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create]
     resources :sessions, only: [:create]
     resources :groups, only: [:index, :create]
+    get '/groups/search' => 'groups#search'
   end
 end

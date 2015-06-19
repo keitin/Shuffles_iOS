@@ -1,0 +1,1 @@
+json.group_name @group.name if @group

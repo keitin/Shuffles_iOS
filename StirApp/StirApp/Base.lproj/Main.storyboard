@@ -371,7 +371,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qcc-UE-hkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409.5" y="1454.5"/>
+            <point key="canvasLocation" x="405.5" y="1602.5"/>
         </scene>
         <!--New Group-->
         <scene sceneID="Kb7-pe-Qpr">
@@ -404,6 +404,18 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hinako2.png" translatesAutoresizingMaskIntoConstraints="NO" id="xk6-P5-E4Y">
                                 <rect key="frame" x="12" y="20" width="105" height="105"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yH-mn-vAm">
+                                <rect key="frame" x="12" y="144" width="347" height="30"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.40784313729999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
+                                <state key="normal" title="作成">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapCreateGroupBtn:" destination="NbO-eC-YNx" eventType="touchUpInside" id="Umb-DE-iaS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -414,10 +426,58 @@
                         <outlet property="groupNameTextFiled" destination="A0A-mm-k4t" id="FJT-1A-drn"/>
                         <outlet property="groupPassConfirmTextField" destination="O5h-GD-wd5" id="E0q-Ue-TPb"/>
                         <outlet property="groupPassTextFiled" destination="Uak-rR-9Mv" id="Q7L-hp-ELg"/>
+                        <segue destination="L9u-u2-jFy" kind="show" identifier="showSearchGroupVC" id="zeR-xs-VAY"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1320.5" y="1454.5"/>
+            <point key="canvasLocation" x="1350.5" y="1602.5"/>
+        </scene>
+        <!--Search Group View Controller-->
+        <scene sceneID="C14-pu-1Ne">
+            <objects>
+                <viewController id="L9u-u2-jFy" customClass="SearchGroupViewController" customModule="StirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="feh-eI-xHE"/>
+                        <viewControllerLayoutGuide type="bottom" id="qen-HJ-spv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CZJ-S3-Qsa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="グループのパスワード" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvy-5V-glJ">
+                                <rect key="frame" x="16" y="58" width="343" height="30"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeL-kX-Wer">
+                                <rect key="frame" x="16" y="112" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.40784313729999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
+                                <state key="normal" title="検索">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapSearchGroupBtn:" destination="L9u-u2-jFy" eventType="touchUpInside" id="RXL-2Z-b3p"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="グループ名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kUZ-rK-pws">
+                                <rect key="frame" x="16" y="21" width="343" height="30"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="groupNameTextField" destination="kUZ-rK-pws" id="Dof-hf-RDF"/>
+                        <outlet property="groupPassTextField" destination="pvy-5V-glJ" id="Miu-5h-YpO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HPd-6J-3bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1816.5" y="1602.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xBk-oO-z4y">
@@ -476,7 +536,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFZ-qA-Umd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-69" y="1455"/>
+            <point key="canvasLocation" x="-69.5" y="1602.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ovy-Dl-bjC">
@@ -495,7 +555,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06A-cR-DYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="867.5" y="1454.5"/>
+            <point key="canvasLocation" x="881.5" y="1602.5"/>
         </scene>
     </scenes>
     <resources>

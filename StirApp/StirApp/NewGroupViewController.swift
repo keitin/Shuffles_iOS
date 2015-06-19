@@ -30,16 +30,21 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         
     }
     
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Bookmarks, target: self, action: "backToGroupListVC")
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "saveGroup")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: "searchGroup")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func searchGroup() {
+        performSegueWithIdentifier("showSearchGroupVC", sender: nil)
     }
     
     //camera
@@ -49,9 +54,7 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
-    //Action
-    func saveGroup() {
+    @IBAction func tapCreateGroupBtn(sender: UIButton) {
         var name = groupNameTextFiled.text
         var pass = groupPassTextFiled.text
         var confirmPass = groupPassConfirmTextField.text
@@ -59,11 +62,11 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         var callback = { () -> Void in
             self.dismissViewControllerAnimated(true, completion: nil)
         }
-
+        
         
         if pass == confirmPass {
             println("保存しました")
-//            StockGroup.saveGroup(name, passwd: pass, )
+            //            StockGroup.saveGroup(name, passwd: pass, )
             StockGroup.saveGroup(name, password: pass, callback: callback)
         } else {
             println("確認用パスワードが異なります")

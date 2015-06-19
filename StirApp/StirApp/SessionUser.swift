@@ -28,11 +28,11 @@ class SessionUser: NSObject {
                 
                 println("========request=============")
                 println(request)
-                println("=========response============")
+                println("========response============")
                 println(response)
-                println("==========JSON===========")
+                println("========JSON===========")
                 println(JSON)
-                println("==========error===========")
+                println("========error===========")
                 println(error)
                 println("=====================")
                 
@@ -72,35 +72,30 @@ class SessionUser: NSObject {
         var returnParams: Dictionary<String, AnyObject> = [:]
         
         Alamofire.request(.POST, "http://localhost:3001/api/sessions", parameters: params, encoding: .URL)
-            //        Alamofire.request(.POST, "http://matsushitakeidai-no-MacBook-Pro.local:3000/api/users",parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 
-                println("===ログイン=====request=============")
+                println("====ログイン=====request=============")
                 println(request)
                 println("====ログイン=====response============")
                 println(response)
-                println("=====ログイン=====JSON===========")
+                println("====ログイン=====JSON===========")
                 println(JSON)
-                println("=====ログイン=====error===========")
+                println("====ログイン=====error===========")
                 println(error)
-                println("=====ログイン================")
-                
+                println("====ログイン================")
                 
                 var messageArray = JSON!["error_message"] as! Array<AnyObject>
                 
                 if messageArray.isEmpty {
 
-                    
                     let currentUser = CurrentUser.sharedInstance
                     currentUser.authToken = JSON!["auth_token"]
                     currentUser.saveAuthToken()
                     
-                    
                 } else {
                     returnParams["error_message"] = messageArray
-                    
                 }
-                println(returnParams)
+                
                 callBackClosure(returnParams)
         }
     }
