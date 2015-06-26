@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
   # attr_accessible :email, :password, :password_confirmation
 
-
-  has_many :groups
+  # has_many :groups, through: :users_group
+  has_and_belongs_to_many :groups, through: :group_users
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create

@@ -13,6 +13,7 @@ class CurrentUser: User {
     static let sharedInstance = CurrentUser()
     var authToken: AnyObject?
     
+    
     func saveAuthToken() {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(authToken, forKey: "authToken")

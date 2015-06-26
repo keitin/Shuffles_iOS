@@ -175,7 +175,6 @@
 				32E91B651B2F11AA0089DD59 /* TabBarController.swift */,
 				32E91B691B3079680089DD59 /* users */,
 				32E91B6A1B3079720089DD59 /* tweets */,
-				323CC6FA1B2B176F00E93780 /* MyPageTableViewController.swift */,
 				32E91B6B1B30797C0089DD59 /* groups */,
 			);
 			name = Controllers;
@@ -235,6 +234,7 @@
 			children = (
 				3215EC8A1B2C699700964F6C /* SignUpViewController.swift */,
 				32E91B631B2F08000089DD59 /* LogInViewController.swift */,
+				323CC6FA1B2B176F00E93780 /* MyPageTableViewController.swift */,
 			);
 			name = users;
 			sourceTree = "<group>";

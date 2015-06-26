@@ -10,24 +10,42 @@ import UIKit
 
 class GroupListTableViewController: UITableViewController {
     
+    var activeGroup: Group!
+    var groups: Array<Group> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.registerNib(UINib(nibName: "GroupTableViewCell", bundle: nil), forCellReuseIdentifier: "groupCell")
+        
+        
+        let label = UILabel()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        println(defaults.objectForKey("authToken"))
+        if let authToke = defaults.objectForKey("authToken") as? String {
+            println("ログイン済み")
+            println(authToke)
+        } else {
+            performSegueWithIdentifier("ModalSigbUpViewController", sender: nil)
+            return
+        }
+        
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "modalNewGroupViewController")
         
         //HTTP
         var callback = {() -> Void in
             println("グループフェッチ完了")
             self.tableView.reloadData()
+            self.groups = StockGroup.sharedInstance.myGroups
         }
         
         StockGroup.fetchGroup(callback)
-        
         
     }
 
@@ -59,7 +77,8 @@ class GroupListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("groupCell", forIndexPath: indexPath) as! GroupTableViewCell
-        let group = StockGroup.sharedInstance.myGroups[indexPath.row]
+        println(self.groups)
+        let group = groups[indexPath.row]
         cell.groupNameLabel.text = group.name
         return cell
     }
@@ -67,6 +86,18 @@ class GroupListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 90
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        activeGroup = groups[indexPath.row]
+        performSegueWithIdentifier("ShowTimeLineVC", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowTimeLineVC" {
+            let timeLineTableViewController = segue.destinationViewController as! TimeLineTableViewController
+            timeLineTableViewController.currentGroup = activeGroup
+        }
     }
     
     

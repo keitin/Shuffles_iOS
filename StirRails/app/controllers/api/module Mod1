@@ -1,0 +1,33 @@
+module Mod1
+  def say
+    super
+    puts "Mod1"
+  end
+
+  module Mod2
+    def say
+      super
+      puts "Mod1::Mod2"
+    end
+
+    module Mod3
+      def say
+        puts "Mod1::Mod2::Mod3"
+      end
+    end
+
+    include Mod1::Mod2::Mod3
+    include Mod1
+  end
+
+  class Class1
+    include Mod1::Mod2
+
+    def say
+      super
+      puts "Mod1::Class1"
+    end
+  end
+end
+
+Mod1::Class1.new.say

@@ -39,7 +39,9 @@ class Group: NSObject {
                 if error == nil {
                     println(JSON!["group_name"])
                     returnParams["groupName"] = JSON?["group_name"] as! String
+                    returnParams["groupPass"] = JSON?["group_pass"] as! String
                     println(returnParams["groupName"])
+                    
                 }
                 
                 callback(returnParams)

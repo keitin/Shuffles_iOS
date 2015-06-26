@@ -15,6 +15,7 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var groupImageView: UIImageView!
     
     let photoPicker = UIImagePickerController()
+    var groupImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,9 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
     
     //camera
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-
+        
+        groupImage = image
+        
         groupImageView.image = image!
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -67,7 +70,7 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         if pass == confirmPass {
             println("保存しました")
             //            StockGroup.saveGroup(name, passwd: pass, )
-            StockGroup.saveGroup(name, password: pass, callback: callback)
+            StockGroup.saveGroup(name, password: pass, image: groupImage!, callback: callback)
         } else {
             println("確認用パスワードが異なります")
         }

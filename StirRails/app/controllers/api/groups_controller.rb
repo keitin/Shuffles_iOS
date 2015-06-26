@@ -6,16 +6,24 @@ class Api::GroupsController < ApplicationController
   end
 
   def create
-    Group.create_my_group(create_params)
+    group = Group.create(create_params)
+    user = User.by_auth_token(auth_token_params[:auth_token])
+    GroupsUser.create(group_id: group.id, user_id: user.id)
   end
 
   def search
     @group = Group.search_group(search_params)
   end
 
+  def add_group
+    user = User.by_auth_token(auth_token_params[:auth_token])
+    group = Group.search_group(search_params)
+    GroupsUser.create(group_id: group.id, user_id: user.id)
+  end
+
   private
   def create_params
-    params.permit(:name, :password, :auth_token)
+    params.permit(:name, :password, :avatar)
   end
 
   def auth_token_params

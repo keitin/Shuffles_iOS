@@ -11,6 +11,8 @@ import UIKit
 class TimeLineTableViewController: UITableViewController {
 
     var tweets = StockTweets.sharedInstance
+    var currentGroup: Group!
+    let currentUser = CurrentUser.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,10 @@ class TimeLineTableViewController: UITableViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "modalToNewTweetViewController")
         
-//        tweets.loadTweets()
+        
+        //ツイートをdbからフェッチ
+        StockTweets.fetchTweets(currentUser, group: currentGroup)
+        
     }
 
     override func didReceiveMemoryWarning() {

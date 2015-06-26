@@ -12,23 +12,32 @@ import Alamofire
 class StockTweets: NSObject {
    
     static let sharedInstance = StockTweets()
-    var groupTweets: Array<Dictionary<String, AnyObject>> = []
+    var tweets: Array<Tweet> = []
     
-    func login() {
-
-        Alamofire.request(.GET, "http://localhost:3000/users/sign_in",parameters: nil, encoding: .JSON)
+    class func fetchTweets(currentUser: CurrentUser, group: Group) {
+        
+        var params: [String: AnyObject] = [
+            "group_name": group.name,
+            "group_pass": group.password,
+            "auth_token": currentUser.authToken!
+        ]
+    
+        Alamofire.request(.GET, "http://localhost:3001/api/tweets",parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
-                println("=====================")
+                
+                println("========request=============")
                 println(request)
-                println("=====================")
+                println("========response============")
                 println(response)
-                println("=====================")
+                println("========JSON===========")
                 println(JSON)
-                println("=====================")
+                println("========error===========")
                 println(error)
                 println("=====================")
+                
+                
+                
         }
-        
     }
     
 }

@@ -13,11 +13,14 @@ class SearchGroupViewController: UIViewController {
     @IBOutlet weak var groupPassTextField: UITextField!
     @IBOutlet weak var groupNameTextField: UITextField!
 
-    let backgroundView = UIView()
+    
     let groupView = UIView()
     let groupImageView = UIImageView()
     let groupNameLabel = UILabel()
     var name = ""
+    var currentGroupName = ""
+    var currentPass = ""
+
     
     let orange = UIColor(red: 244/255, green: 104/255, blue: 95/255, alpha: 1.0)
 
@@ -26,12 +29,6 @@ class SearchGroupViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
-    
-        
-
-        
 
     }
 
@@ -42,41 +39,39 @@ class SearchGroupViewController: UIViewController {
     
     @IBAction func tapSearchGroupBtn(sender: UIButton) {
         
-        backgroundView.frame = self.view.frame
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = self.view.frame
-        backgroundView.addSubview(blurEffectView)
-        
-        
-        let gesture = UITapGestureRecognizer(target: self, action: "tapBackgroundView")
-        blurEffectView.addGestureRecognizer(gesture)
-        
-        
         let groupName = groupNameTextField.text
         let groupPass = groupPassTextField.text
         
         var callback = { (params: Dictionary<String, AnyObject>) -> Void in
             self.name = params["groupName"] as! String!
-            self.view.addSubview(self.backgroundView)
-            self.setSearchView(blurEffectView)
+            self.currentPass = params["groupPass"] as! String!
+            self.currentGroupName = self.name
+            self.setGroupView()
         }
         
         Group.searchGroup(groupName, groupPass: groupPass, callback: callback)
         
     }
     
-    func setSearchView(blurEffectView: UIVisualEffectView) {
-        setGrounpImage(blurEffectView)
-        setGroupNameLabel(blurEffectView)
-        setLabel(blurEffectView)
-        setJoinBtn(blurEffectView)
+    
+    func setGroupView() {
+        groupView.frame.size = CGSize(width: self.view.frame.width - 50 , height: 300)
+        groupView.center = self.view.center
+        groupView.layer.borderColor = orange.CGColor
+        groupView.layer.borderWidth = 2
+        setLabel()
+        setGrounpImage()
+        setJoinBtn()
+        setGroupNameLabel()
+//        self.view.addSubview(groupView)
+        
     }
     
-    func setJoinBtn(blurEffectView: UIVisualEffectView) {
+    
+    func setJoinBtn() {
         let joinButton = UIButton()
         joinButton.frame.size = CGSize(width: 200, height: 50)
-        joinButton.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+        joinButton.center = CGPoint(x: self.view.center.x, y: self.view.center.y + 100)
         joinButton.setTitle("参加する", forState: UIControlState.Normal)
         joinButton.setTitleColor(orange, forState: UIControlState.Normal)
         joinButton.titleLabel?.font = UIFont(name: "HirakakuProN-W6", size: 15)
@@ -84,45 +79,47 @@ class SearchGroupViewController: UIViewController {
         joinButton.layer.borderWidth = 1
         joinButton.layer.borderColor = orange.CGColor
         joinButton.addTarget(self, action: "tapJoinBtn:", forControlEvents: UIControlEvents.TouchUpInside)
-        blurEffectView.addSubview(joinButton)
-        
+        view.addSubview(joinButton)
     }
     
     
-    func setLabel(blurEffectView: UIVisualEffectView) {
+    func setLabel() {
         let label = UILabel()
         label.text = "このグループに参加しますか？"
         label.font = UIFont(name: "HirakakuProN-W3", size: 15)
         label.sizeToFit()
-        label.center = CGPoint(x: self.view.center.x, y: self.view.center.y - 250)
-        blurEffectView.contentView.addSubview(label)
+        label.center = CGPoint(x: self.groupView.center.x, y: self.groupView.center.y - 150)
+        view.addSubview(label)
     }
     
-    func setGroupNameLabel(blurEffectView: UIVisualEffectView) {
+    func setGroupNameLabel() {
         groupNameLabel.text = self.name
         groupNameLabel.font = UIFont(name: "HirakakuProN-W3", size: 18)
         groupNameLabel.sizeToFit()
-        groupNameLabel.center = CGPoint(x: self.view.center.x, y: self.view.center.y - 75)
-        blurEffectView.contentView.addSubview(groupNameLabel)
-        
+        groupNameLabel.center = CGPoint(x: self.view.center.x, y: self.view.center.y + 25)
+        view.addSubview(groupNameLabel)
+
     }
     
-    func setGrounpImage(blurEffectView: UIVisualEffectView) {
+    func setGrounpImage() {
         groupImageView.frame.size = CGSize(width: 100, height: 100)
-        groupImageView.center = CGPoint(x: self.view.center.x, y: self.view.center.y - 150)
+        groupImageView.center = CGPoint(x: self.view.center.x, y: self.view.center.y - 50)
         groupImageView.image = UIImage(named: "hinako2")
         groupImageView.layer.cornerRadius = groupImageView.frame.width / 2
         groupImageView.clipsToBounds = true
-        blurEffectView.contentView.addSubview(groupImageView)
+        view.addSubview(groupImageView)
     }
     
     func tapJoinBtn(sender: UIButton) {
         println("参加する！！")
+        
+        var callback = { () -> Void in
+            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        }
+
+        
+        StockGroup.addGroup(currentGroupName, groupPass: currentPass, callback: callback)
     }
     
-    func tapBackgroundView() {
-        backgroundView.removeFromSuperview()
-    }
-
 
 }

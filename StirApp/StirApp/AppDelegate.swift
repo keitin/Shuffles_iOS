@@ -16,9 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //アプリ起動時に呼ばれる
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-
-        println(window?.rootViewController)
         
+        let currentUser = CurrentUser.sharedInstance
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let authToken = defaults.objectForKey("authToken") as! String
+        currentUser.authToken = authToken
         return true
     }
 
