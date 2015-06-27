@@ -9,11 +9,15 @@
 import UIKit
 
 class NewTweetViewController: UIViewController, UITextViewDelegate {
+    
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     let placeholderLabel = UILabel()
-
+    let tweet = Tweet()
+    var currentGroup: Group!
+    let currentUser = CurrentUser.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setIconImageView()
@@ -21,15 +25,17 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
         tweetTextView.delegate = self
     }
 
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "×", style: UIBarButtonItemStyle.Plain, target: self, action: "backToTimeLineViewController")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "sendTweet")
-        
+        println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         //Registing Notification Center
         let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: "willShowKeyBoard", name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: "willShowKeyBoard:", name: UIKeyboardWillShowNotification, object: nil)
     }
+    
     
     override func viewDidDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
@@ -38,19 +44,37 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
         notificationCenter.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.removeObserver("willShowKeyBoard")
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    
     func sendTweet() {
+        
         self.tweetTextView.resignFirstResponder()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        tweet.text = tweetTextView.text
+        var callBack = { () -> Void in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        println(currentGroup)
+        StockTweets.saveTweet(tweet, group: currentGroup, currentUser: currentUser, callBack: callBack)
     }
+    
     
     func backToTimeLineViewController() {
         self.tweetTextView.resignFirstResponder()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     
     func makePlaceholderLabel() {
         placeholderLabel.frame.origin = CGPointMake(0, 8)
@@ -61,13 +85,16 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
         tweetTextView.addSubview(placeholderLabel)
     }
     
+    
     func setIconImageView() {
         iconImageView.layer.cornerRadius = iconImageView.frame.width / 2
         iconImageView.clipsToBounds = true
     }
     
+    
     //keyBoard
-    func willShowKeyBoard() {
+    func willShowKeyBoard(notification: NSNotification?) {
+        println("きーぼーだお")
         placeholderLabel.hidden = true
     }
     

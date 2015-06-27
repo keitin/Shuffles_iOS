@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create]
     resources :sessions, only: [:create]
     resources :groups, only: [:index, :create]
-    resources :tweets, only: [:index]
+    resources :tweets, only: [:index, :create]
     get '/groups/search' => 'groups#search'
     get '/groups/add_group' => 'groups#add_group'
   end

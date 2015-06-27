@@ -10,7 +10,7 @@ import UIKit
 
 class TimeLineTableViewController: UITableViewController {
 
-    var tweets = StockTweets.sharedInstance
+    var tweets: Array<Tweet> = []
     var currentGroup: Group!
     let currentUser = CurrentUser.sharedInstance
     
@@ -39,9 +39,15 @@ class TimeLineTableViewController: UITableViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "modalToNewTweetViewController")
         
+        let callBack = { () -> Void in
+            self.tweets = StockTweets.sharedInstance.tweets
+            self.tableView.reloadData()
+            println("gggggggggggggggggggggggg")
+            println(self.tweets)
+        }
         
         //ツイートをdbからフェッチ
-        StockTweets.fetchTweets(currentUser, group: currentGroup)
+        StockTweets.fetchTweets(currentUser, group: currentGroup, callBack: callBack)
         
     }
 
@@ -61,12 +67,14 @@ class TimeLineTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 10
+        return tweets.count
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell", forIndexPath: indexPath) as! TweetTableViewCell
+        let tweet = tweets[indexPath.row]
+        cell.tweetLabel?.text = tweet.text
         return cell
     }
 
@@ -121,5 +129,14 @@ class TimeLineTableViewController: UITableViewController {
         performSegueWithIdentifier("modalToNewTweetViewController", sender: nil)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "modalToNewTweetViewController" {
+            println("llllllllllllllllllllllllllllllllllllllll")
+            println(segue.destinationViewController)
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let newTweetViewController = navigationController.viewControllers.first as! NewTweetViewController
+            newTweetViewController.currentGroup = self.currentGroup
+        }
+    }
 
 }

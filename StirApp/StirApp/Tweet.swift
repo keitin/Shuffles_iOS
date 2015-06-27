@@ -9,5 +9,8 @@
 import UIKit
 
 class Tweet: NSObject {
+
     var text: String!
+    weak var user: User!
+    
 }

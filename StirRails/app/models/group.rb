@@ -2,6 +2,7 @@ class Group < ActiveRecord::Base
 
   # has_many :users, through: :users_group
   has_and_belongs_to_many :users, through: :group_users
+  has_many :tweets
 
   scope :search, ->(name, password) { find_by(name: name, password: password) }
 

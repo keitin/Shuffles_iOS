@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   # has_many :groups, through: :users_group
   has_and_belongs_to_many :groups, through: :group_users
+  has_many :tweets
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
