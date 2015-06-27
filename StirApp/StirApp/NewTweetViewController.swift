@@ -23,6 +23,8 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
         setIconImageView()
         makePlaceholderLabel()
         tweetTextView.delegate = self
+        
+        nameLabel.text = currentUser.name
     }
 
     

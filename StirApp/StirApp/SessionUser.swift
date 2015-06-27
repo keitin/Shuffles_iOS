@@ -12,9 +12,10 @@ import Alamofire
 class SessionUser: NSObject {
 
     
-    class func signUp(email: String, pass: String, confirmPass: String, callBackClosure:(Dictionary<String, AnyObject>) -> Void) {
+    class func signUp(name: String, email: String, pass: String, confirmPass: String, callBackClosure:(Dictionary<String, AnyObject>) -> Void) {
         
         var params: [String: AnyObject] = [
+            "name": name,
             "email": email,
             "password": pass,
             "password_confirmation": confirmPass
