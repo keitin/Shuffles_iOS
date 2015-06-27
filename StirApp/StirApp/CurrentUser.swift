@@ -17,6 +17,7 @@ class CurrentUser: User {
     func saveAuthToken() {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(authToken, forKey: "authToken")
+        defaults.setObject(name, forKey: "userName")
         defaults.synchronize()
     }
     

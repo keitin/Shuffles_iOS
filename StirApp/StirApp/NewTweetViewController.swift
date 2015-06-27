@@ -13,10 +13,12 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
+    
     let placeholderLabel = UILabel()
     let tweet = Tweet()
-    var currentGroup: Group!
     let currentUser = CurrentUser.sharedInstance
+    
+    var currentGroup: Group!
     
     override func viewDidLoad() {
         super.viewDidLoad()

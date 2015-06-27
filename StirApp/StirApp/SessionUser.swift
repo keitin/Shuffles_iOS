@@ -24,7 +24,7 @@ class SessionUser: NSObject {
         var returnParams: Dictionary<String, AnyObject> = [:]
         
         Alamofire.request(.POST, "http://localhost:3001/api/users",parameters: params, encoding: .URL)
-//        Alamofire.request(.POST, "http://matsushitakeidai-no-MacBook-Pro.local:3000/api/users",parameters: params, encoding: .URL)
+
             .responseJSON { (request, response, JSON, error) in
                 
                 println("========request=============")
@@ -48,6 +48,7 @@ class SessionUser: NSObject {
                     
                     let currentUser = CurrentUser.sharedInstance
                     currentUser.authToken = JSON!["auth_token"]
+                    currentUser.name = JSON!["name"] as! String
                     currentUser.saveAuthToken()
     
                     
