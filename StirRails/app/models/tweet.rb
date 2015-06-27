@@ -7,7 +7,6 @@ class Tweet < ActiveRecord::Base
   scope :by_group_id, -> (group_id) { where(group_id: group_id) }
 
   def self.fetch_tweets(params)
-    # user = User.by_auth_token(params["auth_token"])
     group = Group.search(params["group_name"], params["group_pass"])
     group.tweets
   end

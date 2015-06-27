@@ -12,7 +12,7 @@ class Api::TweetsController < ApplicationController
 
   private
   def tweets_params
-    params.permit(:auth_token, :group_name, :group_pass)
+    params.permit(:group_name, :group_pass)
   end
 
   def create_params

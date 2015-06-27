@@ -47,7 +47,7 @@ class TimeLineTableViewController: UITableViewController {
         }
         
         //ツイートをdbからフェッチ
-        StockTweets.fetchTweets(currentUser, group: currentGroup, callBack: callBack)
+        StockTweets.fetchTweets(currentGroup, callBack: callBack)
         
     }
 
@@ -75,6 +75,7 @@ class TimeLineTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell", forIndexPath: indexPath) as! TweetTableViewCell
         let tweet = tweets[indexPath.row]
         cell.tweetLabel?.text = tweet.text
+        cell.nameLabel.text = tweet.user.name
         return cell
     }
 

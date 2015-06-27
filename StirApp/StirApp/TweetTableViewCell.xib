@@ -7,8 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="106" id="KGk-i7-Jjw" customClass="TweetTableViewCell" customModule="StirApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="357" height="106"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="TweetTableViewCell" customModule="StirApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -31,13 +31,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日はけいたくんとおしゃべりしました^^とっても良いひとだった！また会いたいな〜😍すきになっちゃいそ〜&gt;&lt;" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptH-b4-T65">
-                        <rect key="frame" x="76" y="33" width="273" height="45"/>
+                        <rect key="frame" x="76" y="33" width="273" height="59"/>
                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nR-Gd-m8F">
-                        <rect key="frame" x="76" y="82" width="20" height="20"/>
+                        <rect key="frame" x="76" y="96" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="3Ma-cX-P9s"/>
                             <constraint firstAttribute="width" constant="20" id="coq-I3-9Oe"/>
@@ -82,7 +82,7 @@
                 <outlet property="timeLabel" destination="542-gs-LYl" id="w8I-o8-Kgt"/>
                 <outlet property="tweetLabel" destination="ptH-b4-T65" id="jMg-Qb-WCv"/>
             </connections>
-            <point key="canvasLocation" x="216.5" y="247"/>
+            <point key="canvasLocation" x="216.5" y="254"/>
         </tableViewCell>
     </objects>
     <resources>
