@@ -92,6 +92,7 @@ class SessionUser: NSObject {
 
                     let currentUser = CurrentUser.sharedInstance
                     currentUser.authToken = JSON!["auth_token"]
+                    currentUser.name = JSON!["name"] as! String
                     currentUser.saveAuthToken()
                     
                 } else {

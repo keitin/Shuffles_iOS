@@ -33,7 +33,6 @@
                     </refreshControl>
                     <connections>
                         <segue destination="58S-kV-GQu" kind="presentation" identifier="modalToNewTweetViewController" id="KmL-az-zxA"/>
-                        <segue destination="FXQ-iM-jVb" kind="presentation" identifier="ModalSigbUpViewController" id="go2-ib-Vsj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kT1-oG-E4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,7 +106,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwl-EM-hzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1897.5" y="1819.5"/>
+            <point key="canvasLocation" x="-1921.5" y="1339.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BAa-Ou-4w8">
@@ -152,7 +151,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Cb-kF-BsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2393.5" y="1811.5"/>
+            <point key="canvasLocation" x="-2435.5" y="1331.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="F7d-zz-PvP">
@@ -256,11 +255,12 @@
                         <outlet property="errorMessageLabel" destination="Bku-fn-uTJ" id="s79-uN-081"/>
                         <outlet property="nameTextFiled" destination="9Al-bC-mEE" id="e9t-56-ivd"/>
                         <outlet property="passwordTextFiled" destination="7pc-Hp-jk6" id="OR4-be-Lly"/>
+                        <segue destination="F4c-2l-t8m" kind="presentation" identifier="segueToTimeLineTabBarController" modalTransitionStyle="crossDissolve" id="ogd-X3-DHe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sqy-My-3sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1239.5" y="1593.5"/>
+            <point key="canvasLocation" x="-3742.5" y="1211.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="QEf-yJ-UXx">
@@ -323,11 +323,12 @@
                         <outlet property="emailTextField" destination="lxO-Hh-T7e" id="JVi-3I-UCO"/>
                         <outlet property="errorMessageLabel" destination="feM-Oj-F6r" id="2zl-76-YOU"/>
                         <outlet property="passTextFiled" destination="uuq-tx-xUp" id="uvp-Xc-MDq"/>
+                        <segue destination="F4c-2l-t8m" kind="presentation" identifier="segueToTimeLineTabBarController" modalTransitionStyle="crossDissolve" id="TIe-do-DNU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIu-zv-gV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1234.5" y="874.5"/>
+            <point key="canvasLocation" x="-3742.5" y="474.5"/>
         </scene>
         <!--Group List-->
         <scene sceneID="3Dg-WD-P0H">
@@ -356,7 +357,6 @@
                     <connections>
                         <segue destination="05E-Ze-b1C" kind="presentation" identifier="modalNewGroupVC" id="qlG-Ry-D7P"/>
                         <segue destination="kge-vu-1rz" kind="show" identifier="ShowTimeLineVC" id="Hrx-bW-6qf"/>
-                        <segue destination="FXQ-iM-jVb" kind="presentation" identifier="ModalSigbUpViewController" id="0Ko-ZG-muc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qcc-UE-hkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -488,12 +488,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3WS-Xk-TJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3259.5" y="671.5"/>
+            <point key="canvasLocation" x="-3067.5" y="767.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CVF-RJ-gY6">
             <objects>
-                <tabBarController autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="FXQ-iM-jVb" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="LogInTabBarController" autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="FXQ-iM-jVb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -508,7 +508,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Cp-y5-vkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1829.5" y="919.5"/>
+            <point key="canvasLocation" x="-4409.5" y="739.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="Eps-ed-k5F">
@@ -554,6 +554,6 @@
         <image name="hinako2.png" width="573" height="573"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="go2-ib-Vsj"/>
+        <segue reference="ogd-X3-DHe"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -41,8 +41,8 @@ class GroupListTableViewController: UITableViewController {
         //HTTP
         var callback = {() -> Void in
             println("グループフェッチ完了")
-            self.tableView.reloadData()
             self.groups = StockGroup.sharedInstance.myGroups
+            self.tableView.reloadData()
         }
         
         StockGroup.fetchGroup(callback)
@@ -65,7 +65,7 @@ class GroupListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return StockGroup.sharedInstance.myGroups.count
+        return groups.count
     }
     
     

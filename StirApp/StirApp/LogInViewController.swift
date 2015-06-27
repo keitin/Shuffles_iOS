@@ -50,19 +50,9 @@ class LogInViewController: UIViewController {
                     str += messaege as! String
                 }
                 self.errorMessageLabel.text = str
-            } else {
-//                println("登録失敗")
-//                println(errorMessages)
-//                var str = ""
-//                for messaege in errorMessages {
-//                    str += messaege as! String
-//                }
-//                self.errorMessageLabel.text = str
-                
+            } else {                
                 println("登録成功")
-                self.dismissViewControllerAnimated(true, completion: nil)
-
-                
+                self.performSegueWithIdentifier("segueToTimeLineTabBarController", sender: nil)
             }
         }
         

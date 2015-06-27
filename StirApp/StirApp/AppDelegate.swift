@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let userName = defaults.objectForKey("userName") as! String
             currentUser.authToken = authToken
             currentUser.name = userName
+        } else {
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            self.window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("LogInTabBarController") as! UITabBarController
         }
         return true
     }

@@ -48,7 +48,8 @@ class SignUpViewController: UIViewController {
             
             if errorMessages.isEmpty {
                 println("登録成功")
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.performSegueWithIdentifier("segueToTimeLineTabBarController", sender: nil)
+                
             } else {
                 println("登録失敗")
                 println(errorMessages)
