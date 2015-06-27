@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
   # has_many :groups, through: :users_group
   has_and_belongs_to_many :groups, through: :group_users
   has_many :tweets
-  # has_many :fakes, :class_name => 'Fake', :foreign_key => 'fake_user_id'
-  has_many :fakes
+
+  has_many :fake_users, through: :fakes, source: :fake_user
+  has_many :fakes, foreign_key: "user_id"
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
