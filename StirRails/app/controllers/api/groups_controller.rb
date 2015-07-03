@@ -21,6 +21,17 @@ class Api::GroupsController < ApplicationController
     GroupsUser.create(group_id: group.id, user_id: user.id)
   end
 
+  def fetch_fake_users
+    group = Group.search_group(search_params)
+    group.shuffle_users
+    @fake_users = group.fakes
+  end
+
+  def shuffle_users
+    group = Group.search_group(search_params)
+    group.shuffle_users
+  end
+
   private
   def create_params
     params.permit(:name, :password, :avatar)

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		32047FC51B2D9C0900A0A5A5 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32047FC41B2D9C0900A0A5A5 /* CurrentUser.swift */; };
+		320D7F731B41186100A9C426 /* FakeUsersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320D7F721B41186100A9C426 /* FakeUsersListTableViewController.swift */; };
+		320D7F761B411AB100A9C426 /* FakeUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320D7F741B411AB100A9C426 /* FakeUserTableViewCell.swift */; };
+		320D7F771B411AB100A9C426 /* FakeUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320D7F751B411AB100A9C426 /* FakeUserTableViewCell.xib */; };
+		320D7F7A1B41269F00A9C426 /* StockFakeUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320D7F791B41269F00A9C426 /* StockFakeUsers.swift */; };
+		320D7F7C1B41380D00A9C426 /* Fake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320D7F7B1B41380D00A9C426 /* Fake.swift */; };
 		3215EC8B1B2C699700964F6C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215EC8A1B2C699700964F6C /* SignUpViewController.swift */; };
 		3215EC8D1B2C6A9000964F6C /* SessionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215EC8C1B2C6A9000964F6C /* SessionUser.swift */; };
 		323A70501B2B5BF600C9CF1E /* Pods_StirApp.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */; };
@@ -52,6 +57,11 @@
 
 /* Begin PBXFileReference section */
 		32047FC41B2D9C0900A0A5A5 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		320D7F721B41186100A9C426 /* FakeUsersListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeUsersListTableViewController.swift; sourceTree = "<group>"; };
+		320D7F741B411AB100A9C426 /* FakeUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeUserTableViewCell.swift; sourceTree = "<group>"; };
+		320D7F751B411AB100A9C426 /* FakeUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FakeUserTableViewCell.xib; sourceTree = "<group>"; };
+		320D7F791B41269F00A9C426 /* StockFakeUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockFakeUsers.swift; sourceTree = "<group>"; };
+		320D7F7B1B41380D00A9C426 /* Fake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fake.swift; sourceTree = "<group>"; };
 		3215EC8A1B2C699700964F6C /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3215EC8C1B2C6A9000964F6C /* SessionUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionUser.swift; sourceTree = "<group>"; };
 		323CC6C41B2AC54200E93780 /* StirApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StirApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		320D7F781B411AD000A9C426 /* fake users */ = {
+			isa = PBXGroup;
+			children = (
+				320D7F741B411AB100A9C426 /* FakeUserTableViewCell.swift */,
+				320D7F751B411AB100A9C426 /* FakeUserTableViewCell.xib */,
+			);
+			name = "fake users";
+			sourceTree = "<group>";
+		};
 		323CC6BB1B2AC54200E93780 = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +205,7 @@
 				32E91B721B3138D30089DD59 /* tweets */,
 				32E91B731B3138DE0089DD59 /* profiles */,
 				32E91B781B3139160089DD59 /* groups */,
+				320D7F781B411AD000A9C426 /* fake users */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -214,6 +234,7 @@
 				323CC6FE1B2B50AE00E93780 /* User.swift */,
 				323CC7011B2B51ED00E93780 /* Tweet.swift */,
 				32E91B6E1B30827B0089DD59 /* Group.swift */,
+				320D7F7B1B41380D00A9C426 /* Fake.swift */,
 			);
 			name = "Model Object";
 			sourceTree = "<group>";
@@ -225,6 +246,7 @@
 				3215EC8C1B2C6A9000964F6C /* SessionUser.swift */,
 				32047FC41B2D9C0900A0A5A5 /* CurrentUser.swift */,
 				32E91B701B30831C0089DD59 /* StockGroup.swift */,
+				320D7F791B41269F00A9C426 /* StockFakeUsers.swift */,
 			);
 			name = "Model Manager";
 			sourceTree = "<group>";
@@ -244,6 +266,7 @@
 			children = (
 				323CC6E91B2AC6BB00E93780 /* TimeLineTableViewController.swift */,
 				323CC6F41B2AEA5E00E93780 /* NewTweetViewController.swift */,
+				320D7F721B41186100A9C426 /* FakeUsersListTableViewController.swift */,
 			);
 			name = tweets;
 			sourceTree = "<group>";
@@ -388,6 +411,7 @@
 				323A70501B2B5BF600C9CF1E /* Pods_StirApp.framework in Resources */,
 				323CC6CF1B2AC54200E93780 /* Main.storyboard in Resources */,
 				323CC6D41B2AC54200E93780 /* LaunchScreen.xib in Resources */,
+				320D7F771B411AB100A9C426 /* FakeUserTableViewCell.xib in Resources */,
 				323CC6D11B2AC54200E93780 /* Images.xcassets in Resources */,
 				32E91B7A1B3139910089DD59 /* hinako4.png in Resources */,
 				323CC6EF1B2AC77700E93780 /* TweetTableViewCell.xib in Resources */,
@@ -465,12 +489,15 @@
 				32E91B6F1B30827B0089DD59 /* Group.swift in Sources */,
 				323CC7051B2B529000E93780 /* StockTweets.swift in Sources */,
 				323CC6F51B2AEA5E00E93780 /* NewTweetViewController.swift in Sources */,
+				320D7F731B41186100A9C426 /* FakeUsersListTableViewController.swift in Sources */,
 				323CC6FB1B2B176F00E93780 /* MyPageTableViewController.swift in Sources */,
 				3215EC8D1B2C6A9000964F6C /* SessionUser.swift in Sources */,
 				323CC6CA1B2AC54200E93780 /* AppDelegate.swift in Sources */,
 				323CC6F81B2B150100E93780 /* ProfileTableViewCell.swift in Sources */,
 				323CC6EE1B2AC77700E93780 /* TweetTableViewCell.swift in Sources */,
 				323CC6FF1B2B50AE00E93780 /* User.swift in Sources */,
+				320D7F7C1B41380D00A9C426 /* Fake.swift in Sources */,
+				320D7F7A1B41269F00A9C426 /* StockFakeUsers.swift in Sources */,
 				32E91B711B30831C0089DD59 /* StockGroup.swift in Sources */,
 				32E91B681B3078860089DD59 /* GroupListTableViewController.swift in Sources */,
 				3215EC8B1B2C699700964F6C /* SignUpViewController.swift in Sources */,
@@ -478,6 +505,7 @@
 				32047FC51B2D9C0900A0A5A5 /* CurrentUser.swift in Sources */,
 				32E91B661B2F11AA0089DD59 /* TabBarController.swift in Sources */,
 				32E91B6D1B307B820089DD59 /* NewGroupViewController.swift in Sources */,
+				320D7F761B411AB100A9C426 /* FakeUserTableViewCell.swift in Sources */,
 				32E91B641B2F08000089DD59 /* LogInViewController.swift in Sources */,
 				323CC7021B2B51ED00E93780 /* Tweet.swift in Sources */,
 			);

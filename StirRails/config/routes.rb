@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     resources :tweets, only: [:index, :create]
     get '/groups/search' => 'groups#search'
     get '/groups/add_group' => 'groups#add_group'
+    get '/groups/fake_users' => 'groups#fetch_fake_users'
   end
 end

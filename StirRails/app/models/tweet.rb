@@ -7,13 +7,13 @@ class Tweet < ActiveRecord::Base
   scope :by_group_id, -> (group_id) { where(group_id: group_id) }
 
   def self.fetch_tweets(params)
-    group = Group.search(params["group_name"], params["group_pass"])
+    group = Group.search(params["name"], params["password"])
     group.tweets
   end
 
   def self.create_tweet(params)
     user = User.by_auth_token(params["auth_token"])
-    group = Group.search(params["group_name"], params["group_pass"])
+    group = Group.search(params["name"], params["password"])
     params = {text: params["text"], user_id: user.id, group_id: group.id}
     Tweet.create(params)
   end

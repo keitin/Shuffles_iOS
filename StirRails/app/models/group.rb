@@ -3,11 +3,17 @@ class Group < ActiveRecord::Base
   # has_many :users, through: :users_group
   has_and_belongs_to_many :users, through: :group_users
   has_many :tweets
+  has_many :fakes
 
   scope :search, ->(name, password) { find_by(name: name, password: password) }
 
   #carrierWave
   mount_uploader :avatar, AvatarUploader
+
+
+  def fetch_group_fake_user(user_id)
+    fakes.find_by(user_id: user_id)
+  end
 
   def shuffle_users
     group_user_ids = self.users.map { |user| user.id }
@@ -19,9 +25,12 @@ class Group < ActiveRecord::Base
     end
 
     pare_ids.each do |pare_id|
-      Fake.create(user_id: pare_id.first, fake_user_id: pare_id.second)
+      fake = Fake.where(user_id: pare_id.first, group_id: self.id).first_or_initialize
+      fake.fake_user_id = pare_id.second
+      fake.save
     end
   end
+
 
   def self.create_my_group(params)
     auth_token = params[:auth_token]
@@ -29,11 +38,13 @@ class Group < ActiveRecord::Base
     Group.create(name: params[:name], password: params[:password], avatar: params[:avatar], user_id: user.id )
   end
 
+
   def self.fetch_my_groups(params)
     auth_token = params[:auth_token]
     user = User.by_auth_token(auth_token)
     return user.groups
   end
+
 
   def self.search_group(params)
     search(params[:name], params[:password])

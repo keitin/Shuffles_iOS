@@ -17,8 +17,8 @@ class StockTweets: NSObject {
     class func fetchTweets(group: Group, callBack: () -> Void) {
         
         var params: [String: AnyObject] = [
-            "group_name": group.name,
-            "group_pass": group.password
+            "name": group.name,
+            "password": group.password
         ]
     
         Alamofire.request(.GET, "http://localhost:3001/api/tweets",parameters: params, encoding: .URL)
@@ -36,18 +36,20 @@ class StockTweets: NSObject {
 
                 StockTweets.sharedInstance.tweets = []
                 let tweets = JSON?["tweets"] as! Array<AnyObject>
+                
                 for tweet in tweets {
                     var myTweet = Tweet()
-                    var user = User()
                     myTweet.text = tweet["text"] as! String
-                    user.name = tweet["name"] as! String
+                    
+                    var user = User()
+                    user.name = tweet["user_name"] as! String
+                    var fakeUser = User()
+                    fakeUser.name = tweet["fake_user_name"] as! String
+                    user.fakeUser = fakeUser
                     myTweet.user = user
                     StockTweets.sharedInstance.tweets.insert(myTweet, atIndex: 0)
                 }
-                
-                
                 callBack()
-    
         }
     }
     

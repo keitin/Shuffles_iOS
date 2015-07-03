@@ -10,5 +10,5 @@ import UIKit
 
 class User: NSObject {
     var name = ""
-    var user: User?
+    var fakeUser: User?
 }

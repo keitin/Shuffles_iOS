@@ -13,6 +13,7 @@ class TimeLineTableViewController: UITableViewController {
     var tweets: Array<Tweet> = []
     var currentGroup: Group!
     let currentUser = CurrentUser.sharedInstance
+    var flag: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +29,12 @@ class TimeLineTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        println(defaults.objectForKey("authToken"))
-        if let authToke = defaults.objectForKey("authToken") as? String {
-            println("ログイン済み")
-            println(authToke)
-        } else {
-            performSegueWithIdentifier("ModalSigbUpViewController", sender: nil)
-        }
+        let myBarButton_3 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Pause, target: self, action: "changeFakeUser")
+        let myBarButton_2 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Play, target: self, action: "modalFakeUsersTableViewController")
+        let myBarButton_1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "modalToNewTweetViewController")
+        let myRightButtons: NSArray = [myBarButton_1, myBarButton_2, myBarButton_3]
+        self.navigationItem.setRightBarButtonItems(myRightButtons as [AnyObject], animated: true)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "modalToNewTweetViewController")
         
         let callBack = { () -> Void in
             self.tweets = StockTweets.sharedInstance.tweets
@@ -75,7 +72,12 @@ class TimeLineTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell", forIndexPath: indexPath) as! TweetTableViewCell
         let tweet = tweets[indexPath.row]
         cell.tweetLabel?.text = tweet.text
-        cell.nameLabel.text = tweet.user.name
+        if flag {
+            cell.nameLabel.text = tweet.user.name
+        } else {
+            cell.nameLabel.text = tweet.user.fakeUser?.name
+            println(tweet.user.fakeUser)
+        }
         return cell
     }
 
@@ -125,18 +127,33 @@ class TimeLineTableViewController: UITableViewController {
     }
     */
     
+    func changeFakeUser() {
+        if flag == true {
+            flag = false
+        } else {
+            flag = true
+        }
+        self.tableView.reloadData()
+    }
+    
     //segue
     func modalToNewTweetViewController() {
         performSegueWithIdentifier("modalToNewTweetViewController", sender: nil)
     }
     
+    func modalFakeUsersTableViewController() {
+        performSegueWithIdentifier("modalFakeUsersTableViewController", sender: nil)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "modalToNewTweetViewController" {
-            println("llllllllllllllllllllllllllllllllllllllll")
-            println(segue.destinationViewController)
             let navigationController = segue.destinationViewController as! UINavigationController
             let newTweetViewController = navigationController.viewControllers.first as! NewTweetViewController
             newTweetViewController.currentGroup = self.currentGroup
+        } else if segue.identifier == "modalFakeUsersTableViewController" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let fakeUserTableViewController = navigationController.viewControllers.first as! FakeUsersListTableViewController
+            fakeUserTableViewController.currentGroup = self.currentGroup
         }
     }
 

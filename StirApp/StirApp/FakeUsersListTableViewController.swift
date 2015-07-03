@@ -1,39 +1,34 @@
 //
-//  GroupListTableViewController.swift
+//  FakeUsersListTableViewController.swift
 //  StirApp
 //
-//  Created by 松下慶大 on 2015/06/17.
+//  Created by 松下慶大 on 2015/06/29.
 //  Copyright (c) 2015年 matsushita keita. All rights reserved.
 //
 
 import UIKit
 
-class GroupListTableViewController: UITableViewController {
-    
-    var activeGroup: Group!
-    var groups: Array<Group> = []
+class FakeUsersListTableViewController: UITableViewController {
+
+    var currentGroup: Group!
+    var fakeUsers: Array<Fake> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.registerNib(UINib(nibName: "GroupTableViewCell", bundle: nil), forCellReuseIdentifier: "groupCell")
-        
+        println(currentGroup)
+        tableView.registerNib(UINib(nibName: "FakeUserTableViewCell", bundle: nil), forCellReuseIdentifier: "fakeUserCell")
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "×", style: UIBarButtonItemStyle.Plain, target: self, action: "backToTimeLineViewController")
         
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "modalNewGroupViewController")
-        
-        //HTTP
-        var callback = {() -> Void in
-            println("グループフェッチ完了")
-            self.groups = StockGroup.sharedInstance.myGroups
+        let callBack = { () -> Void in
+            self.fakeUsers = StockFakeUsers.sharedInstance.fakeUsers
             self.tableView.reloadData()
         }
         
-        StockGroup.fetchGroup(callback)
+        StockFakeUsers.fetchFakeUsers(currentGroup, callback: callBack)
         
     }
 
@@ -47,48 +42,28 @@ class GroupListTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return  1
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return groups.count
-    }
-    
-    
-    
-    func modalNewGroupViewController() {
-        performSegueWithIdentifier("modalNewGroupVC", sender: nil)
+        return fakeUsers.count
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("groupCell", forIndexPath: indexPath) as! GroupTableViewCell
-        println(self.groups)
-        let group = groups[indexPath.row]
-        cell.groupNameLabel.text = group.name
+        let cell = tableView.dequeueReusableCellWithIdentifier("fakeUserCell", forIndexPath: indexPath) as! FakeUserTableViewCell
+        let fake = fakeUsers[indexPath.row]
+        cell.userName.text = fake.user.name
+        cell.fakeUserName.text = fake.fakeUser.name
         return cell
     }
 
-
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 90
+        return 82
     }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        activeGroup = groups[indexPath.row]
-        performSegueWithIdentifier("ShowTimeLineVC", sender: nil)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowTimeLineVC" {
-            let timeLineTableViewController = segue.destinationViewController as! TimeLineTableViewController
-            timeLineTableViewController.currentGroup = activeGroup
-        }
-    }
-    
-    
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -133,5 +108,9 @@ class GroupListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func backToTimeLineViewController() {
+        dismissViewControllerAnimated(false, completion: nil)
+    }
 
 }
