@@ -58,19 +58,19 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func tapCreateGroupBtn(sender: UIButton) {
-        var name = groupNameTextFiled.text
-        var pass = groupPassTextFiled.text
-        var confirmPass = groupPassConfirmTextField.text
+        
+        let group = Group()
+        group.name  = groupNameTextFiled.text
+        group.password = groupPassTextFiled.text
+        group.confirmPass = groupPassConfirmTextField.text
         
         var callback = { () -> Void in
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         
-        
-        if pass == confirmPass {
+        if group.password == group.confirmPass {
             println("保存しました")
-            //            StockGroup.saveGroup(name, passwd: pass, )
-            StockGroup.saveGroup(name, password: pass, image: groupImage!, callback: callback)
+            StockGroup.saveGroup(group, callback: callback)
         } else {
             println("確認用パスワードが異なります")
         }

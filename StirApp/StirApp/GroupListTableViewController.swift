@@ -65,7 +65,6 @@ class GroupListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("groupCell", forIndexPath: indexPath) as! GroupTableViewCell
-        println(self.groups)
         let group = groups[indexPath.row]
         cell.groupNameLabel.text = group.name
         return cell
@@ -88,6 +87,7 @@ class GroupListTableViewController: UITableViewController {
         }
     }
     
+
     
     /*
     // Override to support conditional editing of the table view.

@@ -20,6 +20,7 @@ class SearchGroupViewController: UIViewController {
     var name = ""
     var currentGroupName = ""
     var currentPass = ""
+    var currentGroup = Group()
 
     
     let orange = UIColor(red: 244/255, green: 104/255, blue: 95/255, alpha: 1.0)
@@ -39,18 +40,18 @@ class SearchGroupViewController: UIViewController {
     
     @IBAction func tapSearchGroupBtn(sender: UIButton) {
         
-        let groupName = groupNameTextField.text
-        let groupPass = groupPassTextField.text
+        let group = Group()
+        group.name = groupNameTextField.text
+        group.password = groupPassTextField.text
         
         var callback = { (params: Dictionary<String, AnyObject>) -> Void in
             self.name = params["groupName"] as! String!
-            self.currentPass = params["groupPass"] as! String!
-            self.currentGroupName = self.name
+            self.currentGroup.password = params["groupPass"] as! String!
+            self.currentGroup.name = self.name
             self.setGroupView()
         }
         
-        Group.searchGroup(groupName, groupPass: groupPass, callback: callback)
-        
+        StockGroup.searchGroup(group, callback: callback)
     }
     
     
@@ -101,6 +102,7 @@ class SearchGroupViewController: UIViewController {
 
     }
     
+    
     func setGrounpImage() {
         groupImageView.frame.size = CGSize(width: 100, height: 100)
         groupImageView.center = CGPoint(x: self.view.center.x, y: self.view.center.y - 50)
@@ -109,16 +111,15 @@ class SearchGroupViewController: UIViewController {
         groupImageView.clipsToBounds = true
         view.addSubview(groupImageView)
     }
+
     
     func tapJoinBtn(sender: UIButton) {
-        println("参加する！！")
         
         var callback = { () -> Void in
             self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         }
 
-        
-        StockGroup.addGroup(currentGroupName, groupPass: currentPass, callback: callback)
+        StockGroup.addGroup(currentGroup, callback: callback)
     }
     
 

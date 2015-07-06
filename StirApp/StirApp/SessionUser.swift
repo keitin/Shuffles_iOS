@@ -12,13 +12,13 @@ import Alamofire
 class SessionUser: NSObject {
 
     
-    class func signUp(name: String, email: String, pass: String, confirmPass: String, callBackClosure:(Dictionary<String, AnyObject>) -> Void) {
+    class func signUp(user: User, callBackClosure:(Dictionary<String, AnyObject>) -> Void) {
         
         var params: [String: AnyObject] = [
-            "name": name,
-            "email": email,
-            "password": pass,
-            "password_confirmation": confirmPass
+            "name": user.name,
+            "email": user.email,
+            "password": user.password,
+            "password_confirmation": user.confirmPassword
         ]
         
         var returnParams: Dictionary<String, AnyObject> = [:]
@@ -64,11 +64,11 @@ class SessionUser: NSObject {
     
     
     
-    class func login(email: String, pass: String, callBackClosure: (Dictionary<String, AnyObject>) -> Void) {
+    class func login(user: User, callBackClosure: (Dictionary<String, AnyObject>) -> Void) {
         
         var params: [String: AnyObject] = [
-            "email": email,
-            "password": pass,
+            "email": user.email,
+            "password": user.password,
         ]
         
         var returnParams: Dictionary<String, AnyObject> = [:]

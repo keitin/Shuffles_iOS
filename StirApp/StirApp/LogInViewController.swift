@@ -33,30 +33,27 @@ class LogInViewController: UIViewController {
     
     @IBAction func tapLoginButton(sender: UIButton) {
         
-        var email = emailTextField.text
-        var pass = passTextFiled.text
+        let user = User()
+        user.email = emailTextField.text
+        user.password = passTextFiled.text
+
+
         
-        var callbackClosure = { (params: Dictionary<String, AnyObject>) -> Void in
+        var callback = { (params: Dictionary<String, AnyObject>) -> Void in
             
-//            var errorMessages = params["error_message"] as! Array<AnyObject>
             
             if var errorMessages = params["error_message"] as? Array<AnyObject> {
-//                println("登録成功")
-//                self.dismissViewControllerAnimated(true, completion: nil)
-                println("登録失敗")
-                println(errorMessages)
                 var str = ""
                 for messaege in errorMessages {
                     str += messaege as! String
                 }
                 self.errorMessageLabel.text = str
-            } else {                
-                println("登録成功")
+            } else {
                 self.performSegueWithIdentifier("segueToTimeLineTabBarController", sender: nil)
             }
         }
         
-        SessionUser.login(email, pass: pass, callBackClosure: callbackClosure)
+        SessionUser.login(user, callBackClosure: callback)
     }
     
 

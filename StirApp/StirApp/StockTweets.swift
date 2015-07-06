@@ -43,8 +43,10 @@ class StockTweets: NSObject {
                     
                     var user = User()
                     user.name = tweet["user_name"] as! String
+                    
                     var fakeUser = User()
                     fakeUser.name = tweet["fake_user_name"] as! String
+                    
                     user.fakeUser = fakeUser
                     myTweet.user = user
                     StockTweets.sharedInstance.tweets.insert(myTweet, atIndex: 0)

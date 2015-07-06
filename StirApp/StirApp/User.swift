@@ -10,5 +10,8 @@ import UIKit
 
 class User: NSObject {
     var name = ""
+    var email = ""
+    var password = ""
+    var confirmPassword = ""
     var fakeUser: User?
 }

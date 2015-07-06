@@ -34,7 +34,6 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
         super.viewWillAppear(animated)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "×", style: UIBarButtonItemStyle.Plain, target: self, action: "backToTimeLineViewController")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "sendTweet")
-        println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         //Registing Notification Center
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "willShowKeyBoard:", name: UIKeyboardWillShowNotification, object: nil)
@@ -98,7 +97,6 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
     
     //keyBoard
     func willShowKeyBoard(notification: NSNotification?) {
-        println("きーぼーだお")
         placeholderLabel.hidden = true
     }
     

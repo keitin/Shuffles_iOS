@@ -37,32 +37,30 @@ class SignUpViewController: UIViewController {
 
     @IBAction func tapLoginButton(sender: UIButton) {
         
-        var email = emailTextField.text
-        var pass = passwordTextFiled.text
-        var confirmPass = confirmPassTextFiled.text
-        var name = nameTextFiled.text
+        let user = User()
+        user.name = nameTextFiled.text
+        user.email = emailTextField.text
+        user.password = passwordTextFiled.text
+        user.confirmPassword = confirmPassTextFiled.text
         
-        var callbackClosure1 = { (params: Dictionary<String, AnyObject>) -> Void in
+        var callback = { (params: Dictionary<String, AnyObject>) -> Void in
             
             var errorMessages = params["error_message"] as! Array<AnyObject>
             
             if errorMessages.isEmpty {
-                println("登録成功")
                 self.performSegueWithIdentifier("segueToTimeLineTabBarController", sender: nil)
-                
             } else {
-                println("登録失敗")
-                println(errorMessages)
                 var str = ""
                 for messaege in errorMessages {
                     str += messaege as! String
                 }
+    
                 self.errorMessageLabel.text = str
-                
+    
             }
         }
         
-        SessionUser.signUp(name, email: email, pass: pass, confirmPass: confirmPass, callBackClosure: callbackClosure1)
+        SessionUser.signUp(user, callBackClosure: callback)
 
     }
     

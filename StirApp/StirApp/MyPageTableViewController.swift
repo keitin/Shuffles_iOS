@@ -60,16 +60,17 @@ class MyPageTableViewController: UITableViewController {
     }
     
     func showActionSheet() {
-        let actionSheet = UIAlertController(title: "", message: "", preferredStyle: .ActionSheet)
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         let signoutAction = UIAlertAction(title: "Log Out", style: UIAlertActionStyle.Default) { (action) -> Void in
             
             CurrentUser.sharedInstance.removeAuthToken()
             let tabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("LogInTabBarController") as! UITabBarController
             UIApplication.sharedApplication().keyWindow?.rootViewController = tabBarController
             
-            
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         actionSheet.addAction(signoutAction)
+        actionSheet.addAction(cancelAction)
         presentViewController(actionSheet, animated: true, completion: nil)
     }
     

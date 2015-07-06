@@ -15,28 +15,26 @@ class StockGroup: NSObject {
     var myGroups: Array<Group> = []
     
     //HTTP通信
-    class func saveGroup(name: String, password: String, image: UIImage, callback: () -> Void) {
+    class func saveGroup(group: Group, callback: () -> Void) {
         
         let defaults = NSUserDefaults.standardUserDefaults()
         let auth_token = defaults.objectForKey("authToken") as! String
         
-        let imageData = UIImagePNGRepresentation(image)
+        let imageData = UIImagePNGRepresentation(group.image)
         var array: NSArray = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)
         
-        println(array)
         var cacheDirPath: NSString = array.objectAtIndex(0) as! NSString
         var filePath: String = cacheDirPath.stringByAppendingPathComponent("tmp.png")
         
         var isSaved = imageData.writeToFile(filePath as String, atomically: true)
         
-        println(isSaved)
-        
         let fileURL = NSURL(fileURLWithPath: filePath)
         println(fileURL)
         
+        
         var params: [String: AnyObject] = [
-            "name": name,
-            "password": password,
+            "name": group.name,
+            "password": group.password,
             "auth_token": auth_token
         ]
         
@@ -56,39 +54,6 @@ class StockGroup: NSObject {
                 
                 callback()
         }
-        
-        
-        
-//        let imageData = UIImagePNGRepresentation(image)
-//        var array: NSArray = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)
-//        
-//        println(array)
-//        var cacheDirPath: NSString = array.objectAtIndex(0) as! NSString
-//        var filePath: String = cacheDirPath.stringByAppendingPathComponent("tmp.png")
-//
-//        var isSaved = imageData.writeToFile(filePath as String, atomically: true)
-//        
-//        println(isSaved)
-//        
-////        let fileURL = NSBundle.mainBundle().URLForResource("tmp", withExtension: "png")
-//        let fileURL = NSURL(fileURLWithPath: filePath)
-//        println(fileURL)
-        
-//        Alamofire.upload(.POST, "http://localhost:3001/api/groups", fileURL!)
-//            .responseJSON { (request, response, JSON, error) in
-//
-//                println("========request=============")
-//                println(request)
-//                println("========response============")
-//                println(response)
-//                println("========JSON===========")
-//                println(JSON)
-//                println("========error===========")
-//                println(error)
-//                println("=====================")
-//                
-//        }
-
         
     }
     
@@ -133,15 +98,53 @@ class StockGroup: NSObject {
     }
     
     
-    class func addGroup(groupName: String, groupPass: String, callback: () -> Void) {
+    class func searchGroup(group: Group, callback: (Dictionary<String, AnyObject>) -> Void) {
+        
+        var params: [String: AnyObject] = [
+            "name": group.name,
+            "password": group.password
+        ]
+        
+        var returnParams: Dictionary<String, AnyObject> = [:]
+        
+        Alamofire.request(.GET, "http://localhost:3001/api/groups/search",parameters: params, encoding: .URL)
+            .responseJSON { (request, response, JSON, error) in
+                
+                println("========request=============")
+                println(request)
+                println("=========response============")
+                println(response)
+                println("==========JSON===========")
+                println(JSON)
+                println("==========error===========")
+                println(error)
+                println("=====================")
+                
+                
+                if error == nil {
+                    println(JSON!["group_name"])
+                    returnParams["groupName"] = JSON?["group_name"] as! String
+                    returnParams["groupPass"] = JSON?["group_pass"] as! String
+                    println(returnParams["groupName"])
+                    
+                }
+                
+                callback(returnParams)
+                
+        }
+        
+    }
+
+    
+    class func addGroup(group: Group, callback: () -> Void) {
         
         let defaults = NSUserDefaults.standardUserDefaults()
         let auth_token = defaults.objectForKey("authToken") as! String
         
         var params: [String: AnyObject] = [
             "auth_token": auth_token,
-            "name": groupName,
-            "password": groupPass
+            "name": group.name,
+            "password": group.password
         ]
      
         Alamofire.request(.GET, "http://localhost:3001/api/groups/add_group",parameters: params, encoding: .URL)

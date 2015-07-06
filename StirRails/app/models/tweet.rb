@@ -13,7 +13,7 @@ class Tweet < ActiveRecord::Base
 
   def self.create_tweet(params)
     user = User.by_auth_token(params["auth_token"])
-    group = Group.search(params["name"], params["password"])
+    group = Group.search(params["group_name"], params["group_pass"])
     params = {text: params["text"], user_id: user.id, group_id: group.id}
     Tweet.create(params)
   end
