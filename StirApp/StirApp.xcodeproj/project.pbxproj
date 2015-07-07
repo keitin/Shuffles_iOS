@@ -32,6 +32,8 @@
 		323CC6FF1B2B50AE00E93780 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC6FE1B2B50AE00E93780 /* User.swift */; };
 		323CC7021B2B51ED00E93780 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC7011B2B51ED00E93780 /* Tweet.swift */; };
 		323CC7051B2B529000E93780 /* StockTweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC7041B2B529000E93780 /* StockTweets.swift */; };
+		3244BBDC1B4B72BC00FBB5CF /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3244BBDB1B4B72BC00FBB5CF /* InformationView.swift */; };
+		3244BBDE1B4B895500FBB5CF /* Extention+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3244BBDD1B4B895500FBB5CF /* Extention+UIColor.swift */; };
 		32E91B641B2F08000089DD59 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B631B2F08000089DD59 /* LogInViewController.swift */; };
 		32E91B661B2F11AA0089DD59 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B651B2F11AA0089DD59 /* TabBarController.swift */; };
 		32E91B681B3078860089DD59 /* GroupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B671B3078860089DD59 /* GroupListTableViewController.swift */; };
@@ -84,6 +86,8 @@
 		323CC6FE1B2B50AE00E93780 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		323CC7011B2B51ED00E93780 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		323CC7041B2B529000E93780 /* StockTweets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockTweets.swift; sourceTree = "<group>"; };
+		3244BBDB1B4B72BC00FBB5CF /* InformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		3244BBDD1B4B895500FBB5CF /* Extention+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extention+UIColor.swift"; sourceTree = "<group>"; };
 		32E91B631B2F08000089DD59 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		32E91B651B2F11AA0089DD59 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		32E91B671B3078860089DD59 /* GroupListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListTableViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				323CC7001B2B50B800E93780 /* Models */,
 				323CC6F01B2AC78A00E93780 /* Views */,
 				323CC6EB1B2AC6C600E93780 /* Controllers */,
+				3244BBDF1B4B896800FBB5CF /* Extension */,
 				323CC6D01B2AC54200E93780 /* Images.xcassets */,
 				323CC6D21B2AC54200E93780 /* LaunchScreen.xib */,
 				323CC6C71B2AC54200E93780 /* Supporting Files */,
@@ -251,6 +256,14 @@
 			name = "Model Manager";
 			sourceTree = "<group>";
 		};
+		3244BBDF1B4B896800FBB5CF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3244BBDD1B4B895500FBB5CF /* Extention+UIColor.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		32E91B691B3079680089DD59 /* users */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +299,7 @@
 			children = (
 				323CC6EC1B2AC77700E93780 /* TweetTableViewCell.swift */,
 				323CC6ED1B2AC77700E93780 /* TweetTableViewCell.xib */,
+				3244BBDB1B4B72BC00FBB5CF /* InformationView.swift */,
 			);
 			name = tweets;
 			sourceTree = "<group>";
@@ -492,6 +506,7 @@
 				320D7F731B41186100A9C426 /* FakeUsersListTableViewController.swift in Sources */,
 				323CC6FB1B2B176F00E93780 /* MyPageTableViewController.swift in Sources */,
 				3215EC8D1B2C6A9000964F6C /* SessionUser.swift in Sources */,
+				3244BBDC1B4B72BC00FBB5CF /* InformationView.swift in Sources */,
 				323CC6CA1B2AC54200E93780 /* AppDelegate.swift in Sources */,
 				323CC6F81B2B150100E93780 /* ProfileTableViewCell.swift in Sources */,
 				323CC6EE1B2AC77700E93780 /* TweetTableViewCell.swift in Sources */,
@@ -505,6 +520,7 @@
 				32047FC51B2D9C0900A0A5A5 /* CurrentUser.swift in Sources */,
 				32E91B661B2F11AA0089DD59 /* TabBarController.swift in Sources */,
 				32E91B6D1B307B820089DD59 /* NewGroupViewController.swift in Sources */,
+				3244BBDE1B4B895500FBB5CF /* Extention+UIColor.swift in Sources */,
 				320D7F761B411AB100A9C426 /* FakeUserTableViewCell.swift in Sources */,
 				32E91B641B2F08000089DD59 /* LogInViewController.swift in Sources */,
 				323CC7021B2B51ED00E93780 /* Tweet.swift in Sources */,

@@ -46,6 +46,9 @@ class TimeLineTableViewController: UITableViewController {
         //ツイートをdbからフェッチ
         StockTweets.fetchTweets(currentGroup, callBack: callBack)
         
+        let informationView = InformationView(frame: self.view.bounds)
+        self.tabBarController?.view.addSubview(informationView)
+        
     }
 
     override func didReceiveMemoryWarning() {

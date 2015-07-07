@@ -18,4 +18,8 @@ class Tweet < ActiveRecord::Base
     Tweet.create(params)
   end
 
+  def self.hello
+    p "hhhhhhhhhhhhh"
+  end
+
 end

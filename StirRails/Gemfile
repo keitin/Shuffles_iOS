@@ -48,4 +48,6 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'acts_in_relation' #フォロー機能を簡単に実装してくれるgem(今回はusersテーブル内でのリレーションに使用)
 
+gem 'whenever', :require => false
+
 
