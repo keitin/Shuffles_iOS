@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "signup" => "users#new", :as => "signup"
   resources :users
   resources :sessions
+  resources :groups
   get "secret" => "home#secret", :as => "secret"
   root :to => "home#index"
 
@@ -17,4 +18,6 @@ Rails.application.routes.draw do
     get '/groups/add_group' => 'groups#add_group'
     get '/groups/fake_users' => 'groups#fetch_fake_users'
   end
+  #grape
+  # mount Stir::API => '/'
 end

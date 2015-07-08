@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
 
   scope :by_auth_token, ->(auth_token) { find_by(auth_token: auth_token) }
 
+  #CarrierWave
+  mount_uploader :avatar, AvatarUploader
 
   private
 

@@ -67,6 +67,7 @@ class GroupListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("groupCell", forIndexPath: indexPath) as! GroupTableViewCell
         let group = groups[indexPath.row]
         cell.groupNameLabel.text = group.name
+        cell.groupImageView.image = group.image
         return cell
     }
 

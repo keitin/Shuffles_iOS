@@ -63,6 +63,7 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         group.name  = groupNameTextFiled.text
         group.password = groupPassTextFiled.text
         group.confirmPass = groupPassConfirmTextField.text
+        group.image = groupImage
         
         var callback = { () -> Void in
             self.dismissViewControllerAnimated(true, completion: nil)

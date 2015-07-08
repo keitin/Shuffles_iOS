@@ -6,7 +6,6 @@ class Group < ActiveRecord::Base
   has_many :fakes
 
   scope :search, ->(name, password) { find_by(name: name, password: password) }
-  scope :published, -> { where(name: 'kinoko') }
   scope :first_group, -> { find_by(id: [1, 2, 3, 4, 5]) }
   #carrierWave
   mount_uploader :avatar, AvatarUploader

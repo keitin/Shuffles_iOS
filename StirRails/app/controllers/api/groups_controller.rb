@@ -34,7 +34,7 @@ class Api::GroupsController < ApplicationController
 
   private
   def create_params
-    params.permit(:name, :password, :avatar)
+    params.permit(:avatar, :name, :password)
   end
 
   def auth_token_params

@@ -50,4 +50,5 @@ gem 'acts_in_relation' #フォロー機能を簡単に実装してくれるgem(�
 
 gem 'whenever', :require => false
 
-
+gem 'grape'
+gem 'grape-jbuilder'
