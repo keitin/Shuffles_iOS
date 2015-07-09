@@ -27,17 +27,7 @@ class StockFakeUsers: NSObject {
         
         Alamofire.request(.GET, "http://localhost:3001/api/groups/fake_users",parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
-                
-                println("========request=============")
-                println(request)
-                println("=========response============")
-                println(response)
-                println("==========JSON===========")
-                println(JSON)
-                println("==========error===========")
-                println(error)
-                println("=====================")
-                
+                                
                 if error == nil {
                     
                     let fakeUsers = JSON!["fakes"] as! Array<AnyObject>

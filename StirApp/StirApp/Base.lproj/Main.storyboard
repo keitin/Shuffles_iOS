@@ -132,10 +132,57 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="RFe-Re-OCq"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="NiT-ZW-wOy" kind="presentation" identifier="modalEditProfile" id="Rn0-Qm-tw9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwl-EM-hzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1921.5" y="1339.5"/>
+        </scene>
+        <!--EDIT MY PROFILE-->
+        <scene sceneID="YZP-vV-fn2">
+            <objects>
+                <viewController id="Nkf-XZ-mMW" customClass="EditMyProfileViewController" customModule="StirApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SWM-hj-NcV"/>
+                        <viewControllerLayoutGuide type="bottom" id="jiG-eS-L08"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fw2-Ww-hHN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mKV-o3-RxQ">
+                                <rect key="frame" x="109" y="102" width="237" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wZ-e1-bnY">
+                                <rect key="frame" x="157" y="173" width="61" height="30"/>
+                                <state key="normal" title="EDIT!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapEditBtn:" destination="Nkf-XZ-mMW" eventType="touchUpInside" id="Tdl-LH-Qrl"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hinako2.png" translatesAutoresizingMaskIntoConstraints="NO" id="mg2-pp-sfH">
+                                <rect key="frame" x="24" y="87" width="66" height="59"/>
+                                <color key="backgroundColor" red="1" green="0.83529411760000005" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="EDIT MY PROFILE" id="GRA-mJ-NyI"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="iconImageView" destination="mg2-pp-sfH" id="vxB-Il-R9G"/>
+                        <outlet property="nameTextFiled" destination="mKV-o3-RxQ" id="kUB-hg-iyu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2tG-au-LK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1425.5" y="2116.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BAa-Ou-4w8">
@@ -596,6 +643,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAx-QP-q9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1149.5" y="825.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ikb-g1-hNq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NiT-ZW-wOy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UeW-MK-A5G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Nkf-XZ-mMW" kind="relationship" relationship="rootViewController" id="QDj-AN-4cV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jab-IM-gcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1921.5" y="2116.5"/>
         </scene>
     </scenes>
     <resources>

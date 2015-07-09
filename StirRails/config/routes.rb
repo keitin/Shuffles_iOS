@@ -14,9 +14,10 @@ Rails.application.routes.draw do
     resources :sessions, only: [:create]
     resources :groups, only: [:index, :create]
     resources :tweets, only: [:index, :create]
-    get '/groups/search' => 'groups#search'
-    get '/groups/add_group' => 'groups#add_group'
-    get '/groups/fake_users' => 'groups#fetch_fake_users'
+    get     '/groups/search' => 'groups#search'
+    get     '/groups/add_group' => 'groups#add_group'
+    get     '/groups/fake_users' => 'groups#fetch_fake_users'
+    put   '/users/update' => 'users#update'
   end
   #grape
   # mount Stir::API => '/'

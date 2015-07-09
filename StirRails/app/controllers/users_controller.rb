@@ -11,13 +11,4 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
-  def edit
-    @user = User.new
-  end
-
-  def update
-    binding.pry
-  end
-
 end

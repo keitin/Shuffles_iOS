@@ -67,21 +67,8 @@ class StockTweets: NSObject {
         Alamofire.request(.POST, "http://localhost:3001/api/tweets",parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 
-                println("========request=============")
-                println(request)
-                println("========response============")
-                println(response)
-                println("========JSON===========")
-                println(JSON)
-                println("========error===========")
-                println(error)
-                println("=====================")
-                
-                callBack()
-                
+            callBack()
         }
-
-        
     }
     
 }

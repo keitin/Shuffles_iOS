@@ -14,4 +14,11 @@ class User: NSObject {
     var password = ""
     var confirmPassword = ""
     var fakeUser: User?
+    var image: UIImage!
+    
+    override init() {
+        super.init()
+        self.image = UIImage(named: "kinoponpopo")
+    }
+    
 }

@@ -20,7 +20,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hinako2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pbo-1D-c8d">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hinako2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pbo-1D-c8d">
                         <rect key="frame" x="154" y="41" width="70" height="70"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="7EY-Y9-aT0"/>
@@ -48,7 +48,7 @@
                 <outlet property="iconImageView" destination="Pbo-1D-c8d" id="9pS-NL-W6Z"/>
                 <outlet property="nameLabel" destination="t1j-k5-grN" id="pI0-ZT-i3Z"/>
             </connections>
-            <point key="canvasLocation" x="382.5" y="268.5"/>
+            <point key="canvasLocation" x="382.5" y="268"/>
         </tableViewCell>
     </objects>
     <resources>

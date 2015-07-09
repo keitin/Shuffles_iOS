@@ -25,55 +25,20 @@ class StockGroup: NSObject {
             "password": group.password,
             "auth_token": auth_token,
         ]
-
-        let imageData = UIImagePNGRepresentation(group.image)
         
-        let urlRequest = urlRequestWithComponents("http://localhost:3001/api/groups/", parameters: params, imageData: imageData)
+                        //Extension
+        let httpMethod = Alamofire.Method.POST.rawValue
+        let pass = "http://localhost:3001/api/groups/"
+        let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: pass, parameters: params, image: group.image!)
         
         Alamofire.upload(urlRequest.0, urlRequest.1)
             .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
 
             }
             .responseJSON { (request, response, JSON, error) in
-
         }
         
     }
-    
-    
-    class func urlRequestWithComponents(urlString: String, parameters: Dictionary<String, AnyObject>, imageData: NSData) -> (URLRequestConvertible, NSData) {
-    
-        // create url request to send
-        var mutableURLRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
-        mutableURLRequest.HTTPMethod = Alamofire.Method.POST.rawValue
-        let boundaryConstant = "myRandomBoundary12345"
-        let contentType = "multipart/form-data;boundary=" + boundaryConstant
-        mutableURLRequest.setValue(contentType, forHTTPHeaderField: "Content-Type")
-        
-        
-        // create upload data to send
-        let uploadData = NSMutableData()
-        
-        
-        // add image
-        uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        uploadData.appendData("Content-Disposition: form-data; name=\"avatar\"; filename=\"file.png\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        uploadData.appendData("Content-Type: image/png\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        uploadData.appendData(imageData)
-        
-        
-        // add parameters
-        for (key, value) in parameters {
-            uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-            uploadData.appendData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n\(value)".dataUsingEncoding(NSUTF8StringEncoding)!)
-        }
-        
-        uploadData.appendData("\r\n--\(boundaryConstant)--\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        
-        return (Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: nil).0, uploadData)
-        
-    }
-    
     
     class func fetchGroup(callback: () -> Void) {
         

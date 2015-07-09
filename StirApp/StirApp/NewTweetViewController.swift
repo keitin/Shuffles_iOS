@@ -29,7 +29,6 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
         nameLabel.text = currentUser.name
     }
 
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "×", style: UIBarButtonItemStyle.Plain, target: self, action: "backToTimeLineViewController")

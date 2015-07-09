@@ -24,22 +24,9 @@ class SessionUser: NSObject {
         var returnParams: Dictionary<String, AnyObject> = [:]
         
         Alamofire.request(.POST, "http://localhost:3001/api/users",parameters: params, encoding: .URL)
-
             .responseJSON { (request, response, JSON, error) in
                 
-                println("========request=============")
-                println(request)
-                println("========response============")
-                println(response)
-                println("========JSON===========")
-                println(JSON)
-                println("========error===========")
-                println(error)
-                println("=====================")
-                
-                
                 var messageArray = JSON!["error_message"] as! Array<AnyObject>
-                
                 if messageArray.isEmpty {
                     
                     returnParams["error_message"] = []
@@ -49,15 +36,12 @@ class SessionUser: NSObject {
                     let currentUser = CurrentUser.sharedInstance
                     currentUser.authToken = JSON!["auth_token"]
                     currentUser.name = JSON!["name"] as! String
-                    currentUser.saveAuthToken()
+                    currentUser.saveCurrentUserInUserDefault()
     
-                    
                 } else {
                     var messages = messageArray[0] as! Array<AnyObject>
                     returnParams["error_message"] = messages
-                    
                 }
-                println(returnParams)
                 callBackClosure(returnParams)
         }
     }
@@ -76,16 +60,6 @@ class SessionUser: NSObject {
         Alamofire.request(.POST, "http://localhost:3001/api/sessions", parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 
-                println("====ログイン=====request=============")
-                println(request)
-                println("====ログイン=====response============")
-                println(response)
-                println("====ログイン=====JSON===========")
-                println(JSON)
-                println("====ログイン=====error===========")
-                println(error)
-                println("====ログイン================")
-                
                 var messageArray = JSON!["error_message"] as! Array<AnyObject>
                 
                 if messageArray.isEmpty {
@@ -93,12 +67,11 @@ class SessionUser: NSObject {
                     let currentUser = CurrentUser.sharedInstance
                     currentUser.authToken = JSON!["auth_token"]
                     currentUser.name = JSON!["name"] as! String
-                    currentUser.saveAuthToken()
+                    currentUser.saveCurrentUserInUserDefault()
                     
                 } else {
                     returnParams["error_message"] = messageArray
                 }
-                
                 callBackClosure(returnParams)
         }
     }

@@ -10,6 +10,8 @@ import UIKit
 
 class MyPageTableViewController: UITableViewController {
 
+    var currentUser = CurrentUser.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,10 @@ class MyPageTableViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        currentUser = CurrentUser.fetchCurrentUserInUserDefaults()
+        tableView.reloadData()
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "showActionSheet")
         
     }
@@ -52,6 +58,8 @@ class MyPageTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ProfileTableViewCell", forIndexPath: indexPath) as! ProfileTableViewCell
+            cell.iconImageView.image = currentUser.image
+            cell.nameLabel.text = currentUser.name
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell", forIndexPath: indexPath) as! TweetTableViewCell
@@ -61,16 +69,18 @@ class MyPageTableViewController: UITableViewController {
     
     func showActionSheet() {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let editProfileAction = UIAlertAction(title: "Edit Profile", style: UIAlertActionStyle.Default) { (action) -> Void in
+            self.performSegueWithIdentifier("modalEditProfile", sender: nil)
+        }
         let signoutAction = UIAlertAction(title: "Log Out", style: UIAlertActionStyle.Default) { (action) -> Void in
-            
             CurrentUser.sharedInstance.removeAuthToken()
             let tabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("LogInTabBarController") as! UITabBarController
             UIApplication.sharedApplication().keyWindow?.rootViewController = tabBarController
-            
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         actionSheet.addAction(signoutAction)
         actionSheet.addAction(cancelAction)
+        actionSheet.addAction(editProfileAction)
         presentViewController(actionSheet, animated: true, completion: nil)
     }
     
