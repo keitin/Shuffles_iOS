@@ -22,7 +22,7 @@ set :output, {:error => 'log/error.log', :standard => 'log/cron.log'}
 set :environment, :development
 
 every 1.minutes do
-  runner "Tweet.hello"
+  runner "Group.all_group_user_shuffle"
 end
 
 

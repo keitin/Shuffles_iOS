@@ -23,6 +23,13 @@ class Api::UsersController < ApplicationController
     @user = User.by_auth_token(auth_token_params[:auth_token])
   end
 
+  def fetch_current_fake_user_in_group
+    user = User.by_auth_token(auth_token_params[:auth_token])
+    group = Group.search_group(group_params)
+    @curret_fake_user = Fake.fetch_fake_user(user, group)
+    @is_checked = Fake.is_checked?(user, group)
+  end
+
   private
   def create_params
     params.permit(:name, :email, :password, :password_confirmation, :avatar)
@@ -34,6 +41,10 @@ class Api::UsersController < ApplicationController
 
   def auth_token_params
     params.permit(:auth_token)
+  end
+
+  def group_params
+    params.permit(:name, :password)
   end
 
 end

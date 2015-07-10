@@ -14,6 +14,7 @@ class TimeLineTableViewController: UITableViewController {
     var currentGroup: Group!
     let currentUser = CurrentUser.sharedInstance
     var flag: Bool = true
+    var curretFakeUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class TimeLineTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         
         let myBarButton_3 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Pause, target: self, action: "changeFakeUser")
         let myBarButton_2 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Play, target: self, action: "modalFakeUsersTableViewController")
@@ -44,8 +46,8 @@ class TimeLineTableViewController: UITableViewController {
         //ツイートをdbからフェッチ
         StockTweets.fetchTweets(currentGroup, callBack: callBack)
         
-        let informationView = InformationView(frame: self.view.bounds)
-        self.tabBarController?.view.addSubview(informationView)
+        //フェイクユーザを取得しポップアップを表示
+        fetchCurrentUserInGroup()
         
     }
 
@@ -79,11 +81,29 @@ class TimeLineTableViewController: UITableViewController {
         } else {
             cell.nameLabel.text = tweet.user.fakeUser?.name
             cell.iconImageView.image = tweet.user.fakeUser?.image!
-            println("ffffffffffffffffffffff")
             println(tweet.user.fakeUser?.image!)
         }
         cell.timeLabel.text = tweet.time
         return cell
+    }
+    
+    
+    func fetchCurrentUserInGroup() {
+        
+        let callback = { (fakeUser: User, isChecked: Bool) -> Void in
+            
+            if !isChecked {
+                let informationView = InformationView(frame: self.view.frame)
+                informationView.fakeUser = fakeUser
+                informationView.group = self.currentGroup
+                informationView.setUpInfoView()
+                println(informationView.frame)
+                self.tabBarController?.view.addSubview(informationView)
+            }
+        }
+        
+        curretFakeUser = currentUser.fetchCurrentUserInGroup(currentGroup, callback: callback)
+        
     }
 
 

@@ -22,7 +22,6 @@ class CurrentUser: User {
             let imagePass = currentUserImage.convertToString()
             defaults.setObject("avatar", forKey: imagePass)
         }
-        println(defaults.objectForKey("avatar"))
         defaults.synchronize()
     }
     
@@ -71,7 +70,7 @@ class CurrentUser: User {
 
         let pass = "http://localhost:3001/api/users/update"
         let httpMethod = Alamofire.Method.PUT.rawValue
-        println(user.image)
+
         if user.image == nil {
             Alamofire.request(.PUT, pass, parameters: params, encoding: .URL)
                 .responseJSON { (request, response, JSON, error) in
@@ -115,6 +114,58 @@ class CurrentUser: User {
 
         }
         
+    }
+    
+    
+    func fetchCurrentUserInGroup(group: Group, callback: (fakeUser: User, isCheked: Bool) -> Void) -> User! {
+        
+        var params: [String: AnyObject!] = [
+            "auth_token": self.authToken,
+            "name": group.name,
+            "password": group.password
+        ]
+        
+        Alamofire.request(.GET, "http://localhost:3001/api/users/group/curret_user", parameters: params, encoding: .URL)
+            .responseJSON { (request, response, JSON, error) in
+                println("aaaaaaaaaaaaaaaaaaaaaaaaaaa")
+                println(JSON)
+                let fakeUser = User()
+                var isCheked: Bool!
+                if error == nil {
+                    let fakeUserName = JSON!["fake_user_name"] as! String
+                    let imageString = JSON!["fake_user_avatar"] as! String
+                    let image = UIImage.convertToUIImageFromImagePass(imageString)
+
+                    fakeUser.name = fakeUserName
+                    fakeUser.image = image
+                    
+                    isCheked = JSON!["is_checked"] as! Bool
+                    println("bbbbbbbbbbbbbbb")
+                    println(isCheked)
+                }
+
+                callback(fakeUser: fakeUser, isCheked: isCheked)
+        }
+        
+        return fakeUser
+    }
+    
+    
+    
+    func checkedFakeUser(group: Group, callback: () -> Void) {
+        
+        var params: [String: AnyObject!] = [
+            "auth_token": self.authToken,
+            "name": group.name,
+            "password": group.password
+        ]
+        
+        Alamofire.request(.PUT, "http://localhost:3001/api/fakes/checked", parameters: params, encoding: .URL)
+            .responseJSON { (request, response, JSON, error) in
+                
+        }
+        
+        callback()
     }
     
 

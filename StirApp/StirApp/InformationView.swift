@@ -11,17 +11,23 @@ import UIKit
 class InformationView: UIView {
 
     let infoView = UIView()
+    var fakeUser = User()
+    var group: Group!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
     
+    }
+    
+    func setUpInfoView() {
         setInfoView()
         setTodayLabel()
         setFakeUserImageView()
         setFakeUserNameLabel()
         setOKButton()
     }
+    
 
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -49,7 +55,7 @@ class InformationView: UIView {
         let fakeUserImageView = UIImageView()
         fakeUserImageView.frame.size = CGSize(width: 100, height: 100)
         fakeUserImageView.center = CGPoint(x: infoView.center.x, y: infoView.center.y - 25)
-        fakeUserImageView.image = UIImage(named: "hinako4")
+        fakeUserImageView.image = fakeUser.image
         fakeUserImageView.layer.cornerRadius = fakeUserImageView.frame.width / 2
         fakeUserImageView.layer.masksToBounds = true
         self.addSubview(fakeUserImageView)
@@ -57,7 +63,7 @@ class InformationView: UIView {
     
     func setFakeUserNameLabel() {
         let fakeUserNameLabel = UILabel()
-        fakeUserNameLabel.text = "松下 慶大"
+        fakeUserNameLabel.text = fakeUser.name
         fakeUserNameLabel.font = UIFont(name: "HirakakuProN-W6", size: 17)
         fakeUserNameLabel.sizeToFit()
         fakeUserNameLabel.center = CGPoint(x: infoView.center.x, y: infoView.center.y + 50)
@@ -77,8 +83,14 @@ class InformationView: UIView {
         self.addSubview(OKButton)
     }
     
+    
     func tapOK(sender: UIButton) {
-        self.removeFromSuperview()
+        let callback = { () -> Void in
+            self.removeFromSuperview()
+        }
+        let currentUser = CurrentUser.sharedInstance
+        currentUser.checkedFakeUser(group, callback: callback)
+        
     }
     
 }

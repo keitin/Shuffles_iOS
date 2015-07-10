@@ -17,10 +17,12 @@ class Group < ActiveRecord::Base
 
 
   def self.all_group_user_shuffle
+    p "++++++++++++++++++++++++++"
     groups = Group.all
     groups.each do |group|
       group.shuffle_users
     end
+    Fake.update_all(is_checked: false)
   end
 
 
