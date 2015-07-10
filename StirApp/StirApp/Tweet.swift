@@ -12,5 +12,6 @@ class Tweet: NSObject {
 
     var text: String!
     var user: User!
+    var time: String!
     
 }

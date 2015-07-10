@@ -59,7 +59,11 @@ class StockTweets: NSObject {
                         let image = UIImage.convertToUIImageFromImagePass(imageURL)
                         user.image = image
                     }
-
+                    
+                    let time = tweet["time"] as! String
+                    println("++++++++++++++++++++")
+                    NSDate.convertToNSDate(time)
+                    println("++++++++++++++++++++")
                     user.fakeUser = fakeUser
                     myTweet.user = user
                     StockTweets.sharedInstance.tweets.insert(myTweet, atIndex: 0)

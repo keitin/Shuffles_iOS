@@ -49,6 +49,7 @@
 		32E91B7A1B3139910089DD59 /* hinako4.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E91B791B3139910089DD59 /* hinako4.png */; };
 		32E91B7C1B31A5CA0089DD59 /* SearchGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B7B1B31A5CA0089DD59 /* SearchGroupViewController.swift */; };
 		32EB31891B4F9AA7006E07A0 /* omoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 32EB31881B4F9AA7006E07A0 /* omoto.png */; };
+		32EB318B1B4FAADD006E07A0 /* Extension+NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB318A1B4FAADD006E07A0 /* Extension+NSDate.swift */; };
 		D05E8CF620DD2BE7452F169B /* Pods_StirApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		32E91B791B3139910089DD59 /* hinako4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hinako4.png; sourceTree = "<group>"; };
 		32E91B7B1B31A5CA0089DD59 /* SearchGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchGroupViewController.swift; sourceTree = "<group>"; };
 		32EB31881B4F9AA7006E07A0 /* omoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = omoto.png; sourceTree = "<group>"; };
+		32EB318A1B4FAADD006E07A0 /* Extension+NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+NSDate.swift"; sourceTree = "<group>"; };
 		34ADCD9A7BFFCC032C59AF27 /* Pods-StirApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StirApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-StirApp/Pods-StirApp.release.xcconfig"; sourceTree = "<group>"; };
 		59C826AD3A8568805A274FB0 /* Pods-StirApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StirApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StirApp/Pods-StirApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StirApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +276,7 @@
 				3244BBDD1B4B895500FBB5CF /* Extension+UIColor.swift */,
 				3237AD2B1B4D839D00FA68D1 /* Extension+NSData.swift */,
 				3237AD2D1B4E47D600FA68D1 /* Extension+UIImage.swift */,
+				32EB318A1B4FAADD006E07A0 /* Extension+NSDate.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				323CC7051B2B529000E93780 /* StockTweets.swift in Sources */,
 				323CC6F51B2AEA5E00E93780 /* NewTweetViewController.swift in Sources */,
 				320D7F731B41186100A9C426 /* FakeUsersListTableViewController.swift in Sources */,
+				32EB318B1B4FAADD006E07A0 /* Extension+NSDate.swift in Sources */,
 				323CC6FB1B2B176F00E93780 /* MyPageTableViewController.swift in Sources */,
 				3215EC8D1B2C6A9000964F6C /* SessionUser.swift in Sources */,
 				3244BBDC1B4B72BC00FBB5CF /* InformationView.swift in Sources */,
