@@ -25,6 +25,13 @@ class MyPageTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        let callBack = { () -> Void in
+            self.currentUser = CurrentUser.sharedInstance
+            self.tableView.reloadData()
+        }
+        
+        currentUser.fetchCurrentUser(callBack)
+        
         currentUser = CurrentUser.fetchCurrentUserInUserDefaults()
         tableView.reloadData()
         

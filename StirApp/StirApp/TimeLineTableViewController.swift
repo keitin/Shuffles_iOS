@@ -77,6 +77,7 @@ class TimeLineTableViewController: UITableViewController {
         cell.tweetLabel?.text = tweet.text
         if flag {
             cell.nameLabel.text = tweet.user.name
+            cell.iconImageView.image = tweet.user.image
         } else {
             cell.nameLabel.text = tweet.user.fakeUser?.name
             println(tweet.user.fakeUser)

@@ -47,6 +47,12 @@ class StockTweets: NSObject {
                     var fakeUser = User()
                     fakeUser.name = tweet["fake_user_name"] as! String
                     
+                    let urlKey = tweet["avatar"] as! Dictionary<String, AnyObject>
+                    if let imageURL = urlKey["url"] as? String {
+                        let image = UIImage.convertToUIImageFromImagePass(imageURL)
+                        user.image = image
+                    }
+
                     user.fakeUser = fakeUser
                     myTweet.user = user
                     StockTweets.sharedInstance.tweets.insert(myTweet, atIndex: 0)

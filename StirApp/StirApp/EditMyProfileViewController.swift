@@ -14,7 +14,7 @@ class EditMyProfileViewController: UIViewController, UIImagePickerControllerDele
     
     let photoPicker = UIImagePickerController()
     let currentUser = CurrentUser.sharedInstance
-    var currentImage = UIImage()
+    var currentImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()

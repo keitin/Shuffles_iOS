@@ -20,10 +20,18 @@ extension UIImage {
     class func convertToUIImage(imageString: String) -> UIImage! {
         let decodedData = NSData(base64EncodedString: imageString, options: NSDataBase64DecodingOptions(rawValue: 0))
         var decodeImage = UIImage(data: decodedData!)
-        println("@@@@@@@@@@@@@@@@@@@")
-        println(decodeImage)
-        println("@@@@@@@@@@@@@@@@@@@")
         return decodeImage
     }
+    
+    class func convertToUIImageFromImagePass(imagePath: String) -> UIImage! {
+        let imageLink = "http://localhost:3001" + imagePath
+        let url = NSURL(string: imageLink)
+        let imageData = NSData(contentsOfURL: url!)
+        let image = UIImage(data: imageData!)
+        return image
+    }
+    
+    
+    
     
 }

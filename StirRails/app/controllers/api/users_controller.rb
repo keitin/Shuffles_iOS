@@ -19,6 +19,10 @@ class Api::UsersController < ApplicationController
     @user = User.by_auth_token(auth_token_params[:auth_token])
   end
 
+  def fetch_user
+    @user = User.by_auth_token(auth_token_params[:auth_token])
+  end
+
   private
   def create_params
     params.permit(:name, :email, :password, :password_confirmation)
