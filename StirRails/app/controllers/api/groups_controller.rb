@@ -8,6 +8,7 @@ class Api::GroupsController < ApplicationController
   def create
     group = Group.create(create_params)
     user = User.by_auth_token(auth_token_params[:auth_token])
+    Fake.create(user_id: user.id, fake_user_id: user.id, group_id: group.id)
     GroupsUser.create(group_id: group.id, user_id: user.id)
   end
 
@@ -18,6 +19,7 @@ class Api::GroupsController < ApplicationController
   def add_group
     user = User.by_auth_token(auth_token_params[:auth_token])
     group = Group.search_group(search_params)
+    Fake.create(user_id: user.id, fake_user_id: user.id, group_id: group.id)
     GroupsUser.create(group_id: group.id, user_id: user.id)
   end
 
