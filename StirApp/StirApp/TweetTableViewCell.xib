@@ -17,14 +17,14 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hinako2.png" translatesAutoresizingMaskIntoConstraints="NO" id="RAb-US-2Zt">
                         <rect key="frame" x="8" y="8" width="60" height="60"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="INs-xa-Xso"/>
-                            <constraint firstAttribute="width" constant="60" id="qOZ-mO-pQF"/>
+                            <constraint firstAttribute="height" constant="60" id="8Q8-dz-fke"/>
+                            <constraint firstAttribute="width" constant="60" id="qfU-h6-s91"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3分前" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="542-gs-LYl">
-                        <rect key="frame" x="254" y="8" width="95" height="21"/>
+                        <rect key="frame" x="232" y="8" width="117" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="Y75-p9-QHH"/>
+                            <constraint firstAttribute="height" constant="21" id="uUR-Z7-7GZ"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -39,8 +39,7 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nR-Gd-m8F">
                         <rect key="frame" x="76" y="96" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="FL9-eS-aqL"/>
-                            <constraint firstAttribute="width" constant="20" id="SFi-aR-bOi"/>
+                            <constraint firstAttribute="height" constant="20" id="Dv2-ZW-kvH"/>
                         </constraints>
                         <state key="normal" title="☆">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,10 +47,10 @@
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="佐野 ひなこ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tn-ut-vvd">
-                        <rect key="frame" x="76" y="8" width="170" height="21"/>
+                        <rect key="frame" x="76" y="8" width="148" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="AVX-Op-lB3"/>
-                            <constraint firstAttribute="width" constant="170" id="ifY-7M-AKd"/>
+                            <constraint firstAttribute="height" constant="21" id="GmT-Kf-2TD"/>
+                            <constraint firstAttribute="width" constant="148" id="YSq-cj-tAP"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -59,19 +58,21 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ptH-b4-T65" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="1vO-EH-qkQ"/>
-                    <constraint firstItem="ptH-b4-T65" firstAttribute="top" secondItem="9Tn-ut-vvd" secondAttribute="bottom" constant="4" id="9Cb-SJ-B6m"/>
-                    <constraint firstItem="542-gs-LYl" firstAttribute="leading" secondItem="9Tn-ut-vvd" secondAttribute="trailing" constant="8" id="IE4-Tk-cIo"/>
-                    <constraint firstItem="ptH-b4-T65" firstAttribute="leading" secondItem="RAb-US-2Zt" secondAttribute="trailing" constant="8" id="Yij-ts-5eK"/>
-                    <constraint firstItem="RAb-US-2Zt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="aq6-UD-2mB"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="0nR-Gd-m8F" secondAttribute="bottom" constant="-5" id="bBL-Q6-tYW"/>
-                    <constraint firstItem="RAb-US-2Zt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="gaa-Ve-Rve"/>
-                    <constraint firstItem="542-gs-LYl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="muc-io-Hi2"/>
-                    <constraint firstItem="0nR-Gd-m8F" firstAttribute="top" secondItem="ptH-b4-T65" secondAttribute="bottom" constant="4" id="oEL-Fc-Dd1"/>
-                    <constraint firstItem="0nR-Gd-m8F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="68" id="ou6-cC-cw8"/>
-                    <constraint firstItem="9Tn-ut-vvd" firstAttribute="leading" secondItem="RAb-US-2Zt" secondAttribute="trailing" constant="8" id="sDa-mz-Fva"/>
-                    <constraint firstItem="9Tn-ut-vvd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="tcp-HD-vAg"/>
-                    <constraint firstItem="542-gs-LYl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="znE-PD-ixk"/>
+                    <constraint firstItem="0nR-Gd-m8F" firstAttribute="top" secondItem="ptH-b4-T65" secondAttribute="bottom" constant="4" id="5bv-zr-CyG"/>
+                    <constraint firstItem="RAb-US-2Zt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ABo-RO-aMF"/>
+                    <constraint firstItem="ptH-b4-T65" firstAttribute="top" secondItem="9Tn-ut-vvd" secondAttribute="bottom" constant="4" id="DBA-VW-S9a"/>
+                    <constraint firstItem="9Tn-ut-vvd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="IpM-5G-yGG"/>
+                    <constraint firstItem="9Tn-ut-vvd" firstAttribute="leading" secondItem="RAb-US-2Zt" secondAttribute="trailing" constant="8" id="Nb5-Ja-Qzj"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="0nR-Gd-m8F" secondAttribute="bottom" constant="-5" id="QtI-QM-nW7"/>
+                    <constraint firstItem="0nR-Gd-m8F" firstAttribute="top" secondItem="ptH-b4-T65" secondAttribute="bottom" constant="4" id="R35-MU-ZKm"/>
+                    <constraint firstItem="542-gs-LYl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="T06-gh-kBN"/>
+                    <constraint firstItem="0nR-Gd-m8F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="68" id="WBz-fT-jUt"/>
+                    <constraint firstItem="RAb-US-2Zt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="bVf-Q5-VDG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0nR-Gd-m8F" secondAttribute="trailing" constant="253" id="eDj-5x-0bf"/>
+                    <constraint firstItem="ptH-b4-T65" firstAttribute="leading" secondItem="RAb-US-2Zt" secondAttribute="trailing" constant="8" id="myf-sF-hay"/>
+                    <constraint firstItem="ptH-b4-T65" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="nN7-oc-A43"/>
+                    <constraint firstItem="542-gs-LYl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="oyL-Ch-H02"/>
+                    <constraint firstItem="542-gs-LYl" firstAttribute="leading" secondItem="9Tn-ut-vvd" secondAttribute="trailing" constant="8" id="v98-hZ-EFg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
