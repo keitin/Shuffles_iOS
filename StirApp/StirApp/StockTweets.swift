@@ -47,8 +47,7 @@ class StockTweets: NSObject {
                     var fakeUser = User()
                     fakeUser.name = tweet["fake_user_name"] as! String
                     
-                    let urlKey = tweet["avatar"] as! Dictionary<String, AnyObject>
-                    if let imageURL = urlKey["url"] as? String {
+                    if let imageURL = tweet["avatar"] as? String {
                         let image = UIImage.convertToUIImageFromImagePass(imageURL)
                         user.image = image
                     }

@@ -22,10 +22,13 @@ class SessionUser: NSObject {
         ]
         
         var returnParams: Dictionary<String, AnyObject> = [:]
-        
-        Alamofire.request(.POST, "http://localhost:3001/api/users",parameters: params, encoding: .URL)
+        let image = UIImage(named: "omoto")
+        let httpMethod = Alamofire.Method.POST.rawValue
+        let pass = "http://localhost:3001/api/users"
+        let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: pass, parameters: params, image: image!)
+        Alamofire.upload(urlRequest.0, urlRequest.1)
             .responseJSON { (request, response, JSON, error) in
-                
+        
                 var messageArray = JSON!["error_message"] as! Array<AnyObject>
                 if messageArray.isEmpty {
                     

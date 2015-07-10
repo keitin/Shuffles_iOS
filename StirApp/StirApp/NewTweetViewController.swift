@@ -16,7 +16,7 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
     
     let placeholderLabel = UILabel()
     let tweet = Tweet()
-    let currentUser = CurrentUser.sharedInstance
+    var currentUser = CurrentUser.sharedInstance
     
     var currentGroup: Group!
     
@@ -27,12 +27,21 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
         tweetTextView.delegate = self
         
         nameLabel.text = currentUser.name
+        iconImageView.image = currentUser.image
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let callBack = { () -> Void in
+            self.currentUser = CurrentUser.sharedInstance
+            self.iconImageView.image = self.currentUser.image
+        }
+        currentUser.fetchCurrentUser(callBack)
+        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "×", style: UIBarButtonItemStyle.Plain, target: self, action: "backToTimeLineViewController")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "sendTweet")
+        
         //Registing Notification Center
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "willShowKeyBoard:", name: UIKeyboardWillShowNotification, object: nil)
@@ -51,6 +60,7 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
         
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.removeObserver("willShowKeyBoard")
+
     }
     
     

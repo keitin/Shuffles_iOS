@@ -39,8 +39,6 @@ class TimeLineTableViewController: UITableViewController {
         let callBack = { () -> Void in
             self.tweets = StockTweets.sharedInstance.tweets
             self.tableView.reloadData()
-            println("gggggggggggggggggggggggg")
-            println(self.tweets)
         }
         
         //ツイートをdbからフェッチ
