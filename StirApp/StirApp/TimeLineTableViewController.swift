@@ -82,6 +82,7 @@ class TimeLineTableViewController: UITableViewController {
             println("ffffffffffffffffffffff")
             println(tweet.user.fakeUser?.image!)
         }
+        cell.timeLabel.text = tweet.time
         return cell
     }
 

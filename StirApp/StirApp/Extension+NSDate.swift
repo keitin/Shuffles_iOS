@@ -37,12 +37,12 @@ extension NSDate {
             
             // 44 mins, 30 secs ..< 89 mins, 30 secs                                     # => about 1 hour
         case (44 * MINUTE_IN_SECONDS + 30)..<(89 * MINUTE_IN_SECONDS + 30):
-            timeAgo = "about 1 hour"
+            timeAgo = "1 hour"
             
             // 89 mins, 30 secs ..< 23 hrs, 59 mins, 30 secs                             # => about [2..24] hours
         case (89 * MINUTE_IN_SECONDS + 30)..<(23 * HOUR_IN_SECONDS + 59 * MINUTE_IN_SECONDS + 30):
             let hours = Int(round(deltaSeconds / HOUR_IN_SECONDS))
-            timeAgo = "about \(hours) hours"
+            timeAgo = "\(hours) hours"
             
             // 23 hrs, 59 mins, 30 secs ..< 41 hrs, 59 mins, 30 secs                     # => 1 day
         case (23 * HOUR_IN_SECONDS + 59 * MINUTE_IN_SECONDS + 30)..<(41 * HOUR_IN_SECONDS + 59 * MINUTE_IN_SECONDS + 30):
@@ -55,20 +55,20 @@ extension NSDate {
             
             // 29 days, 23 hrs, 59 mins, 30 secs ..< 44 days, 23 hrs, 59 mins, 30 secs   # => about 1 month
         case (29 * DAY_IN_SECONDS + 23 * HOUR_IN_SECONDS + 59 * MINUTE_IN_SECONDS + 30)..<(44 * DAY_IN_SECONDS + 23 * HOUR_IN_SECONDS + 59 * MINUTE_IN_SECONDS + 30):
-            timeAgo = "about 1 month"
+            timeAgo = "1 month"
             
             // 44 days, 23 hrs, 59 mins, 30 secs ..< 59 days, 23 hrs, 59 mins, 30 secs   # => about 2 months
         case (44 * DAY_IN_SECONDS + 23 * HOUR_IN_SECONDS + 59 * MINUTE_IN_SECONDS + 30)..<(59 * DAY_IN_SECONDS + 23 * HOUR_IN_SECONDS + 59 * MINUTE_IN_SECONDS + 30):
-            timeAgo = "about 2 months"
+            timeAgo = "2 months"
             
             // 59 days, 23 hrs, 59 mins, 30 secs ..< 1 yr                                # => [2..12] months
         case (59 * DAY_IN_SECONDS + 23 * HOUR_IN_SECONDS + 59 * MINUTE_IN_SECONDS + 30)..<(1 * YEAR_IN_SECONDS):
             let months = Int(round(deltaSeconds / MONTH_IN_SECONDS))
-            timeAgo = "about \(months) months"
+            timeAgo = "\(months) months"
             
             // 1 yr ..< 1 yr, 3 months                                                   # => about 1 year
         case (1 * YEAR_IN_SECONDS)..<(1 * YEAR_IN_SECONDS + 3 * MONTH_IN_SECONDS):
-            timeAgo = "about 1 year"
+            timeAgo = "1 year"
             
             // 1 yr, 3 months ..< 1 yr, 9 months                                         # => over 1 year
         case (1 * YEAR_IN_SECONDS + 3 * MONTH_IN_SECONDS)..<(1 * YEAR_IN_SECONDS + 9 * MONTH_IN_SECONDS):
@@ -92,16 +92,15 @@ extension NSDate {
     }
     
     
-    class func convertToNSDate(timeString: String) {
+    class func convertToNSDate(timeString: String) -> NSDate {
         let str = timeString.stringByReplacingOccurrencesOfString("T", withString: " ", options: nil, range: nil)
-        let str2 = str.stringByReplacingOccurrencesOfString(".000Z", withString: "", options: nil, range: nil)
-        println("SSSSSSSSSSSSSSSSSSS")
+        let str2 = str.stringByReplacingOccurrencesOfString(".000Z", withString: "", options: nil, range: nil) + " +0000"
         println(str2)
-        println("SSSSSSSSSSSSSSSSSSS")
-        
-        
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzz"
+        let date: NSDate! = dateFormatter.dateFromString(str2)
+        return date
     }
     
     
