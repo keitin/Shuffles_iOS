@@ -94,9 +94,14 @@ extension NSDate {
     
     class func convertToNSDate(timeString: String) {
         let str = timeString.stringByReplacingOccurrencesOfString("T", withString: " ", options: nil, range: nil)
+        let str2 = str.stringByReplacingOccurrencesOfString(".000Z", withString: "", options: nil, range: nil)
         println("SSSSSSSSSSSSSSSSSSS")
-        println(str)
+        println(str2)
         println("SSSSSSSSSSSSSSSSSSS")
+        
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     }
     
     
