@@ -673,35 +673,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="グループのパスワード" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvy-5V-glJ">
-                                <rect key="frame" x="16" y="58" width="343" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvy-5V-glJ">
+                                <rect key="frame" x="16" y="67" width="359" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1iK-E6-GqR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeL-kX-Wer">
-                                <rect key="frame" x="16" y="112" width="343" height="30"/>
-                                <color key="backgroundColor" red="0.95686274510000002" green="0.40784313729999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
-                                <state key="normal" title="検索">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeL-kX-Wer">
+                                <rect key="frame" x="16" y="124" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.74901960779999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KUa-MU-VbD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
+                                <state key="normal" title="Search Group">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="tapSearchGroupBtn:" destination="L9u-u2-jFy" eventType="touchUpInside" id="RXL-2Z-b3p"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="グループ名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kUZ-rK-pws">
-                                <rect key="frame" x="16" y="21" width="343" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nag-Ib-RBX">
+                                <rect key="frame" x="16" y="58" width="359" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="fcR-bB-8Gb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKb-7c-eIO">
+                                <rect key="frame" x="16" y="105" width="359" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="cDM-Ic-y4p"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kUZ-rK-pws">
+                                <rect key="frame" x="16" y="20" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6EF-sO-2hR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MeL-kX-Wer" firstAttribute="trailing" secondItem="CZJ-S3-Qsa" secondAttribute="trailingMargin" id="2IP-WK-7zR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nag-Ib-RBX" secondAttribute="trailing" constant="-16" id="6Vx-vO-HUe"/>
+                            <constraint firstItem="Nag-Ib-RBX" firstAttribute="leading" secondItem="CZJ-S3-Qsa" secondAttribute="leadingMargin" id="CTN-Cf-ZMk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cKb-7c-eIO" secondAttribute="trailing" constant="-16" id="CcZ-Mg-CHd"/>
+                            <constraint firstItem="Nag-Ib-RBX" firstAttribute="top" secondItem="kUZ-rK-pws" secondAttribute="bottom" constant="8" id="E3W-X6-RY4"/>
+                            <constraint firstItem="MeL-kX-Wer" firstAttribute="top" secondItem="cKb-7c-eIO" secondAttribute="bottom" constant="18" id="Gcx-MR-vEp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pvy-5V-glJ" secondAttribute="trailing" constant="-16" id="RGb-bl-2CE"/>
+                            <constraint firstItem="kUZ-rK-pws" firstAttribute="top" secondItem="feh-eI-xHE" secondAttribute="bottom" constant="20" id="XwG-Wj-dg2"/>
+                            <constraint firstItem="cKb-7c-eIO" firstAttribute="top" secondItem="pvy-5V-glJ" secondAttribute="bottom" constant="8" id="g3O-b0-Niy"/>
+                            <constraint firstItem="MeL-kX-Wer" firstAttribute="leading" secondItem="CZJ-S3-Qsa" secondAttribute="leadingMargin" id="gr9-ce-5c2"/>
+                            <constraint firstItem="pvy-5V-glJ" firstAttribute="leading" secondItem="CZJ-S3-Qsa" secondAttribute="leadingMargin" id="l32-pK-oq3"/>
+                            <constraint firstItem="kUZ-rK-pws" firstAttribute="leading" secondItem="CZJ-S3-Qsa" secondAttribute="leadingMargin" id="mef-Kk-2or"/>
+                            <constraint firstItem="pvy-5V-glJ" firstAttribute="top" secondItem="Nag-Ib-RBX" secondAttribute="bottom" constant="8" id="sdj-xq-ZIh"/>
+                            <constraint firstItem="kUZ-rK-pws" firstAttribute="trailing" secondItem="CZJ-S3-Qsa" secondAttribute="trailingMargin" id="vg8-2d-tCU"/>
+                            <constraint firstItem="cKb-7c-eIO" firstAttribute="leading" secondItem="CZJ-S3-Qsa" secondAttribute="leadingMargin" id="xVT-4t-5RT"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="groupNameTextField" destination="kUZ-rK-pws" id="Dof-hf-RDF"/>
                         <outlet property="groupPassTextField" destination="pvy-5V-glJ" id="Miu-5h-YpO"/>
+                        <outlet property="searchButton" destination="MeL-kX-Wer" id="rVQ-5q-xEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPd-6J-3bi" userLabel="First Responder" sceneMemberID="firstResponder"/>

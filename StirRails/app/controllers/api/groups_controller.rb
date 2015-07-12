@@ -19,8 +19,12 @@ class Api::GroupsController < ApplicationController
   def add_group
     user = User.by_auth_token(auth_token_params[:auth_token])
     group = Group.search_group(search_params)
-    Fake.create(user_id: user.id, fake_user_id: user.id, group_id: group.id)
-    GroupsUser.create(group_id: group.id, user_id: user.id)
+    if GroupsUser.already_exist?(group, user)
+      @error_message = "You aleady join this group"
+    else
+      Fake.create(user_id: user.id, fake_user_id: user.id, group_id: group.id)
+      GroupsUser.create(group_id: group.id, user_id: user.id)
+    end
   end
 
   def fetch_fake_users
@@ -36,7 +40,7 @@ class Api::GroupsController < ApplicationController
 
   private
   def create_params
-    params.permit(:avatar, :name, :password).merge(last_message: "まだ投稿はありません")
+    params.permit(:avatar, :name, :password).merge(last_message: "no comment")
   end
 
   def auth_token_params

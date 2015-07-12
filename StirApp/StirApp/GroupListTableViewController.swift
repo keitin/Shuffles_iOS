@@ -25,7 +25,7 @@ class GroupListTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "modalNewGroupViewController")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: UIBarButtonItemStyle.Plain, target: self, action: "modalNewGroupViewController")
         
         //HTTP
         var callback = {() -> Void in

@@ -84,31 +84,37 @@ class StockGroup: NSObject {
     }
     
     
-    class func searchGroup(group: Group, callback: (Dictionary<String, AnyObject>) -> Void) {
+    class func searchGroup(group: Group, callback: (group: Group?) -> Void) {
         
         var params: [String: AnyObject] = [
             "name": group.name,
             "password": group.password
         ]
         
-        var returnParams: Dictionary<String, AnyObject> = [:]
         
         Alamofire.request(.GET, "http://localhost:3001/api/groups/search",parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 
+                var group: Group?
+                
                 if error == nil {
-                    println(JSON!["group_name"])
-                    returnParams["groupName"] = JSON?["group_name"] as! String
-                    returnParams["groupPass"] = JSON?["group_pass"] as! String
+                    println("AAAAAAAAAAAAAAAAAA")
+                    println(JSON)
+                    group = Group()
+                    group!.name = JSON!["group_name"] as! String
+                    group!.password = JSON!["group_pass"] as! String
+                    let imageString = JSON!["group_image"] as! String
+                    let image = UIImage.convertToUIImageFromImagePass(imageString)
+                    group!.image = image
                 }
                 
-                callback(returnParams)
+                callback(group: group)
         }
         
     }
 
     
-    class func addGroup(group: Group, callback: () -> Void) {
+    class func addGroup(group: Group, callback: (errorMessage: String) -> Void) {
         
         let defaults = NSUserDefaults.standardUserDefaults()
         let auth_token = defaults.objectForKey("authToken") as! String
@@ -122,7 +128,13 @@ class StockGroup: NSObject {
         Alamofire.request(.GET, "http://localhost:3001/api/groups/add_group",parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 
-            callback()
+                var errorMessage = ""
+                
+                if let error = JSON!["error"] as? String {
+                    errorMessage = error
+                }
+                
+                callback(errorMessage: errorMessage)
         }
     }
     
