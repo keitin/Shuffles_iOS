@@ -22,8 +22,16 @@ class TimeLineTableViewController: UITableViewController {
         //セルの登録
         self.tableView.registerNib(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "TweetTableViewCell")
         
+        //セルの高さを可変
         self.tableView.estimatedRowHeight = 90
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        //下に引っ張ってリロード
+        var refresh = UIRefreshControl()
+        refresh.attributedTitle = NSAttributedString(string: "Loading...")
+        refresh.addTarget(self, action: "reloadTimeLine", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refresh
+        
 
     }
     
@@ -105,6 +113,20 @@ class TimeLineTableViewController: UITableViewController {
         
     }
 
+
+    func reloadTimeLine() {
+        let callBack = { () -> Void in
+            self.tweets = StockTweets.sharedInstance.tweets
+            self.refreshControl?.endRefreshing()
+            self.tableView.reloadData()
+        }
+        
+        //ツイートをdbからフェッチ
+        StockTweets.fetchTweets(currentGroup, callBack: callBack)
+        
+        //フェイクユーザを取得しポップアップを表示
+        fetchCurrentUserInGroup()
+    }
 
     /*
     // Override to support conditional editing of the table view.
