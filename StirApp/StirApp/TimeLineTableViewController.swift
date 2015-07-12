@@ -37,7 +37,6 @@ class TimeLineTableViewController: UITableViewController {
         let myRightButtons: NSArray = [myBarButton_1, myBarButton_2, myBarButton_3]
         self.navigationItem.setRightBarButtonItems(myRightButtons as [AnyObject], animated: true)
         
-        
         let callBack = { () -> Void in
             self.tweets = StockTweets.sharedInstance.tweets
             self.tableView.reloadData()

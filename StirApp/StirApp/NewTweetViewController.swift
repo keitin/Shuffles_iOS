@@ -39,8 +39,9 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
         }
         currentUser.fetchCurrentUser(callBack)
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "×", style: UIBarButtonItemStyle.Plain, target: self, action: "backToTimeLineViewController")
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "sendTweet")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Stop, target: self, action: "backToTimeLineViewController")
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Post", style: UIBarButtonItemStyle.Plain, target: self, action: "sendTweet")
         
         //Registing Notification Center
         let notificationCenter = NSNotificationCenter.defaultCenter()
@@ -73,12 +74,17 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
         
         self.tweetTextView.resignFirstResponder()
         
-        tweet.text = tweetTextView.text
-        var callBack = { () -> Void in
-            self.dismissViewControllerAnimated(true, completion: nil)
+        if tweetTextView.text == "" {
+            let alertController = UIAlertController.showAlert("It is blanks", message: "")
+            presentViewController(alertController, animated: true, completion: nil)
+        } else {
+            tweet.text = tweetTextView.text
+            var callBack = { () -> Void in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+            println(currentGroup)
+            StockTweets.saveTweet(tweet, group: currentGroup, currentUser: currentUser, callBack: callBack)
         }
-        println(currentGroup)
-        StockTweets.saveTweet(tweet, group: currentGroup, currentUser: currentUser, callBack: callBack)
     }
     
     
@@ -90,7 +96,7 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
     
     func makePlaceholderLabel() {
         placeholderLabel.frame.origin = CGPointMake(0, 8)
-        placeholderLabel.text = "いまなにしてる？"
+        placeholderLabel.text = "What are you doing now?"
         placeholderLabel.sizeToFit()
         placeholderLabel.textColor = UIColor.grayColor()
         placeholderLabel.font = UIFont(name: "HiraKakuProN-W3", size: 15)
@@ -109,15 +115,4 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
         placeholderLabel.hidden = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

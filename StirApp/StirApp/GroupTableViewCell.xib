@@ -14,48 +14,42 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hinako4.png" translatesAutoresizingMaskIntoConstraints="NO" id="0EU-FB-DT2">
-                        <rect key="frame" x="8" y="5" width="60" height="60"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="60" id="Wth-Hu-OZf"/>
-                            <constraint firstAttribute="width" constant="60" id="mfu-9P-7tq"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="佐野ひなこ愛好会" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdL-Js-dbQ">
                         <rect key="frame" x="78" y="2" width="279" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="4ES-d9-yrS"/>
+                            <constraint firstAttribute="height" constant="30" id="OZL-T8-4Up"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyT-l7-f8k">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyT-l7-f8k">
                         <rect key="frame" x="78" y="32" width="284" height="29"/>
                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-Sl-fz5">
+                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-Sl-fz5">
                         <rect key="frame" x="78" y="68" width="287" height="1"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="jgf-ds-Ec7"/>
-                        </constraints>
                     </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hinako4.png" translatesAutoresizingMaskIntoConstraints="NO" id="0EU-FB-DT2">
+                        <rect key="frame" x="8" y="7" width="55" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="cKr-Bf-8zt"/>
+                            <constraint firstAttribute="height" constant="55" id="n69-3W-LIY"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0EU-FB-DT2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="0ps-Bl-3Px"/>
-                    <constraint firstItem="wyT-l7-f8k" firstAttribute="leading" secondItem="0EU-FB-DT2" secondAttribute="trailing" constant="10" id="4vJ-iA-W9y"/>
-                    <constraint firstItem="DdL-Js-dbQ" firstAttribute="leading" secondItem="0EU-FB-DT2" secondAttribute="trailing" constant="10" id="7fD-7c-Upn"/>
-                    <constraint firstAttribute="bottom" secondItem="Y0T-Sl-fz5" secondAttribute="bottom" id="CnF-mu-BC4"/>
-                    <constraint firstItem="Y0T-Sl-fz5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="78" id="JmM-tq-XOy"/>
-                    <constraint firstItem="DdL-Js-dbQ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Q1R-91-waw"/>
-                    <constraint firstItem="wyT-l7-f8k" firstAttribute="top" secondItem="DdL-Js-dbQ" secondAttribute="bottom" id="UnC-EA-ruO"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="wyT-l7-f8k" secondAttribute="trailing" constant="-5" id="Zut-H3-cnY"/>
-                    <constraint firstAttribute="trailing" secondItem="Y0T-Sl-fz5" secondAttribute="trailing" id="c1T-sF-gBX"/>
-                    <constraint firstItem="0EU-FB-DT2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ju3-QH-i8w"/>
-                    <constraint firstItem="DdL-Js-dbQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-6" id="kaW-8I-29e"/>
-                    <constraint firstItem="wyT-l7-f8k" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="vdS-bP-KpH"/>
+                    <constraint firstItem="wyT-l7-f8k" firstAttribute="top" secondItem="DdL-Js-dbQ" secondAttribute="bottom" id="39B-us-zo9"/>
+                    <constraint firstItem="0EU-FB-DT2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="Cx3-cd-NyG"/>
+                    <constraint firstItem="DdL-Js-dbQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-6" id="ECI-e7-J1A"/>
+                    <constraint firstItem="Y0T-Sl-fz5" firstAttribute="top" secondItem="wyT-l7-f8k" secondAttribute="bottom" constant="7" id="ZWB-Zp-ST3"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="wyT-l7-f8k" secondAttribute="trailing" constant="-5" id="g7U-0b-W99"/>
+                    <constraint firstItem="DdL-Js-dbQ" firstAttribute="leading" secondItem="0EU-FB-DT2" secondAttribute="trailing" constant="15" id="gUZ-vh-3Ro"/>
+                    <constraint firstItem="wyT-l7-f8k" firstAttribute="leading" secondItem="0EU-FB-DT2" secondAttribute="trailing" constant="15" id="gqa-5l-NHr"/>
+                    <constraint firstItem="0EU-FB-DT2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="kab-Pz-kM5"/>
+                    <constraint firstItem="DdL-Js-dbQ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="qax-d9-Mov"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

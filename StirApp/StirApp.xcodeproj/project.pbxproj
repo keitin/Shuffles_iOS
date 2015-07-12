@@ -61,6 +61,7 @@
 		32F09B681B50DC00003401AD /* GroupListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F09B671B50DC00003401AD /* GroupListNavigationController.swift */; };
 		32F09B6A1B51034F003401AD /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F09B691B51034F003401AD /* CustomTextField.swift */; };
 		32F09B6D1B527ADE003401AD /* searchedGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F09B6C1B527ADE003401AD /* searchedGroupView.swift */; };
+		32F09B6F1B52BFBB003401AD /* Extension+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F09B6E1B52BFBB003401AD /* Extension+UIAlertController.swift */; };
 		D05E8CF620DD2BE7452F169B /* Pods_StirApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,7 @@
 		32F09B671B50DC00003401AD /* GroupListNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListNavigationController.swift; sourceTree = "<group>"; };
 		32F09B691B51034F003401AD /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		32F09B6C1B527ADE003401AD /* searchedGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchedGroupView.swift; sourceTree = "<group>"; };
+		32F09B6E1B52BFBB003401AD /* Extension+UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIAlertController.swift"; sourceTree = "<group>"; };
 		34ADCD9A7BFFCC032C59AF27 /* Pods-StirApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StirApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-StirApp/Pods-StirApp.release.xcconfig"; sourceTree = "<group>"; };
 		59C826AD3A8568805A274FB0 /* Pods-StirApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StirApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StirApp/Pods-StirApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StirApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,6 +310,7 @@
 				3237AD2B1B4D839D00FA68D1 /* Extension+NSData.swift */,
 				3237AD2D1B4E47D600FA68D1 /* Extension+UIImage.swift */,
 				32EB318A1B4FAADD006E07A0 /* Extension+NSDate.swift */,
+				32F09B6E1B52BFBB003401AD /* Extension+UIAlertController.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -340,7 +343,6 @@
 				32E91B671B3078860089DD59 /* GroupListTableViewController.swift */,
 				32E91B6C1B307B820089DD59 /* NewGroupViewController.swift */,
 				32E91B7B1B31A5CA0089DD59 /* SearchGroupViewController.swift */,
-				32F09B6C1B527ADE003401AD /* searchedGroupView.swift */,
 			);
 			name = groups;
 			sourceTree = "<group>";
@@ -369,6 +371,7 @@
 			children = (
 				32E91B741B31390F0089DD59 /* GroupTableViewCell.swift */,
 				32E91B751B31390F0089DD59 /* GroupTableViewCell.xib */,
+				32F09B6C1B527ADE003401AD /* searchedGroupView.swift */,
 			);
 			name = groups;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				3244BBDE1B4B895500FBB5CF /* Extension+UIColor.swift in Sources */,
 				3237AD2C1B4D839D00FA68D1 /* Extension+NSData.swift in Sources */,
 				320D7F761B411AB100A9C426 /* FakeUserTableViewCell.swift in Sources */,
+				32F09B6F1B52BFBB003401AD /* Extension+UIAlertController.swift in Sources */,
 				32E91B641B2F08000089DD59 /* LogInViewController.swift in Sources */,
 				32F09B6D1B527ADE003401AD /* searchedGroupView.swift in Sources */,
 				323CC7021B2B51ED00E93780 /* Tweet.swift in Sources */,

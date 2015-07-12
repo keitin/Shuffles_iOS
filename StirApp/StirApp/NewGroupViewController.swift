@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewGroupViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var selectImageButton: UIButton!
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var groupPassConfirmTextField: UITextField!
@@ -33,6 +33,10 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         
         setCreateButton()
         setSelectImageButton()
+        
+        groupNameTextFiled.delegate = self
+        groupPassTextFiled.delegate = self
+        groupPassConfirmTextField.delegate = self
         
     }
     
@@ -137,6 +141,9 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         presentViewController(alertController, animated: true, completion: nil)
     }
     
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
 }
