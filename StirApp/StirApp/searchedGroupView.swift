@@ -87,9 +87,8 @@ class SearchedGroupView: UIView {
         actionButton.layer.position = CGPoint(x: x, y: 150)
         actionButton.frame.size = CGSize(width: 110, height: 30)
         actionButton.setTitle(title, forState: UIControlState.Normal)
-        actionButton.setTitleColor(UIColor.mainColor(), forState: UIControlState.Normal)
-        actionButton.layer.borderColor = UIColor.grayColor().CGColor
-        actionButton.layer.borderWidth = 1
+        actionButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        actionButton.backgroundColor = UIColor.subColor()
         actionButton.layer.cornerRadius = 3
         actionButton.tag = tag
         actionButton.addTarget(self, action: "tapActionButton:", forControlEvents: UIControlEvents.TouchUpInside)
