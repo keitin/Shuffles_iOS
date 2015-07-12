@@ -9,6 +9,8 @@
 import UIKit
 
 class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @IBOutlet weak var selectImageButton: UIButton!
+    @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var groupPassConfirmTextField: UITextField!
     @IBOutlet weak var groupPassTextFiled: UITextField!
     @IBOutlet weak var groupNameTextFiled: UITextField!
@@ -28,6 +30,9 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         groupImageView.userInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action: "openCameraRoll")
         groupImageView.addGestureRecognizer(gesture)
+        
+        setCreateButton()
+        setSelectImageButton()
         
     }
     
@@ -52,31 +57,43 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         
         groupImage = image
-        
         groupImageView.image = image!
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func tapCreateGroupBtn(sender: UIButton) {
-        
-        let group = Group()
-        group.name  = groupNameTextFiled.text
-        group.password = groupPassTextFiled.text
-        group.confirmPass = groupPassConfirmTextField.text
-        group.image = groupImage
-        
-        var callback = { () -> Void in
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
-        
-        if group.password == group.confirmPass {
-            println("保存しました")
-            StockGroup.saveGroup(group, callback: callback)
+        var message = ""
+        if groupNameTextFiled.text == "" ||
+            groupPassConfirmTextField.text == "" ||
+            groupPassTextFiled.text == ""{
+            message = "Form is blank"
+            showErrorAlert(message)
+        } else if groupPassTextFiled.text != groupPassConfirmTextField.text {
+            message = "Password does not accord"
+            showErrorAlert(message)
+        } else if groupImage == nil {
+            message = "Set group image"
+            showErrorAlert(message)
         } else {
-            println("確認用パスワードが異なります")
+            let group = Group()
+            group.name  = groupNameTextFiled.text
+            group.password = groupPassTextFiled.text
+            group.confirmPass = groupPassConfirmTextField.text
+            group.image = groupImage
+            
+            var callback = { () -> Void in
+                self.showSuccessfullyAlert()
+            }
+            
+            StockGroup.saveGroup(group, callback: callback)
+            
         }
     }
     
+    @IBAction func tapSelectImage(sender: UIButton) {
+        self.photoPicker.sourceType = .PhotoLibrary
+        self.presentViewController(photoPicker, animated: true, completion: nil)
+    }
     
     func openCameraRoll() {
         self.photoPicker.sourceType = .PhotoLibrary
@@ -87,14 +104,39 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         dismissViewControllerAnimated(true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setCreateButton() {
+        createButton.layer.cornerRadius = 5
+        createButton.layer.masksToBounds = true
     }
-    */
-
+    
+    func setSelectImageButton() {
+        let textLabel = UILabel()
+        textLabel.frame.size = selectImageButton.frame.size
+        textLabel.layer.position = CGPoint(x: 155, y: 15)
+        textLabel.text = "Select Group Image"
+        textLabel.font = UIFont(name: "Helvetica", size: 14)
+        textLabel.textColor = UIColor.mainColor()
+        selectImageButton.addSubview(textLabel)
+    }
+    
+    
+    func showErrorAlert(errorMessage: String) {
+        let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        alertController.addAction(OKAction)
+        presentViewController(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func showSuccessfullyAlert() {
+        let alertController = UIAlertController(title: "Complete", message: "Successfully Create Group", preferredStyle: UIAlertControllerStyle.Alert)
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action) -> Void in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        alertController.addAction(OKAction)
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    
+    
 }

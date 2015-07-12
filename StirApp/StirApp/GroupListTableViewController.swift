@@ -17,6 +17,7 @@ class GroupListTableViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView.registerNib(UINib(nibName: "GroupTableViewCell", bundle: nil), forCellReuseIdentifier: "groupCell")
+        tableView.separatorColor = UIColor.clearColor()
         
     }
     
@@ -74,7 +75,7 @@ class GroupListTableViewController: UITableViewController {
 
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 85
+        return 70
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

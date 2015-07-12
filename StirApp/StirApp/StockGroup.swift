@@ -36,6 +36,7 @@ class StockGroup: NSObject {
 
             }
             .responseJSON { (request, response, JSON, error) in
+                callback()
         }
         
     }
