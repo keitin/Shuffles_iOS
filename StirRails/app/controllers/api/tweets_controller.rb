@@ -8,6 +8,7 @@ class Api::TweetsController < ApplicationController
 
   def create
     Tweet.create_tweet(create_params)
+    Group.search_group(group_params).update(last_message: params[:text])
   end
 
   private
@@ -16,7 +17,11 @@ class Api::TweetsController < ApplicationController
   end
 
   def create_params
-    params.permit(:auth_token, :group_name, :group_pass, :text)
+    params.permit(:auth_token, :name, :password, :text)
+  end
+
+  def group_params
+    params.permit(:name, :password)
   end
 
 end

@@ -89,13 +89,11 @@ class CurrentUser: User {
                         currentUser.saveCurrentUserInUserDefault()
                         callback()
                     }
-
             }
         } else {
             let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: pass, parameters: params, image: user.image!)
             Alamofire.upload(urlRequest.0, urlRequest.1)
                 .responseJSON { (request, response, JSON, error) in
-
                     if error == nil {
                         let user = JSON!["user"] as! Dictionary<String, AnyObject>
                         let currentUser = CurrentUser.sharedInstance
@@ -106,12 +104,10 @@ class CurrentUser: User {
                             let image = UIImage.convertToUIImageFromImagePass(imageURL)
                             currentUser.image = image
                         }
-
                         currentUser.saveCurrentUserInUserDefault()
                         callback()
                     }
             }
-
         }
         
     }
@@ -127,8 +123,6 @@ class CurrentUser: User {
         
         Alamofire.request(.GET, "http://localhost:3001/api/users/group/curret_user", parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
-                println("aaaaaaaaaaaaaaaaaaaaaaaaaaa")
-                println(JSON)
                 let fakeUser = User()
                 var isCheked: Bool!
                 if error == nil {
@@ -140,8 +134,6 @@ class CurrentUser: User {
                     fakeUser.image = image
                     
                     isCheked = JSON!["is_checked"] as! Bool
-                    println("bbbbbbbbbbbbbbb")
-                    println(isCheked)
                 }
 
                 callback(fakeUser: fakeUser, isCheked: isCheked)

@@ -9,19 +9,21 @@
 import UIKit
 
 class LogInViewController: UIViewController {
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var passTextFiled: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setLoginButton()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         errorMessageLabel.text = ""
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign up?", style: UIBarButtonItemStyle.Plain, target: self, action: "showSignUpViewController")
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,9 +59,16 @@ class LogInViewController: UIViewController {
     }
     
 
-    @IBAction func showSignUpViewController(sender: UIButton) {
+    func showSignUpViewController() {
         self.tabBarController?.selectedIndex = 1
     }
+    
+    func setLoginButton() {
+        loginButton.layer.cornerRadius = 5
+        loginButton.layer.masksToBounds = true
+    }
+    
+    
     /*
     // MARK: - Navigation
 

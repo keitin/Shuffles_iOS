@@ -78,8 +78,8 @@ class StockTweets: NSObject {
         
         var params: [String: AnyObject] = [
             "text": tweet.text,
-            "group_name": group.name,
-            "group_pass": group.password,
+            "name": group.name,
+            "password": group.password,
             "auth_token": currentUser.authToken!
         ]
         

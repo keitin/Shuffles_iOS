@@ -22,6 +22,4 @@ Rails.application.routes.draw do
     get     '/users/group/curret_user'  => 'users#fetch_current_fake_user_in_group'
     put     '/fakes/checked'            => 'fakes#checked'
   end
-  #grape
-  # mount Stir::API => '/'
 end

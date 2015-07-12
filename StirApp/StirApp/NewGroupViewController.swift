@@ -34,7 +34,7 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Bookmarks, target: self, action: "backToGroupListVC")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Stop, target: self, action: "backToGroupListVC")
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: "searchGroup")
     }

@@ -55,13 +55,13 @@ class StockGroup: NSObject {
                 if error == nil {
 
                     var groups = JSON?["groups"] as! Array<AnyObject>
- 
+                    
                     StockGroup.sharedInstance.myGroups = []
                     for myGroup in groups {
                         var group = Group()
                         group.name = myGroup["name"] as! String
                         group.password = myGroup["password"] as! String
-                        
+                        group.lastMessage = myGroup["last_message"] as! String
                         let avatar =  myGroup["avatar"]! as! Dictionary<String, AnyObject>
                         let urlKey = avatar["avatar"] as! Dictionary<String, AnyObject>
                         if let imageURL = urlKey["url"] as? String {

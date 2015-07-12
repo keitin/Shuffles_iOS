@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchGroupViewController: UIViewController {
+class SearchGroupViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var groupPassTextField: UITextField!
     @IBOutlet weak var groupNameTextField: UITextField!
@@ -29,7 +29,8 @@ class SearchGroupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        groupPassTextField.delegate = self
+        groupNameTextField.delegate = self
 
     }
 
@@ -120,6 +121,11 @@ class SearchGroupViewController: UIViewController {
         }
 
         StockGroup.addGroup(currentGroup, callback: callback)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 

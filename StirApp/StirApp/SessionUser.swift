@@ -22,10 +22,11 @@ class SessionUser: NSObject {
         ]
         
         var returnParams: Dictionary<String, AnyObject> = [:]
-        let image = UIImage(named: "omoto")
+        let image = UIImage(named: "\(arc4random() % 11)")
         let httpMethod = Alamofire.Method.POST.rawValue
         let pass = "http://localhost:3001/api/users"
         let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: pass, parameters: params, image: image!)
+        
         Alamofire.upload(urlRequest.0, urlRequest.1)
             .responseJSON { (request, response, JSON, error) in
         

@@ -14,4 +14,5 @@ class Group: NSObject {
     var password = ""
     var confirmPass = ""
     var image: UIImage?
+    var lastMessage = ""
 }

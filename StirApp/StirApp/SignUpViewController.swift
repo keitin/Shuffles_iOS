@@ -8,17 +8,25 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var siginUpButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nameTextFiled: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var confirmPassTextFiled: UITextField!
     @IBOutlet weak var passwordTextFiled: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        nameTextFiled.delegate = self
+        confirmPassTextFiled.delegate = self
+        passwordTextFiled.delegate = self
+        emailTextField.delegate = self
+        
+        setSignupButton()
+        
     }
 
     
@@ -26,12 +34,20 @@ class SignUpViewController: UIViewController {
         super.viewWillAppear(animated)
         
         errorMessageLabel.text = ""
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log in?", style: UIBarButtonItemStyle.Plain, target: self, action: "showLoginPage")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        // NSNotificationCenterの解除処理
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
     }
     
 
@@ -65,12 +81,26 @@ class SignUpViewController: UIViewController {
     }
     
     
-    @IBAction func showLoginPage(sender: UIButton) {
+    func showLoginPage() {
         self.tabBarController?.selectedIndex = 0
     }
     
+    //キーボードのreturnが押された際にキーボードを閉じる処理
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        nameTextFiled.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passwordTextFiled.resignFirstResponder()
+        confirmPassTextFiled.resignFirstResponder()
+        //        itemMemo.resignFirstResponder()
+        return true
+    }
     
-    /*
+    func setSignupButton() {
+        siginUpButton.layer.cornerRadius = 5
+        siginUpButton.layer.masksToBounds = true
+    }
+    
+       /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

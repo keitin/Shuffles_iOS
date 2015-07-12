@@ -9,6 +9,7 @@
 import UIKit
 
 class GroupTableViewCell: UITableViewCell {
+    @IBOutlet weak var lastMessageLabel: UILabel!
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var groupImageView: UIImageView!
 

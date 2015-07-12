@@ -54,6 +54,7 @@ class InformationView: UIView {
     func setFakeUserImageView() {
         let fakeUserImageView = UIImageView()
         fakeUserImageView.frame.size = CGSize(width: 100, height: 100)
+        fakeUserImageView.contentMode = UIViewContentMode.ScaleAspectFill
         fakeUserImageView.center = CGPoint(x: infoView.center.x, y: infoView.center.y - 25)
         fakeUserImageView.image = fakeUser.image
         fakeUserImageView.layer.cornerRadius = fakeUserImageView.frame.width / 2

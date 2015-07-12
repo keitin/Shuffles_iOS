@@ -68,12 +68,13 @@ class GroupListTableViewController: UITableViewController {
         let group = groups[indexPath.row]
         cell.groupNameLabel.text = group.name
         cell.groupImageView.image = group.image
+        cell.lastMessageLabel.text = group.lastMessage
         return cell
     }
 
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 90
+        return 85
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -36,7 +36,7 @@ class Api::GroupsController < ApplicationController
 
   private
   def create_params
-    params.permit(:avatar, :name, :password)
+    params.permit(:avatar, :name, :password).merge(last_message: "まだ投稿はありません")
   end
 
   def auth_token_params
