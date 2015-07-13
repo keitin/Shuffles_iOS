@@ -15,6 +15,8 @@ class TimeLineTableViewController: UITableViewController {
     let currentUser = CurrentUser.sharedInstance
     var flag: Bool = true
     var curretFakeUser: User?
+    var page: Int = 1
+    var myActivityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,8 @@ class TimeLineTableViewController: UITableViewController {
         refresh.attributedTitle = NSAttributedString(string: "Loading...")
         refresh.addTarget(self, action: "reloadTimeLine", forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refresh
+        
+        tableView.separatorColor = UIColor.clearColor()
         
     }
     
@@ -49,7 +53,7 @@ class TimeLineTableViewController: UITableViewController {
         }
         
         //ツイートをdbからフェッチ
-        StockTweets.fetchTweets(currentGroup, callBack: callBack)
+        StockTweets.fetchTweets(currentGroup, page: page, callBack: callBack)
         
         //フェイクユーザを取得しポップアップを表示
         fetchCurrentUserInGroup()
@@ -80,17 +84,10 @@ class TimeLineTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell", forIndexPath: indexPath) as! TweetTableViewCell
         let tweet = tweets[indexPath.row]
         cell.tweetLabel?.text = tweet.text
-
         cell.tweetLabel.fixLabelHeight(tweet.text)
-        
-//        if flag {
-//            cell.nameLabel.text = tweet.user.name
-//            cell.iconImageView.image = tweet.user.image
-//        } else {
-            cell.nameLabel.text = tweet.user.fakeUser?.name
-            cell.iconImageView.image = tweet.user.fakeUser?.image!
-            println(tweet.user.fakeUser?.image!)
-//        }
+        cell.nameLabel.text = tweet.user.fakeUser?.name
+        cell.iconImageView.image = tweet.user.fakeUser?.image!
+        println(tweet.user.fakeUser?.image!)
         cell.timeLabel.text = tweet.time
         return cell
     }
@@ -123,11 +120,43 @@ class TimeLineTableViewController: UITableViewController {
         }
         
         //ツイートをdbからフェッチ
-        StockTweets.fetchTweets(currentGroup, callBack: callBack)
+        StockTweets.fetchTweets(currentGroup, page: page, callBack: callBack)
         
         //フェイクユーザを取得しポップアップを表示
         fetchCurrentUserInGroup()
     }
+    
+    
+    //ページネーション
+    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        if tableView.contentOffset.y >= (tableView.contentSize.height - tableView.frame.height) {
+            leadMore()
+            
+            //インジケータ
+            let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 30))
+            myActivityIndicator = UIActivityIndicatorView()
+            myActivityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+            myActivityIndicator.color = UIColor.blackColor()
+            myActivityIndicator.center = footerView.center
+            footerView.addSubview(myActivityIndicator)
+            myActivityIndicator.startAnimating()
+            self.tableView.tableFooterView = footerView
+        }
+    }
+    
+    func leadMore() {
+        if tweets.count >= 15 {
+            page++
+        }
+        let callBack = { () -> Void in
+            self.tweets = StockTweets.sharedInstance.tweets
+            self.tableView.reloadData()
+            self.myActivityIndicator.stopAnimating()
+        }
+        //ツイートをdbからフェッチ
+        StockTweets.fetchTweets(currentGroup, page: page, callBack: callBack)
+    }
+
 
     /*
     // Override to support conditional editing of the table view.

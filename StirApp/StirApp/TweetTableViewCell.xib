@@ -36,6 +36,13 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qEh-Ga-g4W">
+                        <rect key="frame" x="0.0" y="96" width="357" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="LJ3-bI-reK"/>
+                        </constraints>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3分前" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="542-gs-LYl">
                         <rect key="frame" x="260" y="8" width="89" height="21"/>
                         <constraints>
@@ -50,14 +57,17 @@
                 <constraints>
                     <constraint firstItem="9Tn-ut-vvd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="0dp-7h-QTz"/>
                     <constraint firstItem="ptH-b4-T65" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="EpA-P4-9uI"/>
+                    <constraint firstAttribute="bottom" secondItem="qEh-Ga-g4W" secondAttribute="bottom" id="QY2-X0-Gsz"/>
                     <constraint firstItem="542-gs-LYl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Uuw-n4-raY"/>
                     <constraint firstItem="542-gs-LYl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="YdR-Oq-SMG"/>
                     <constraint firstItem="RAb-US-2Zt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="g6p-Kg-DCn"/>
                     <constraint firstItem="ptH-b4-T65" firstAttribute="leading" secondItem="RAb-US-2Zt" secondAttribute="trailing" constant="18" id="l3X-Iu-TPG"/>
+                    <constraint firstAttribute="trailing" secondItem="qEh-Ga-g4W" secondAttribute="trailing" id="oH2-ml-YZ6"/>
                     <constraint firstItem="542-gs-LYl" firstAttribute="leading" secondItem="9Tn-ut-vvd" secondAttribute="trailing" constant="8" id="qAm-c4-Sfh"/>
                     <constraint firstAttribute="bottomMargin" secondItem="ptH-b4-T65" secondAttribute="bottom" constant="15" id="rqQ-Ab-RJX"/>
                     <constraint firstItem="ptH-b4-T65" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="vCh-74-7BC"/>
                     <constraint firstItem="RAb-US-2Zt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="vWv-1R-d9z"/>
+                    <constraint firstItem="qEh-Ga-g4W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="xYB-p0-sEU"/>
                     <constraint firstItem="9Tn-ut-vvd" firstAttribute="leading" secondItem="RAb-US-2Zt" secondAttribute="trailing" constant="18" id="yB2-3l-U8b"/>
                 </constraints>
             </tableViewCellContentView>

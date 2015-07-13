@@ -2,8 +2,9 @@ class Api::TweetsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:index, :create]
 
   def index
-    @tweets = Tweet.fetch_tweets(tweets_params)
+    @tweets = Tweet.fetch_tweets(tweets_params).order("created_at DESC").page(params[:page]).per(15)
     @group = Group.search(params["name"], params["password"])
+    @page = params[:page].to_i
   end
 
   def create

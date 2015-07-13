@@ -52,3 +52,4 @@ gem 'whenever', :require => false
 
 gem 'grape'
 gem 'grape-jbuilder'
+gem 'kaminari'

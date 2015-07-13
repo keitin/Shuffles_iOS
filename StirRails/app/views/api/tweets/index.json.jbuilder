@@ -1,3 +1,4 @@
+json.page @page
 json.tweets @tweets do |tweet|
   json.text tweet.text
   json.avatar tweet.user.avatar.url
