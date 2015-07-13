@@ -81,35 +81,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hinako015.png" translatesAutoresizingMaskIntoConstraints="NO" id="ACq-Bh-HsS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hinako015.png" translatesAutoresizingMaskIntoConstraints="NO" id="ACq-Bh-HsS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ww-tu-9RR">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ww-tu-9RR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hinako Sano" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbP-GL-NRI">
-                                        <rect key="frame" x="0.0" y="351" width="375" height="59"/>
-                                        <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="42"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhc-yy-aOG">
+                                        <rect key="frame" x="337" y="18" width="30" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Oc0-s7-Gad"/>
+                                            <constraint firstAttribute="height" constant="32" id="dD6-29-iwh"/>
+                                        </constraints>
+                                        <state key="normal" image="menu2.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapMenuButton:" destination="x7G-M8-lVJ" eventType="touchUpInside" id="2MA-q3-chL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.74901960779999999" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xhc-yy-aOG" secondAttribute="trailing" constant="8" id="9lv-Jb-bpi"/>
+                                    <constraint firstItem="xhc-yy-aOG" firstAttribute="top" secondItem="6Ww-tu-9RR" secondAttribute="top" constant="18" id="thU-xe-5Js"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6Ww-tu-9RR" secondAttribute="bottom" id="8pZ-Kz-qwV"/>
+                            <constraint firstItem="ACq-Bh-HsS" firstAttribute="top" secondItem="fJG-mL-dRW" secondAttribute="top" id="E4x-73-aqI"/>
+                            <constraint firstAttribute="trailing" secondItem="6Ww-tu-9RR" secondAttribute="trailing" id="Mdx-ZO-D0Z"/>
+                            <constraint firstItem="6Ww-tu-9RR" firstAttribute="top" secondItem="fJG-mL-dRW" secondAttribute="top" id="Oll-r3-NlQ"/>
+                            <constraint firstAttribute="trailing" secondItem="ACq-Bh-HsS" secondAttribute="trailing" id="Ove-Ta-SAw"/>
+                            <constraint firstItem="ACq-Bh-HsS" firstAttribute="leading" secondItem="fJG-mL-dRW" secondAttribute="leading" id="TVP-4H-B9t"/>
+                            <constraint firstItem="6Ww-tu-9RR" firstAttribute="leading" secondItem="fJG-mL-dRW" secondAttribute="leading" id="gh0-fi-jdv"/>
+                            <constraint firstAttribute="bottom" secondItem="ACq-Bh-HsS" secondAttribute="bottom" id="qaq-Wm-S6K"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="WRh-Zi-YJ5"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="myImageView" destination="ACq-Bh-HsS" id="SP4-eY-jYt"/>
-                        <outlet property="myLabel" destination="nbP-GL-NRI" id="goj-4B-aMW"/>
                         <segue destination="NiT-ZW-wOy" kind="presentation" identifier="modalEditProfile" id="L96-xz-pl1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bEL-BY-3tr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1780.5" y="1567.5"/>
+            <point key="canvasLocation" x="-1996.5" y="1557.5"/>
         </scene>
         <!--New Tweet View Controller-->
         <scene sceneID="QS5-n3-WXU">
@@ -1023,6 +1043,7 @@
         <image name="9.png" width="100" height="100"/>
         <image name="group.png" width="30" height="30"/>
         <image name="hinako015.png" width="853" height="1280"/>
+        <image name="menu2.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TIe-do-DNU"/>

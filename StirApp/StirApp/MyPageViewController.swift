@@ -9,15 +9,16 @@
 import UIKit
 
 class MyPageViewController: UIViewController {
-    @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var myImageView: UIImageView!
 
     var currentUser = CurrentUser.sharedInstance
+    let nameLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setNameLabel()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -27,7 +28,10 @@ class MyPageViewController: UIViewController {
         let callBack = { () -> Void in
             self.currentUser = CurrentUser.sharedInstance
             self.myImageView.image = self.currentUser.image
-            self.myLabel.text = self.currentUser.name
+            
+            self.nameLabel.adjustsFontSizeToFitWidth = true
+            self.nameLabel.text = self.currentUser.name
+            
         }
         
         currentUser.fetchCurrentUser(callBack)
@@ -44,6 +48,37 @@ class MyPageViewController: UIViewController {
     }
     
 
+    @IBAction func tapMenuButton(sender: UIButton) {
+        showActionSheet()
+    }
+
+    
+    
+    func showActionSheet() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let editProfileAction = UIAlertAction(title: "Edit Profile", style: UIAlertActionStyle.Default) { (action) -> Void in
+            self.performSegueWithIdentifier("modalEditProfile", sender: nil)
+        }
+        let signoutAction = UIAlertAction(title: "Log Out", style: UIAlertActionStyle.Destructive) { (action) -> Void in
+            CurrentUser.sharedInstance.removeAuthToken()
+            let tabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("LogInTabBarController") as! UITabBarController
+            UIApplication.sharedApplication().keyWindow?.rootViewController = tabBarController
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        actionSheet.addAction(editProfileAction)
+        actionSheet.addAction(signoutAction)
+        actionSheet.addAction(cancelAction)
+        presentViewController(actionSheet, animated: true, completion: nil)
+    }
+    
+    func setNameLabel() {
+        nameLabel.frame.size = CGSize(width: view.frame.width, height: 42)
+        nameLabel.center = CGPoint(x: view.center.x, y: view.center.y + 50)
+        nameLabel.textAlignment = NSTextAlignment.Center
+        nameLabel.font = UIFont(name: "HirakakuProN-W6", size: 42)
+        nameLabel.textColor = UIColor.whiteColor()
+        self.view.addSubview(nameLabel)
+    }
 
     /*
     // MARK: - Navigation

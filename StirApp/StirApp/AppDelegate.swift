@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //アプリ起動時に呼ばれる
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-
+        
         let currentUser = CurrentUser.sharedInstance
         let defaults = NSUserDefaults.standardUserDefaults()
         

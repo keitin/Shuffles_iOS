@@ -19,8 +19,8 @@ class TabBarController: UITabBarController {
         
         let groupImage = UIImage(named: "groupp")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         let hiGoupImage = UIImage(named: "grouup")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        let homeImage = UIImage(named: "home")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        let hiHomeImage = UIImage(named: "hihome")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        let homeImage = UIImage(named: "homehome")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        let hiHomeImage = UIImage(named: "hihihome")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         let font = UIFont(name: "Helvetica", size: 10)!
         
         let firstViewController = self.viewControllers![0] as! UINavigationController

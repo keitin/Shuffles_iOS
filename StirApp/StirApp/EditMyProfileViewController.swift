@@ -27,7 +27,7 @@ class EditMyProfileViewController: UIViewController, UIImagePickerControllerDele
         nameTextFiled.text = currentUser.name
         setIconImageView()
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Bookmarks, target: self, action: "backToMyPageVC")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Stop, target: self, action: "backToMyPageVC")
         
         editButton.layer.cornerRadius = 5
         editButton.layer.masksToBounds = true

@@ -32,18 +32,16 @@ class TimeLineTableViewController: UITableViewController {
         refresh.addTarget(self, action: "reloadTimeLine", forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refresh
         
-
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "marketingscript", size: 23)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         
-        let myBarButton_3 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Pause, target: self, action: "changeFakeUser")
-        let myBarButton_2 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Play, target: self, action: "modalFakeUsersTableViewController")
-        let myBarButton_1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "modalToNewTweetViewController")
-        let myRightButtons: NSArray = [myBarButton_1, myBarButton_2, myBarButton_3]
-        self.navigationItem.setRightBarButtonItems(myRightButtons as [AnyObject], animated: true)
+        self.title = "Shuffles"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "modalToNewTweetViewController")
         
         let callBack = { () -> Void in
             self.tweets = StockTweets.sharedInstance.tweets
@@ -82,14 +80,14 @@ class TimeLineTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell", forIndexPath: indexPath) as! TweetTableViewCell
         let tweet = tweets[indexPath.row]
         cell.tweetLabel?.text = tweet.text
-        if flag {
-            cell.nameLabel.text = tweet.user.name
-            cell.iconImageView.image = tweet.user.image
-        } else {
+//        if flag {
+//            cell.nameLabel.text = tweet.user.name
+//            cell.iconImageView.image = tweet.user.image
+//        } else {
             cell.nameLabel.text = tweet.user.fakeUser?.name
             cell.iconImageView.image = tweet.user.fakeUser?.image!
             println(tweet.user.fakeUser?.image!)
-        }
+//        }
         cell.timeLabel.text = tweet.time
         return cell
     }

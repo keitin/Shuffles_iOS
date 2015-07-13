@@ -12,6 +12,7 @@ class InformationView: UIView {
 
     let infoView = UIView()
     var fakeUser = User()
+    let headerView = UIView()
     var group: Group!
     
     override init(frame: CGRect) {
@@ -22,6 +23,7 @@ class InformationView: UIView {
     
     func setUpInfoView() {
         setInfoView()
+        setHeaderView()
         setTodayLabel()
         setFakeUserImageView()
         setFakeUserNameLabel()
@@ -44,18 +46,25 @@ class InformationView: UIView {
     
     func setTodayLabel() {
         let todayLabel = UILabel()
-        todayLabel.text = "今日のあなたは..."
-        todayLabel.font = UIFont(name: "HirakakuProN-W3", size: 15)
-        todayLabel.sizeToFit()
-        todayLabel.center = CGPoint(x: infoView.center.x, y: infoView.center.y - 100)
-        self.addSubview(todayLabel)
+        todayLabel.text = "Today is"
+        todayLabel.frame = headerView.frame
+        todayLabel.textAlignment = NSTextAlignment.Center
+        todayLabel.font = UIFont(name: "HirakakuProN-W6", size: 15)
+        todayLabel.textColor = UIColor.whiteColor()
+        infoView.addSubview(todayLabel)
+    }
+    
+    func setHeaderView() {
+        headerView.frame = CGRect(x: 0, y: 0, width: infoView.frame.width, height: 40)
+        headerView.backgroundColor = UIColor.mainColor()
+        infoView.addSubview(headerView)
     }
     
     func setFakeUserImageView() {
         let fakeUserImageView = UIImageView()
         fakeUserImageView.frame.size = CGSize(width: 100, height: 100)
         fakeUserImageView.contentMode = UIViewContentMode.ScaleAspectFill
-        fakeUserImageView.center = CGPoint(x: infoView.center.x, y: infoView.center.y - 25)
+        fakeUserImageView.center = CGPoint(x: infoView.center.x, y: infoView.center.y - 20)
         fakeUserImageView.image = fakeUser.image
         fakeUserImageView.layer.cornerRadius = fakeUserImageView.frame.width / 2
         fakeUserImageView.layer.masksToBounds = true
@@ -65,22 +74,23 @@ class InformationView: UIView {
     func setFakeUserNameLabel() {
         let fakeUserNameLabel = UILabel()
         fakeUserNameLabel.text = fakeUser.name
-        fakeUserNameLabel.font = UIFont(name: "HirakakuProN-W6", size: 17)
+        fakeUserNameLabel.font = UIFont(name: "HirakakuProN-W3", size: 17)
         fakeUserNameLabel.sizeToFit()
-        fakeUserNameLabel.center = CGPoint(x: infoView.center.x, y: infoView.center.y + 50)
+        fakeUserNameLabel.center = CGPoint(x: infoView.center.x, y: infoView.center.y + 55)
         self.addSubview(fakeUserNameLabel)
     }
     
     func setOKButton() {
         let OKButton = UIButton()
-        OKButton.frame.size = CGSize(width: 150, height: 35)
-        OKButton.center = CGPoint(x: infoView.center.x, y: infoView.center.y + 90)
+        OKButton.frame.size = CGSize(width: 230, height: 35)
+        OKButton.center = CGPoint(x: infoView.center.x, y: infoView.center.y + 95)
         OKButton.setTitle("O K", forState: UIControlState.Normal)
-        OKButton.setTitleColor(UIColor.mainColor(), forState: UIControlState.Normal)
+        OKButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         OKButton.addTarget(self, action: "tapOK:", forControlEvents: UIControlEvents.TouchUpInside)
+        OKButton.backgroundColor = UIColor.subColor()
         OKButton.layer.cornerRadius = 3
-        OKButton.layer.borderColor = UIColor.mainColor().CGColor
-        OKButton.layer.borderWidth = 1
+//        OKButton.layer.borderColor = UIColor.mainColor().CGColor
+//        OKButton.layer.borderWidth = 1
         self.addSubview(OKButton)
     }
     
