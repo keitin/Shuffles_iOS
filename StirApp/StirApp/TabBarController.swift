@@ -12,10 +12,32 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        UITabBar.appearance().barTintColor = UIColor.whiteColor()
+        UITabBar.appearance().translucent = false
+        
+        
+        let groupImage = UIImage(named: "groupp")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        let hiGoupImage = UIImage(named: "grouup")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        let homeImage = UIImage(named: "home")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        let hiHomeImage = UIImage(named: "hihome")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        let font = UIFont(name: "Helvetica", size: 10)!
+        
+        let firstViewController = self.viewControllers![0] as! UINavigationController
+        let secondViewController = self.viewControllers![1] as! UIViewController
+        
+        firstViewController.tabBarItem = UITabBarItem(title: "Group", image: groupImage, selectedImage: hiGoupImage)
+        secondViewController.tabBarItem = UITabBarItem(title: "My Page", image: homeImage, selectedImage: hiHomeImage)
+        
+        let normalAttributes: Dictionary! = [NSForegroundColorAttributeName: UIColor.originalGray()]
+        let selectedAttributes: Dictionary! = [NSForegroundColorAttributeName: UIColor.mainColor()]
+        
+        UITabBarItem.appearance().setTitleTextAttributes(normalAttributes, forState: UIControlState.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes(selectedAttributes, forState: UIControlState.Selected)
 
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

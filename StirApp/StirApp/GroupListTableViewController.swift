@@ -28,7 +28,7 @@ class GroupListTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
     
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: UIBarButtonItemStyle.Plain, target: self, action: "modalNewGroupViewController")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: UIBarButtonItemStyle.Plain, target: self, action: "modalNewGroupViewController")
         
         //HTTP
         var callback = {() -> Void in
@@ -85,6 +85,14 @@ class GroupListTableViewController: UITableViewController {
         activeGroup = groups[indexPath.row]
         performSegueWithIdentifier("ShowTimeLineVC", sender: nil)
     }
+    
+//    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        return true
+//    }
+//    
+//    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        return true
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowTimeLineVC" {

@@ -9,6 +9,9 @@
 import UIKit
 
 class EditMyProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @IBOutlet weak var selectImageButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
+    
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameTextFiled: UITextField!
     
@@ -25,6 +28,11 @@ class EditMyProfileViewController: UIViewController, UIImagePickerControllerDele
         setIconImageView()
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Bookmarks, target: self, action: "backToMyPageVC")
+        
+        editButton.layer.cornerRadius = 5
+        editButton.layer.masksToBounds = true
+        setSelectImageButton()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,6 +78,22 @@ class EditMyProfileViewController: UIViewController, UIImagePickerControllerDele
         }
         CurrentUser.editCurrentUser(currentUser, callback: callback)
         
+    }
+
+
+    @IBAction func tapSelectImageButton(sender: UIButton) {
+        self.photoPicker.sourceType = .PhotoLibrary
+        self.presentViewController(photoPicker, animated: true, completion: nil)
+    }
+    
+    func setSelectImageButton() {
+        let textLabel = UILabel()
+        textLabel.frame.size = selectImageButton.frame.size
+        textLabel.layer.position = CGPoint(x: 155, y: 15)
+        textLabel.text = "Select Group Image"
+        textLabel.font = UIFont(name: "Helvetica", size: 14)
+        textLabel.textColor = UIColor.mainColor()
+        selectImageButton.addSubview(textLabel)
     }
     
     func backToMyPageVC() {

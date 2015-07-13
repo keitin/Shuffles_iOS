@@ -62,6 +62,16 @@
 		32F09B6A1B51034F003401AD /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F09B691B51034F003401AD /* CustomTextField.swift */; };
 		32F09B6D1B527ADE003401AD /* searchedGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F09B6C1B527ADE003401AD /* searchedGroupView.swift */; };
 		32F09B6F1B52BFBB003401AD /* Extension+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F09B6E1B52BFBB003401AD /* Extension+UIAlertController.swift */; };
+		32F09B731B52CCE4003401AD /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B721B52CCE4003401AD /* list@2x.png */; };
+		32F09B751B52CCEB003401AD /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B741B52CCEB003401AD /* list.png */; };
+		32F09B771B538D5C003401AD /* hinako015.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B761B538D5C003401AD /* hinako015.png */; };
+		32F09B791B538F90003401AD /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F09B781B538F90003401AD /* MyPageViewController.swift */; };
+		32F09B7B1B5397AC003401AD /* group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B7A1B5397AC003401AD /* group@2x.png */; };
+		32F09B7D1B539998003401AD /* hiGroupImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B7C1B539998003401AD /* hiGroupImage@2x.png */; };
+		32F09B801B539B88003401AD /* grouup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B7E1B539B88003401AD /* grouup@2x.png */; };
+		32F09B811B539B88003401AD /* groupp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B7F1B539B88003401AD /* groupp@2x.png */; };
+		32F09B841B539F83003401AD /* hihome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B821B539F83003401AD /* hihome@2x.png */; };
+		32F09B851B539F83003401AD /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B831B539F83003401AD /* home@2x.png */; };
 		D05E8CF620DD2BE7452F169B /* Pods_StirApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -134,6 +144,16 @@
 		32F09B691B51034F003401AD /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		32F09B6C1B527ADE003401AD /* searchedGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchedGroupView.swift; sourceTree = "<group>"; };
 		32F09B6E1B52BFBB003401AD /* Extension+UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIAlertController.swift"; sourceTree = "<group>"; };
+		32F09B721B52CCE4003401AD /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
+		32F09B741B52CCEB003401AD /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		32F09B761B538D5C003401AD /* hinako015.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hinako015.png; sourceTree = "<group>"; };
+		32F09B781B538F90003401AD /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		32F09B7A1B5397AC003401AD /* group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group@2x.png"; sourceTree = "<group>"; };
+		32F09B7C1B539998003401AD /* hiGroupImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hiGroupImage@2x.png"; sourceTree = "<group>"; };
+		32F09B7E1B539B88003401AD /* grouup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grouup@2x.png"; sourceTree = "<group>"; };
+		32F09B7F1B539B88003401AD /* groupp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "groupp@2x.png"; sourceTree = "<group>"; };
+		32F09B821B539F83003401AD /* hihome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hihome@2x.png"; sourceTree = "<group>"; };
+		32F09B831B539F83003401AD /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
 		34ADCD9A7BFFCC032C59AF27 /* Pods-StirApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StirApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-StirApp/Pods-StirApp.release.xcconfig"; sourceTree = "<group>"; };
 		59C826AD3A8568805A274FB0 /* Pods-StirApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StirApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StirApp/Pods-StirApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StirApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,9 +275,18 @@
 		323CC6F31B2ACC8200E93780 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				32F09B7E1B539B88003401AD /* grouup@2x.png */,
+				32F09B7F1B539B88003401AD /* groupp@2x.png */,
+				32F09B7C1B539998003401AD /* hiGroupImage@2x.png */,
+				32F09B7A1B5397AC003401AD /* group@2x.png */,
+				32F09B761B538D5C003401AD /* hinako015.png */,
+				32F09B741B52CCEB003401AD /* list.png */,
+				32F09B721B52CCE4003401AD /* list@2x.png */,
 				32F09ACE1B500341003401AD /* 0.png */,
 				32F09ACF1B500341003401AD /* 1.png */,
 				32F09AD01B500341003401AD /* 2.png */,
+				32F09B821B539F83003401AD /* hihome@2x.png */,
+				32F09B831B539F83003401AD /* home@2x.png */,
 				32F09AD11B500341003401AD /* 3.png */,
 				32F09AD21B500341003401AD /* 4.png */,
 				32F09AD31B500341003401AD /* 5.png */,
@@ -322,6 +351,7 @@
 				32E91B631B2F08000089DD59 /* LogInViewController.swift */,
 				323CC6FA1B2B176F00E93780 /* MyPageTableViewController.swift */,
 				3237AD251B4D620600FA68D1 /* EditMyProfileViewController.swift */,
+				32F09B781B538F90003401AD /* MyPageViewController.swift */,
 			);
 			name = users;
 			sourceTree = "<group>";
@@ -490,19 +520,28 @@
 				3237AD2A1B4D80FC00FA68D1 /* kinoponpopo.png in Resources */,
 				32F09ADD1B500341003401AD /* 4.png in Resources */,
 				320D7F771B411AB100A9C426 /* FakeUserTableViewCell.xib in Resources */,
+				32F09B851B539F83003401AD /* home@2x.png in Resources */,
 				32F09AE11B500341003401AD /* 8.png in Resources */,
+				32F09B731B52CCE4003401AD /* list@2x.png in Resources */,
+				32F09B841B539F83003401AD /* hihome@2x.png in Resources */,
 				323CC6D11B2AC54200E93780 /* Images.xcassets in Resources */,
+				32F09B751B52CCEB003401AD /* list.png in Resources */,
 				32F09AE01B500341003401AD /* 7.png in Resources */,
+				32F09B7D1B539998003401AD /* hiGroupImage@2x.png in Resources */,
 				323CC6EF1B2AC77700E93780 /* TweetTableViewCell.xib in Resources */,
 				32F09AE21B500341003401AD /* 9.png in Resources */,
 				32F09ADF1B500341003401AD /* 6.png in Resources */,
 				323CC6F91B2B150100E93780 /* ProfileTableViewCell.xib in Resources */,
 				32F09AD91B500341003401AD /* 0.png in Resources */,
 				32F09ADC1B500341003401AD /* 3.png in Resources */,
+				32F09B811B539B88003401AD /* groupp@2x.png in Resources */,
+				32F09B801B539B88003401AD /* grouup@2x.png in Resources */,
+				32F09B771B538D5C003401AD /* hinako015.png in Resources */,
 				32F09ADB1B500341003401AD /* 2.png in Resources */,
 				32F09ADE1B500341003401AD /* 5.png in Resources */,
 				32F09AE31B500341003401AD /* 10.png in Resources */,
 				32E91B771B31390F0089DD59 /* GroupTableViewCell.xib in Resources */,
+				32F09B7B1B5397AC003401AD /* group@2x.png in Resources */,
 				32F09ADA1B500341003401AD /* 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,6 +639,7 @@
 				3244BBDE1B4B895500FBB5CF /* Extension+UIColor.swift in Sources */,
 				3237AD2C1B4D839D00FA68D1 /* Extension+NSData.swift in Sources */,
 				320D7F761B411AB100A9C426 /* FakeUserTableViewCell.swift in Sources */,
+				32F09B791B538F90003401AD /* MyPageViewController.swift in Sources */,
 				32F09B6F1B52BFBB003401AD /* Extension+UIAlertController.swift in Sources */,
 				32E91B641B2F08000089DD59 /* LogInViewController.swift in Sources */,
 				32F09B6D1B527ADE003401AD /* searchedGroupView.swift in Sources */,

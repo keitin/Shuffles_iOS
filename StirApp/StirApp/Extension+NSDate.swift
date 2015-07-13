@@ -24,7 +24,7 @@ extension NSDate {
         switch deltaSeconds {
             // 0 <-> 29 secs                                                             # => less than a minute
         case 0..<30:
-            timeAgo = "less than a minute"
+            timeAgo = "less a minute"
             
             // 30 secs ..< 1 min, 30 secs                                                # => 1 minute
         case 30..<90:
