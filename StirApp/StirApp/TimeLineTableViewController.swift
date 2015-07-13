@@ -37,9 +37,9 @@ class TimeLineTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "marketingscript", size: 23)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HirakakuProN-W6", size: 17)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         
-        self.title = "Shuffles"
+        self.title = currentGroup.name
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "modalToNewTweetViewController")
         
@@ -80,6 +80,9 @@ class TimeLineTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell", forIndexPath: indexPath) as! TweetTableViewCell
         let tweet = tweets[indexPath.row]
         cell.tweetLabel?.text = tweet.text
+
+        cell.tweetLabel.fixLabelHeight(tweet.text)
+        
 //        if flag {
 //            cell.nameLabel.text = tweet.user.name
 //            cell.iconImageView.image = tweet.user.image
@@ -199,6 +202,16 @@ class TimeLineTableViewController: UITableViewController {
             let fakeUserTableViewController = navigationController.viewControllers.first as! FakeUsersListTableViewController
             fakeUserTableViewController.currentGroup = self.currentGroup
         }
+    }
+    
+    func fixLabelHeight(text: String, label: UILabel) {
+        let lineHeight:CGFloat = 25.0
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.minimumLineHeight = lineHeight
+        paragraphStyle.maximumLineHeight = lineHeight
+        let attributedText = NSMutableAttributedString(string: text)
+        attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedText.length))
+        label.attributedText = attributedText
     }
 
 }

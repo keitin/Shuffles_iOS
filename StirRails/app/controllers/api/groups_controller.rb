@@ -2,7 +2,7 @@ class Api::GroupsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:index, :create]
 
   def index
-    @groups = Group.fetch_my_groups(auth_token_params)
+    @groups = Group.fetch_my_groups(auth_token_params).order("updated_at")
   end
 
   def create

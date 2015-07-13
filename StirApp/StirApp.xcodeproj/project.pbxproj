@@ -80,6 +80,7 @@
 		32F09B901B53C58B003401AD /* saginawmedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B8A1B53BC9A003401AD /* saginawmedium.ttf */; };
 		32F09B931B540F33003401AD /* hihihome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B911B540F33003401AD /* hihihome@2x.png */; };
 		32F09B941B540F33003401AD /* homehome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B921B540F33003401AD /* homehome@2x.png */; };
+		32F09B961B54189E003401AD /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F09B951B54189E003401AD /* Extension+UILabel.swift */; };
 		D05E8CF620DD2BE7452F169B /* Pods_StirApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -168,6 +169,7 @@
 		32F09B8D1B53C3E5003401AD /* marketingscript.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = marketingscript.ttf; sourceTree = "<group>"; };
 		32F09B911B540F33003401AD /* hihihome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hihihome@2x.png"; sourceTree = "<group>"; };
 		32F09B921B540F33003401AD /* homehome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homehome@2x.png"; sourceTree = "<group>"; };
+		32F09B951B54189E003401AD /* Extension+UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
 		34ADCD9A7BFFCC032C59AF27 /* Pods-StirApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StirApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-StirApp/Pods-StirApp.release.xcconfig"; sourceTree = "<group>"; };
 		59C826AD3A8568805A274FB0 /* Pods-StirApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StirApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StirApp/Pods-StirApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5CDF55FEB32170ECE8A560AB /* Pods_StirApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StirApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,6 +361,7 @@
 				3237AD2D1B4E47D600FA68D1 /* Extension+UIImage.swift */,
 				32EB318A1B4FAADD006E07A0 /* Extension+NSDate.swift */,
 				32F09B6E1B52BFBB003401AD /* Extension+UIAlertController.swift */,
+				32F09B951B54189E003401AD /* Extension+UILabel.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				3237AD261B4D620600FA68D1 /* EditMyProfileViewController.swift in Sources */,
 				32F09B681B50DC00003401AD /* GroupListNavigationController.swift in Sources */,
 				32E91B761B31390F0089DD59 /* GroupTableViewCell.swift in Sources */,
+				32F09B961B54189E003401AD /* Extension+UILabel.swift in Sources */,
 				32047FC51B2D9C0900A0A5A5 /* CurrentUser.swift in Sources */,
 				32E91B661B2F11AA0089DD59 /* TabBarController.swift in Sources */,
 				32E91B6D1B307B820089DD59 /* NewGroupViewController.swift in Sources */,

@@ -72,7 +72,7 @@ class MyPageViewController: UIViewController {
     }
     
     func setNameLabel() {
-        nameLabel.frame.size = CGSize(width: view.frame.width, height: 42)
+        nameLabel.frame.size = CGSize(width: view.frame.width - 10, height: 42)
         nameLabel.center = CGPoint(x: view.center.x, y: view.center.y + 50)
         nameLabel.textAlignment = NSTextAlignment.Center
         nameLabel.font = UIFont(name: "HirakakuProN-W6", size: 42)

@@ -72,6 +72,7 @@ class GroupListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("groupCell", forIndexPath: indexPath) as! GroupTableViewCell
         let group = groups[indexPath.row]
+        cell.lastMessageLabel.fixLabelHeight(group.lastMessage)
         cell.groupNameLabel.text = group.name
         cell.groupImageView.image = group.image
         cell.lastMessageLabel.text = group.lastMessage

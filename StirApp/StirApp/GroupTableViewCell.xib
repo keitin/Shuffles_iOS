@@ -23,7 +23,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyT-l7-f8k">
-                        <rect key="frame" x="78" y="32" width="284" height="29"/>
+                        <rect key="frame" x="78" y="28" width="284" height="29"/>
                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <nil key="highlightedColor"/>
@@ -41,15 +41,15 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="wyT-l7-f8k" firstAttribute="top" secondItem="DdL-Js-dbQ" secondAttribute="bottom" id="39B-us-zo9"/>
+                    <constraint firstItem="Y0T-Sl-fz5" firstAttribute="top" secondItem="wyT-l7-f8k" secondAttribute="bottom" constant="11" id="6Ce-Yg-yez"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="wyT-l7-f8k" secondAttribute="trailing" constant="-5" id="6of-Ny-wPW"/>
                     <constraint firstItem="0EU-FB-DT2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="Cx3-cd-NyG"/>
                     <constraint firstItem="DdL-Js-dbQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-6" id="ECI-e7-J1A"/>
-                    <constraint firstItem="Y0T-Sl-fz5" firstAttribute="top" secondItem="wyT-l7-f8k" secondAttribute="bottom" constant="7" id="ZWB-Zp-ST3"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="wyT-l7-f8k" secondAttribute="trailing" constant="-5" id="g7U-0b-W99"/>
                     <constraint firstItem="DdL-Js-dbQ" firstAttribute="leading" secondItem="0EU-FB-DT2" secondAttribute="trailing" constant="15" id="gUZ-vh-3Ro"/>
-                    <constraint firstItem="wyT-l7-f8k" firstAttribute="leading" secondItem="0EU-FB-DT2" secondAttribute="trailing" constant="15" id="gqa-5l-NHr"/>
                     <constraint firstItem="0EU-FB-DT2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="kab-Pz-kM5"/>
                     <constraint firstItem="DdL-Js-dbQ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="qax-d9-Mov"/>
+                    <constraint firstItem="wyT-l7-f8k" firstAttribute="leading" secondItem="0EU-FB-DT2" secondAttribute="trailing" constant="15" id="xEJ-ma-5uv"/>
+                    <constraint firstItem="wyT-l7-f8k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="yKG-0n-whH"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
