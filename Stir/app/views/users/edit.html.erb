@@ -1,7 +1,0 @@
-<h1><% current_user.name%>さんの編集ページ</h1>
-
-<%= form_for current_user do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.submit "設定" %>
-<% end %>
