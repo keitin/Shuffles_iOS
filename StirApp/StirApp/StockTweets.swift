@@ -26,16 +26,6 @@ class StockTweets: NSObject {
         Alamofire.request(.GET, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 
-                println("========request=============")
-                println(request)
-                println("========response============")
-                println(response)
-                println("========JSON===========")
-                println(JSON)
-                println("========error===========")
-                println(error)
-                println("=====================")
-
                 let page = JSON!["page"] as! Int
                 if page == 1 {
                     StockTweets.sharedInstance.tweets = []

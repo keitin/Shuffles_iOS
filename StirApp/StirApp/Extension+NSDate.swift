@@ -95,7 +95,6 @@ extension NSDate {
     class func convertToNSDate(timeString: String) -> NSDate {
         let str = timeString.stringByReplacingOccurrencesOfString("T", withString: " ", options: nil, range: nil)
         let str2 = str.stringByReplacingOccurrencesOfString(".000Z", withString: "", options: nil, range: nil) + " +0000"
-        println(str2)
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzz"

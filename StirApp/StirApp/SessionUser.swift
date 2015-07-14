@@ -63,8 +63,6 @@ class SessionUser: NSObject {
         let path = String.localhost() + "/api/sessions"
         Alamofire.request(.POST, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
-                println(request)
-                println(error)
                 
                 var messageArray = JSON!["error_message"] as! Array<AnyObject>
                 

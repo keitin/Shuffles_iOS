@@ -88,7 +88,6 @@ class TimeLineTableViewController: UITableViewController {
         cell.tweetLabel.fixLabelHeight(tweet.text)
         cell.nameLabel.text = tweet.user.fakeUser?.name
         cell.iconImageView.image = tweet.user.fakeUser?.image!
-        println(tweet.user.fakeUser?.image!)
         cell.timeLabel.text = tweet.time
         return cell
     }
@@ -103,7 +102,6 @@ class TimeLineTableViewController: UITableViewController {
                 informationView.fakeUser = fakeUser
                 informationView.group = self.currentGroup
                 informationView.setUpInfoView()
-                println(informationView.frame)
                 self.tabBarController?.view.addSubview(informationView)
             }
         }

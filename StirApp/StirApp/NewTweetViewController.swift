@@ -82,7 +82,6 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
             var callBack = { () -> Void in
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
-            println(currentGroup)
             StockTweets.saveTweet(tweet, group: currentGroup, currentUser: currentUser, callBack: callBack)
         }
     }

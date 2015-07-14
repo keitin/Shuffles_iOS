@@ -15,7 +15,6 @@ class FakeUsersListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(currentGroup)
         tableView.registerNib(UINib(nibName: "FakeUserTableViewCell", bundle: nil), forCellReuseIdentifier: "fakeUserCell")
     }
     

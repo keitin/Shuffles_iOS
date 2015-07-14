@@ -54,12 +54,6 @@ class StockGroup: NSObject {
         Alamofire.request(.GET, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 
-                println("=====JSON=========")
-                println(JSON)
-                println("=====ERROR=========")
-                println(error)
-                
-                
                 if error == nil {
 
                     var groups = JSON?["groups"] as! Array<AnyObject>
@@ -77,9 +71,7 @@ class StockGroup: NSObject {
                             let url = NSURL(string: imageLink)
                             let imageData = NSData(contentsOfURL: url!)
                             group.image = UIImage(data: imageData!)
-                            println(group.name)
-                            println(imageLink)
-                            println(group.image)
+
                         }
 
                         StockGroup.sharedInstance.myGroups.insert(group, atIndex: 0)

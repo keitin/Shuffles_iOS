@@ -34,7 +34,6 @@ class GroupListTableViewController: UITableViewController {
         
         //HTTP
         var callback = {() -> Void in
-            println("グループフェッチ完了")
             self.groups = StockGroup.sharedInstance.myGroups
             self.tableView.reloadData()
         }
