@@ -84,6 +84,7 @@ class TimeLineTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell", forIndexPath: indexPath) as! TweetTableViewCell
         let tweet = tweets[indexPath.row]
         cell.tweetLabel?.text = tweet.text
+
         cell.tweetLabel.fixLabelHeight(tweet.text)
         cell.nameLabel.text = tweet.user.fakeUser?.name
         cell.iconImageView.image = tweet.user.fakeUser?.image!

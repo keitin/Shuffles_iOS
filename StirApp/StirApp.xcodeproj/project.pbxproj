@@ -37,6 +37,7 @@
 		323CC7051B2B529000E93780 /* StockTweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC7041B2B529000E93780 /* StockTweets.swift */; };
 		3244BBDC1B4B72BC00FBB5CF /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3244BBDB1B4B72BC00FBB5CF /* InformationView.swift */; };
 		3244BBDE1B4B895500FBB5CF /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3244BBDD1B4B895500FBB5CF /* Extension+UIColor.swift */; };
+		32542E7A1B54DED200554713 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32542E791B54DED200554713 /* Extension+String.swift */; };
 		32E91B641B2F08000089DD59 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B631B2F08000089DD59 /* LogInViewController.swift */; };
 		32E91B661B2F11AA0089DD59 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B651B2F11AA0089DD59 /* TabBarController.swift */; };
 		32E91B681B3078860089DD59 /* GroupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E91B671B3078860089DD59 /* GroupListTableViewController.swift */; };
@@ -64,7 +65,6 @@
 		32F09B6F1B52BFBB003401AD /* Extension+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F09B6E1B52BFBB003401AD /* Extension+UIAlertController.swift */; };
 		32F09B731B52CCE4003401AD /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B721B52CCE4003401AD /* list@2x.png */; };
 		32F09B751B52CCEB003401AD /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B741B52CCEB003401AD /* list.png */; };
-		32F09B771B538D5C003401AD /* hinako015.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B761B538D5C003401AD /* hinako015.png */; };
 		32F09B791B538F90003401AD /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F09B781B538F90003401AD /* MyPageViewController.swift */; };
 		32F09B7B1B5397AC003401AD /* group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B7A1B5397AC003401AD /* group@2x.png */; };
 		32F09B7D1B539998003401AD /* hiGroupImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F09B7C1B539998003401AD /* hiGroupImage@2x.png */; };
@@ -128,6 +128,7 @@
 		323CC7041B2B529000E93780 /* StockTweets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockTweets.swift; sourceTree = "<group>"; };
 		3244BBDB1B4B72BC00FBB5CF /* InformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		3244BBDD1B4B895500FBB5CF /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		32542E791B54DED200554713 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		32E91B631B2F08000089DD59 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		32E91B651B2F11AA0089DD59 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		32E91B671B3078860089DD59 /* GroupListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListTableViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +156,6 @@
 		32F09B6E1B52BFBB003401AD /* Extension+UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIAlertController.swift"; sourceTree = "<group>"; };
 		32F09B721B52CCE4003401AD /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
 		32F09B741B52CCEB003401AD /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
-		32F09B761B538D5C003401AD /* hinako015.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hinako015.png; sourceTree = "<group>"; };
 		32F09B781B538F90003401AD /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		32F09B7A1B5397AC003401AD /* group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group@2x.png"; sourceTree = "<group>"; };
 		32F09B7C1B539998003401AD /* hiGroupImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hiGroupImage@2x.png"; sourceTree = "<group>"; };
@@ -299,7 +299,6 @@
 				32F09B7F1B539B88003401AD /* groupp@2x.png */,
 				32F09B7C1B539998003401AD /* hiGroupImage@2x.png */,
 				32F09B7A1B5397AC003401AD /* group@2x.png */,
-				32F09B761B538D5C003401AD /* hinako015.png */,
 				32F09B741B52CCEB003401AD /* list.png */,
 				32F09B721B52CCE4003401AD /* list@2x.png */,
 				32F09B861B53A8F6003401AD /* menu@2x.png */,
@@ -362,6 +361,7 @@
 				32EB318A1B4FAADD006E07A0 /* Extension+NSDate.swift */,
 				32F09B6E1B52BFBB003401AD /* Extension+UIAlertController.swift */,
 				32F09B951B54189E003401AD /* Extension+UILabel.swift */,
+				32542E791B54DED200554713 /* Extension+String.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -570,7 +570,6 @@
 				32F09ADC1B500341003401AD /* 3.png in Resources */,
 				32F09B811B539B88003401AD /* groupp@2x.png in Resources */,
 				32F09B801B539B88003401AD /* grouup@2x.png in Resources */,
-				32F09B771B538D5C003401AD /* hinako015.png in Resources */,
 				32F09ADB1B500341003401AD /* 2.png in Resources */,
 				32F09ADE1B500341003401AD /* 5.png in Resources */,
 				32F09AE31B500341003401AD /* 10.png in Resources */,
@@ -679,6 +678,7 @@
 				3244BBDE1B4B895500FBB5CF /* Extension+UIColor.swift in Sources */,
 				3237AD2C1B4D839D00FA68D1 /* Extension+NSData.swift in Sources */,
 				320D7F761B411AB100A9C426 /* FakeUserTableViewCell.swift in Sources */,
+				32542E7A1B54DED200554713 /* Extension+String.swift in Sources */,
 				32F09B791B538F90003401AD /* MyPageViewController.swift in Sources */,
 				32F09B6F1B52BFBB003401AD /* Extension+UIAlertController.swift in Sources */,
 				32E91B641B2F08000089DD59 /* LogInViewController.swift in Sources */,

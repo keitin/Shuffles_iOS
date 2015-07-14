@@ -54,7 +54,7 @@ class LogInViewController: UIViewController {
                 self.performSegueWithIdentifier("segueToTimeLineTabBarController", sender: nil)
             }
         }
-        
+
         SessionUser.login(user, callBackClosure: callback)
     }
     

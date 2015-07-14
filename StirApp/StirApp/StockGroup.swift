@@ -28,8 +28,8 @@ class StockGroup: NSObject {
         
                         //Extension
         let httpMethod = Alamofire.Method.POST.rawValue
-        let pass = "http://localhost:3001/api/groups/"
-        let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: pass, parameters: params, image: group.image!)
+        let path = String.localhost() + "/api/groups"
+        let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: path, parameters: params, image: group.image!)
         
         Alamofire.upload(urlRequest.0, urlRequest.1)
             .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
@@ -50,8 +50,15 @@ class StockGroup: NSObject {
             "auth_token": auth_token
         ]
         
-        Alamofire.request(.GET, "http://localhost:3001/api/groups",parameters: params, encoding: .URL)
+        let path = String.localhost() + "/api/groups"
+        Alamofire.request(.GET, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
+                
+                println("=====JSON=========")
+                println(JSON)
+                println("=====ERROR=========")
+                println(error)
+                
                 
                 if error == nil {
 
@@ -66,7 +73,7 @@ class StockGroup: NSObject {
                         let avatar =  myGroup["avatar"]! as! Dictionary<String, AnyObject>
                         let urlKey = avatar["avatar"] as! Dictionary<String, AnyObject>
                         if let imageURL = urlKey["url"] as? String {
-                            let imageLink = "http://localhost:3001" + imageURL
+                            let imageLink = String.localhost() + imageURL
                             let url = NSURL(string: imageLink)
                             let imageData = NSData(contentsOfURL: url!)
                             group.image = UIImage(data: imageData!)
@@ -91,15 +98,13 @@ class StockGroup: NSObject {
             "password": group.password
         ]
         
-        
-        Alamofire.request(.GET, "http://localhost:3001/api/groups/search",parameters: params, encoding: .URL)
+        let path = String.localhost() + "/api/groups/search"
+        Alamofire.request(.GET, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 
                 var group: Group?
                 
                 if error == nil {
-                    println("AAAAAAAAAAAAAAAAAA")
-                    println(JSON)
                     group = Group()
                     group!.name = JSON!["group_name"] as! String
                     group!.password = JSON!["group_pass"] as! String
@@ -125,7 +130,8 @@ class StockGroup: NSObject {
             "password": group.password
         ]
      
-        Alamofire.request(.GET, "http://localhost:3001/api/groups/add_group",parameters: params, encoding: .URL)
+        let path = String.localhost() + "/api/groups/add_group"
+        Alamofire.request(.GET, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 
                 var errorMessage = ""

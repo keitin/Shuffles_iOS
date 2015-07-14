@@ -46,7 +46,8 @@ class CurrentUser: User {
         let currentUser = CurrentUser.sharedInstance
         
         var params: [String: AnyObject] = ["auth_token": self.authToken!]
-        Alamofire.request(.GET, "http://localhost:3001/api/users/fetch_current_user",parameters: params, encoding: .URL)
+        let path = String.localhost() + "/api/users/fetch_current_user"
+        Alamofire.request(.GET, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 
                 if error == nil {
@@ -68,7 +69,7 @@ class CurrentUser: User {
             "auth_token": user.authToken!
         ]
 
-        let pass = "http://localhost:3001/api/users/update"
+        let pass = String.localhost() +  "/api/users/update"
         let httpMethod = Alamofire.Method.PUT.rawValue
 
         if user.image == nil {
@@ -121,7 +122,8 @@ class CurrentUser: User {
             "password": group.password
         ]
         
-        Alamofire.request(.GET, "http://localhost:3001/api/users/group/curret_user", parameters: params, encoding: .URL)
+        let path = String.localhost() + "/api/users/group/curret_user"
+        Alamofire.request(.GET, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 let fakeUser = User()
                 var isCheked: Bool!
@@ -152,7 +154,8 @@ class CurrentUser: User {
             "password": group.password
         ]
         
-        Alamofire.request(.PUT, "http://localhost:3001/api/fakes/checked", parameters: params, encoding: .URL)
+        let path = String.localhost() + "/api/fakes/checked"
+        Alamofire.request(.PUT, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 
         }

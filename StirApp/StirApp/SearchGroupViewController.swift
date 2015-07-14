@@ -44,6 +44,9 @@ class SearchGroupViewController: UIViewController, UITextFieldDelegate, Searched
     
     @IBAction func tapSearchGroupBtn(sender: UIButton) {
         
+        groupNameTextField.resignFirstResponder()
+        groupPassTextField.resignFirstResponder()
+        
         let group = Group()
         group.name = groupNameTextField.text
         group.password = groupPassTextField.text

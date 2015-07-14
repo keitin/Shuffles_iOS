@@ -22,7 +22,8 @@ class StockTweets: NSObject {
             "page": page
         ]
     
-        Alamofire.request(.GET, "http://localhost:3001/api/tweets",parameters: params, encoding: .URL)
+        let path = String.localhost() + "/api/tweets"
+        Alamofire.request(.GET, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 
                 println("========request=============")
@@ -87,7 +88,8 @@ class StockTweets: NSObject {
             "auth_token": currentUser.authToken!
         ]
         
-        Alamofire.request(.POST, "http://localhost:3001/api/tweets",parameters: params, encoding: .URL)
+        let path = String.localhost() + "/api/tweets"
+        Alamofire.request(.POST, path,parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                 
             callBack()

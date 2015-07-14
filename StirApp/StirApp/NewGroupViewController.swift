@@ -66,6 +66,11 @@ class NewGroupViewController: UIViewController, UITextFieldDelegate, UIImagePick
     }
     
     @IBAction func tapCreateGroupBtn(sender: UIButton) {
+        
+        groupNameTextFiled.resignFirstResponder()
+        groupPassTextFiled.resignFirstResponder()
+        groupPassConfirmTextField.resignFirstResponder()
+        
         var message = ""
         if groupNameTextFiled.text == "" ||
             groupPassConfirmTextField.text == "" ||

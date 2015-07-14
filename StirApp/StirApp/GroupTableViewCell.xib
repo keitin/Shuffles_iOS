@@ -32,7 +32,7 @@
                         <rect key="frame" x="78" y="68" width="287" height="1"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hinako4.png" translatesAutoresizingMaskIntoConstraints="NO" id="0EU-FB-DT2">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10.png" translatesAutoresizingMaskIntoConstraints="NO" id="0EU-FB-DT2">
                         <rect key="frame" x="8" y="7" width="55" height="55"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="55" id="cKr-Bf-8zt"/>
@@ -61,6 +61,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="hinako4.png" width="300" height="300"/>
+        <image name="10.png" width="100" height="100"/>
     </resources>
 </document>

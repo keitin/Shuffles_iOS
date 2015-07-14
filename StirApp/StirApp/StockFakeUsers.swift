@@ -25,7 +25,8 @@ class StockFakeUsers: NSObject {
             "password": group.password
         ]
         
-        Alamofire.request(.GET, "http://localhost:3001/api/groups/fake_users",parameters: params, encoding: .URL)
+        let path = String.localhost() + "/api/groups/fake_users"
+        Alamofire.request(.GET, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
                                 
                 if error == nil {

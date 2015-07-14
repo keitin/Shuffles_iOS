@@ -24,8 +24,8 @@ class SessionUser: NSObject {
         var returnParams: Dictionary<String, AnyObject> = [:]
         let image = UIImage(named: "\(arc4random() % 11)")
         let httpMethod = Alamofire.Method.POST.rawValue
-        let pass = "http://localhost:3001/api/users"
-        let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: pass, parameters: params, image: image!)
+        let path = String.localhost() + "/api/users"
+        let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: path, parameters: params, image: image!)
         
         Alamofire.upload(urlRequest.0, urlRequest.1)
             .responseJSON { (request, response, JSON, error) in
@@ -60,9 +60,11 @@ class SessionUser: NSObject {
         ]
         
         var returnParams: Dictionary<String, AnyObject> = [:]
-        
-        Alamofire.request(.POST, "http://localhost:3001/api/sessions", parameters: params, encoding: .URL)
+        let path = String.localhost() + "/api/sessions"
+        Alamofire.request(.POST, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
+                println(request)
+                println(error)
                 
                 var messageArray = JSON!["error_message"] as! Array<AnyObject>
                 
