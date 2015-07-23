@@ -21,7 +21,7 @@ class StockTweets: NSObject {
             "password": group.password,
             "page": page
         ]
-    
+        
         let path = String.localhost() + "/api/tweets"
         Alamofire.request(.GET, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
@@ -68,6 +68,7 @@ class StockTweets: NSObject {
                 callBack()
         }
     }
+    
     
     class func saveTweet(tweet: Tweet, group: Group, currentUser: CurrentUser, callBack: () -> Void ){
         

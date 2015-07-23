@@ -14,8 +14,8 @@ import UIKit
 extension String {
     
     static func localhost() -> String {
-        return "http://10.0.1.75:3001"
+        return "http://192.168.100.101:3001"
     }
-    
+//    10.0.1.75
     
 }
