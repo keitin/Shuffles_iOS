@@ -72,6 +72,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 }
     
                 self.errorMessageLabel.text = str
+                self.showAlert(str)
     
             }
         }
@@ -98,6 +99,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     func setSignupButton() {
         siginUpButton.layer.cornerRadius = 5
         siginUpButton.layer.masksToBounds = true
+        siginUpButton.backgroundColor = UIColor.subColor()
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
     }
     
        /*

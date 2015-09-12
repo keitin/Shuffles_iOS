@@ -29,7 +29,6 @@ class SessionUser: NSObject {
         
         Alamofire.upload(urlRequest.0, urlRequest.1)
             .responseJSON { (request, response, JSON, error) in
-        
                 var messageArray = JSON!["error_message"] as! Array<AnyObject>
                 if messageArray.isEmpty {
                     
@@ -63,7 +62,6 @@ class SessionUser: NSObject {
         let path = String.localhost() + "/api/sessions"
         Alamofire.request(.POST, path, parameters: params, encoding: .URL)
             .responseJSON { (request, response, JSON, error) in
-                
                 var messageArray = JSON!["error_message"] as! Array<AnyObject>
                 
                 if messageArray.isEmpty {

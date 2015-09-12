@@ -16,7 +16,7 @@ extension UIColor {
     }
     
     class func subColor() -> UIColor {
-        return UIColor(red: 71/255, green: 189/255, blue: 255/255, alpha: 1.0)
+        return UIColor(red: 19/255, green: 131/255, blue: 195/255, alpha: 1.0)
     }
     
     class func originalGray() -> UIColor {

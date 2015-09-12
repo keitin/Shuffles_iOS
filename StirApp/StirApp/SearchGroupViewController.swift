@@ -77,6 +77,7 @@ class SearchGroupViewController: UIViewController, UITextFieldDelegate, Searched
     func setSearchButton() {
         searchButton.layer.cornerRadius = 5
         searchButton.layer.masksToBounds = true
+        searchButton.backgroundColor = UIColor.subColor()
     }
     
     

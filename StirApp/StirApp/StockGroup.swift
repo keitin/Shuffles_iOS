@@ -67,7 +67,7 @@ class StockGroup: NSObject {
                         let avatar =  myGroup["avatar"]! as! Dictionary<String, AnyObject>
                         let urlKey = avatar["avatar"] as! Dictionary<String, AnyObject>
                         if let imageURL = urlKey["url"] as? String {
-                            let imageLink = String.localhost() + imageURL
+                            let imageLink = imageURL
                             let url = NSURL(string: imageLink)
                             let imageData = NSData(contentsOfURL: url!)
                             group.image = UIImage(data: imageData!)

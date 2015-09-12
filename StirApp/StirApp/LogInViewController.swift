@@ -50,6 +50,7 @@ class LogInViewController: UIViewController {
                     str += messaege as! String
                 }
                 self.errorMessageLabel.text = str
+                self.showAlert(str)
             } else {
                 self.performSegueWithIdentifier("segueToTimeLineTabBarController", sender: nil)
             }
@@ -66,9 +67,15 @@ class LogInViewController: UIViewController {
     func setLoginButton() {
         loginButton.layer.cornerRadius = 5
         loginButton.layer.masksToBounds = true
+        loginButton.backgroundColor = UIColor.subColor()
     }
     
-    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

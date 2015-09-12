@@ -75,7 +75,6 @@ class CurrentUser: User {
         if user.image == nil {
             Alamofire.request(.PUT, pass, parameters: params, encoding: .URL)
                 .responseJSON { (request, response, JSON, error) in
-                    
                     if error == nil {
                         let user = JSON!["user"] as! Dictionary<String, AnyObject>
                         let currentUser = CurrentUser.sharedInstance

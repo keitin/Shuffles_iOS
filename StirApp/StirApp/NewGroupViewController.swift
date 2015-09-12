@@ -116,6 +116,7 @@ class NewGroupViewController: UIViewController, UITextFieldDelegate, UIImagePick
     func setCreateButton() {
         createButton.layer.cornerRadius = 5
         createButton.layer.masksToBounds = true
+        createButton.backgroundColor = UIColor.subColor()
     }
     
     func setSelectImageButton() {

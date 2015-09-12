@@ -24,7 +24,7 @@ extension UIImage {
     }
     
     class func convertToUIImageFromImagePass(imagePath: String) -> UIImage! {
-        let imageLink = String.localhost() + imagePath
+        let imageLink = imagePath
         let url = NSURL(string: imageLink)
         let imageData = NSData(contentsOfURL: url!)
         let image = UIImage(data: imageData!)

@@ -31,6 +31,7 @@ class EditMyProfileViewController: UIViewController, UIImagePickerControllerDele
         
         editButton.layer.cornerRadius = 5
         editButton.layer.masksToBounds = true
+        editButton.backgroundColor = UIColor.subColor()
         setSelectImageButton()
         
     }
